@@ -6,8 +6,8 @@ import search from '../img/hdSearch.svg'
 import login from '../img/hdLogin.svg'
 import close from '../img/hdClose.svg'
 
-import Hdnavi from './mhs/Hdnavi'
-import Hdpopular from './mhs/Hdpopular';
+import Hdnavi from './hd/Hdnavi';
+import Hdpopular from './hd/Hdpopular';
 
 
 function Hd() {
@@ -15,7 +15,7 @@ function Hd() {
 
     return (
         <>
-          <header className={`${hdscss.hd} fixed-top bg-white`}>
+          <header className={`${hdscss.hd} fixed-top bg-white`} >
                 <div className="container-1824 d-flex justify-content-between align-items-center">
                     <h1><a href="/"><img src={logo} alt=""/></a></h1>
                     <ul className={`${hdscss.gnb} d-flex ps-0 mb-0`}>

@@ -1,4 +1,3 @@
-import Hd from './component/Hd'
 import EventE from './component/EventE';
 
 function Mrc(){
@@ -6,7 +5,6 @@ function Mrc(){
         <>
         
             <EventE></EventE>
-            
         </>
     )
 }

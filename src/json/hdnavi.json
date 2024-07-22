@@ -1,55 +1,98 @@
-
 [
     {
-      "link": {
-        "href": "/pageprepare",
-        "text": "경주 소개"
-      },
-      "submenu": {
-        "items": [
-          { "href": "/pageprepare", "text": "역사 및 소개"},
-          { "href": "/pageprepare", "text": "지역 특산품"}
-        ]
-      }
+        "gnbnm": "경주 소개",
+        "gnblink": "/pageprepare",
+        "prnum": "",
+        "cateno": "1"
     },
     {
-      "link": {
-         "href": "/pageprepare",
-        "text": "여행 정보"
-      },
-      "submenu": {
-        "items": [
-          { "href": "/pageprepare", "text": "관광지"},
-          { "href": "/pageprepare", "text": "음식 및 카페"},
-          { "href": "/pageprepare", "text": "축제"},
-          { "href": "/pageprepare", "text": "추천 코스"},
-          { "href": "/pageprepare", "text": "여행 후기"}
-        ]
-      }
+        "gnbnm": "역사 및 소개",
+        "gnblink": "/pageprepare",
+        "prnum": "1",
+        "cateno": "1"
     },
     {
-      "link": {
-         "href": "/pageprepare",
-        "text": "예약 및 문의"
-      },
-      "submenu": {
-        "items": [
-          { "href": "/pageprepare", "text": "숙소 예약"},
-          { "href": "/pageprepare", "text": "패키지 여행 예약"},
-          { "href": "/pageprepare", "text": "문의사항"},
-          { "href": "/pageprepare", "text": "자주 묻는 문의"}
-        ]
-      }
+        "gnbnm": "지역 특산품",
+        "gnblink": "/pageprepare",
+        "prnum": "1",
+        "cateno": "2"
     },
     {
-      "link": {
-         "href": "/pageprepare",
-        "text": "이벤트"
-      },
-      "submenu": {
-        "items": [
-          { "href": "/pageprepare", "text": "진행중인 이벤트"}
-        ]
-      }
+        "gnbnm": "여행 정보",
+        "gnblink": "/pageprepare",
+        "prnum": "",
+        "cateno": "2"
+    },
+    {
+        "gnbnm": "관광지",
+        "gnblink": "/pageprepare",
+        "prnum": "2",
+        "cateno": "1"
+    },
+    {
+        "gnbnm": "음식 및 카페",
+        "gnblink": "/pageprepare",
+        "prnum": "2",
+        "cateno": "2"
+    },
+    {
+        "gnbnm": "축제",
+        "gnblink": "/pageprepare",
+        "prnum": "2",
+        "cateno": "3"
+    },
+    {
+        "gnbnm": "추천 코스",
+        "gnblink": "/pageprepare",
+        "prnum": "2",
+        "cateno": "4"
+    },
+    {
+        "gnbnm": "여행 후기",
+        "gnblink": "/pageprepare",
+        "prnum": "2",
+        "cateno": "5"
+    },
+    {
+        "gnbnm": "예약 및 문의",
+        "gnblink": "/pageprepare",
+        "prnum": "",
+        "cateno": "3"
+    },
+    {
+        "gnbnm": "숙소 예약",
+        "gnblink": "/pageprepare",
+        "prnum": "3",
+        "cateno": "1"
+    },
+    {
+        "gnbnm": "패키지 여행 예약",
+        "gnblink": "/pageprepare",
+        "prnum": "3",
+        "cateno": "2"
+    },
+    {
+        "gnbnm": "문의사항",
+        "gnblink": "/pageprepare",
+        "prnum": "3",
+        "cateno": "3"
+    },
+    {
+        "gnbnm": "자주 묻는 문의",
+        "gnblink": "/pageprepare",
+        "prnum": "3",
+        "cateno": "4"
+    },
+    {
+        "gnbnm": "이벤트",
+        "gnblink": "/pageprepare",
+        "prnum": "",
+        "cateno": "4"
+    },
+    {
+        "gnbnm": "진행중인 이벤트",
+        "gnblink": "/pageprepare",
+        "prnum": "4",
+        "cateno": "1"
     }
-  ]
+]

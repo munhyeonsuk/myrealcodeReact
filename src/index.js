@@ -8,8 +8,8 @@ import './component/scss/common.scss';
 
 import 'swiper/css';
 
-import Mrc from './Mrcmain';
 import Hd from './component/Hd'
+import Mrc from './Mrcmain';
 import Ft from './component/Ft'
 import Quick from './component/Quick';
 import Pageprepare from './component/subpage/Pageprepare';
@@ -17,6 +17,7 @@ import Pageprepare from './component/subpage/Pageprepare';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>
+    
         <Hd />
         <Routes>
             <Route path="/" element={<Mrc />} />
