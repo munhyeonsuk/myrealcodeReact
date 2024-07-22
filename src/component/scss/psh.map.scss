@@ -1,0 +1,25 @@
+.food {
+    &::before {
+        background-color: #FF7682;
+    }
+}
+.cafe {
+    &::before {
+        background-color: #FF9268;
+    }
+}
+.activity {
+    &::before {
+        background-color: #A374C8;
+    }
+}
+.landmark {
+    &::before {
+        background-color: #8AE89F;
+    }
+}
+.festival {
+    &::before {
+        background-color: #77C5FF;
+    }
+}
