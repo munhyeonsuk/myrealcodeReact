@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import pshscss from './scss/psh.module.scss'
 import './scss/mainslide.scss'

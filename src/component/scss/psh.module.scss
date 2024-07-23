@@ -5,3 +5,30 @@
         background-color: yellowgreen;        
     }
 }
+
+/*국내여행지추천*/
+.recommend {
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: block;
+        background-color: #FFEBB7;
+        height: 550px;
+        z-index: -1;
+    }
+    .title {
+        padding-top: 117px;
+        h2 {
+            font-size: 30px;
+            font-weight: 700;
+        }
+        p {
+            font-size: 20px;
+            line-height: 29px;
+        }
+    }
+}
