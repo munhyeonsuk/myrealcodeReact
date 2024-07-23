@@ -1,4 +1,4 @@
-/*공통 스타일*/
+// 공통 스타일
 $mainColor : #FFEBB7;
 $subColorBlue : #B5E1F9;
 $subColorPurple : #D1CFFF;
@@ -31,7 +31,7 @@ $fontColorDarkBeige : #B2A569;
     background-color: $pointColorBlue;
 }
 
-// 지도
+// 지도 START
 .map {
     position: relative;
     background: url(../../../public/img/mapBg6.png) repeat-x center bottom;
@@ -228,11 +228,41 @@ $fontColorDarkBeige : #B2A569;
         }
     }
 }
+// 지도 END
 
 
 
-// 팝업
+// 국내여행지추천 START
+.recommend {
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: block;
+        background-color: #FFEBB7;
+        height: 550px;
+        z-index: -1;
+    }
+    .title {
+        padding-top: 117px;
+        h2 {
+            font-size: 30px;
+            font-weight: 700;
+        }
+        p {
+            font-size: 20px;
+            line-height: 29px;
+        }
+    }
+}
+// 국내여행지추천 END
 
+
+
+// 팝업 START
 .popupform {
     display: none;
     position: fixed;
@@ -338,3 +368,4 @@ $fontColorDarkBeige : #B2A569;
         }
     }
 }
+// 팝업 END
