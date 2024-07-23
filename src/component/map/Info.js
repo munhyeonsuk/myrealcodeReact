@@ -1,3 +1,4 @@
+import{ Link } from 'react-router-dom'
 import mapscss from '../scss/psh.module.scss'
 
 import IconAdress from '../../img/mapIconAdress.svg'
@@ -15,7 +16,7 @@ function Info() {
         <div className={mapscss.mapInfoS}>
             <div className={mapscss.mapInfoWrapS}>
                 <img src={mapdata.info[0].food[0].img} alt="경주장소이미지" className="img-fluid" />
-                <p><a href={mapdata.info[0].food[0].href}>경주월드</a></p>
+                <p><Link to={mapdata.info[0].food[0].href}>경주월드</Link></p>
                 <ul className={`${mapscss.mapInfoTextS} ps-0 mb-0`}>
                     <li>
                         <i><img src={IconAdress} alt="위치" /></i>

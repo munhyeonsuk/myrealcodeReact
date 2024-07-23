@@ -31,7 +31,7 @@
             "food" : [
                 {
                     "img" : "/img/map1.jpg",
-                    "href" : "#",
+                    "href" : "/mapdetail",
                     "name" : "경주월드",
                     "adress" : "경상북도 경주시 보문로 544",
                     "tel" : "1544-8765",

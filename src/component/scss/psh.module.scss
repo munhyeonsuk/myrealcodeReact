@@ -120,6 +120,10 @@ $fontColorDarkBeige : #B2A569;
                     border-radius: 10px;
                 }
                 p {
+                    position: relative;
+                    font-size: 24px;
+                    font-weight: 800;
+                    margin: 12px 0 16px;
                     &::after {
                         content: "";
                         background: url(../../img/EventArrow.svg) no-repeat;
@@ -131,10 +135,9 @@ $fontColorDarkBeige : #B2A569;
                         top: 50%;
                         transform: translateY(-50%);
                     }
-                    position: relative;
-                    font-size: 24px;
-                    font-weight: 800;
-                    margin: 12px 0 16px;
+                    a {
+                        display: block;
+                    }
                 }
                 .mapInfoTextS {
                     font-size: 14px;
