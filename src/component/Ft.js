@@ -31,7 +31,7 @@ const Ft = () => {
                 }} >
                   <img src={language} alt="" />
                   <span id="selected-language" className="text-white">한국어</span>
-                 <img src={check} alt="" className={`${ showul ? '' :'up' }`}  /> 
+                 <img src={check} alt="" className={`${ showul ? 'up' :'' }`}  /> 
                 </div>
                 { showul && <ul className={`${ftscss.languageMenu} ps-0`}>
                   <li className={`${ftscss.active} m-0`}>한국어</li>

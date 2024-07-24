@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import hdscss from './scss/mhs.module.scss'
 
 import logo from '../img/hdLogo.svg'
@@ -11,7 +11,35 @@ import Hdpopular from './hd/Hdpopular';
 
 
 function Hd() {
-    const [ showdiv, setShowdiv] = useState(false);
+    useEffect(() => {
+      const openBtn = document.querySelector('#open');
+      const closeBtn = document.querySelector('#close');
+      const searchMenu = document.querySelector(`.searchdivbox`);
+  
+      const toggleMenu = () => {
+        if (searchMenu) {
+          searchMenu.classList.toggle('d-block');
+          searchMenu.classList.toggle('d-none');
+        }
+      };
+  
+      if (openBtn) {
+        openBtn.addEventListener('click', toggleMenu);
+      }
+  
+      if (closeBtn) {
+        closeBtn.addEventListener('click', toggleMenu);
+      }
+  
+      return () => {
+        if (openBtn) {
+          openBtn.removeEventListener('click', toggleMenu);
+        }
+        if (closeBtn) {
+          closeBtn.removeEventListener('click', toggleMenu);
+        }
+      };
+    }, []);
 
     return (
         <>
@@ -23,17 +51,15 @@ function Hd() {
                     </ul>
                     <ul className={`${hdscss.utill} d-flex justify-content-end position-relative mb-0`}>
                         <li className={`${hdscss.searchLi} position-relative`}>
-                            <img src={search} alt="검색" onClick={()=>{
-                                setShowdiv(!showdiv)
-                            }} />
+                            <img src={search} alt="검색" id='open' />
                             <span className="visually-hidden">검색</span>
-                        { showdiv &&  <div className={hdscss.searchMenu}>
+            
+                            <div className={`${hdscss.searchMenu} searchdivbox d-none`} >
                                             <div className={`${hdscss.dropdownbox} m-0`}>
                                                 <div className="text-end pb-1">
                                                     <img className={`${hdscss.searchimg} pe-3`} src={search} alt="검색" />
-                                                    <input type="text" className={hdscss.searchinput}  onClick={() => setShowdiv(false)} />
-                                                    <button className={`${hdscss.searchbt} pe-1`} onClick={() => setShowdiv(false)}><img src={close} alt="닫기" /></button>
-
+                                                    <input type="text" className={hdscss.searchinput}  />
+                                                    <button className={`${hdscss.searchbt} pe-1` } id="close" ><img src={close} alt="닫기" /></button>
                                                 </div>
                                                 <p className={`${hdscss.searchPopular} pt-2 mb-1 text-black-50`}>실시간인기</p>
                                                 <div className={`${hdscss.searchTop10} d-flex`}>
@@ -42,8 +68,8 @@ function Hd() {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                         }
+                            </div>
+                        
                         </li>
                         <li className="ms-4">
                             <img src={login} alt="로그인" />

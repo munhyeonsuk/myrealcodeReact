@@ -21,14 +21,14 @@ const Hdpopular = () => {
       <div>
         <ul className="ps-0">
           {hdpopular.list1.map((item, index) => (
-            <ListItem key={index} item={item} index={index} />
+            <ListItem key={`listp${index}`} item={item} index={index} />
           ))}
         </ul>
       </div>
       <div>
         <ul>
           {hdpopular.list2.map((item, index) => (
-            <li key={index + list1Length} className="ms-3">
+            <li key={`hdpopular${index}`} className="ms-3">
               <Link to={item.href}>
                 <span className={(index + list1Length) < 3 ? `${hdscss.number} ${hdscss.red}` : hdscss.number}>
                   {index + 1 + list1Length} 
