@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import hdscss from './scss/mhs.module.scss'
 
 import logo from '../img/hdLogo.svg'
@@ -12,13 +12,37 @@ import Hdpopular from './hd/Hdpopular';
 
 function Hd() {
     const [ showdiv, setShowdiv] = useState(false);
+    const [bgColor,setBgColor] = useState("transparent"); // 헤더 배경색 // 초기값
+    const [SubClass,setSubClass] = useState(null); // 헤더 border-bottom // 초기값
+
+    const scrollEvent = () => {
+        const scrollY = window.scrollY;
+
+        if(scrollY > 1000) {
+            setBgColor("#fff")
+            setSubClass("on")
+        }else {
+            setBgColor("transparent")
+            setSubClass("none")
+        }
+        console.log(scrollY)
+    }
+
+    useEffect(()=>{
+        window.addEventListener('scroll', scrollEvent);
+
+        return() => {
+            window.removeEventListener('scroll', scrollEvent);
+            
+        }
+    }, [])
 
     return (
         <>
-          <header className={`${hdscss.hd} fixed-top bg-white`} >
+          <header className={`${hdscss.hd} fixed-top`} style={{ backgroundColor: bgColor}} >
                 <div className="container-1824 d-flex justify-content-between align-items-center">
                     <h1><a href="/"><img src={logo} alt=""/></a></h1>
-                    <ul className={`${hdscss.gnb} d-flex ps-0 mb-0`}>
+                    <ul className={`${hdscss.gnb} ${SubClass} d-flex ps-0 mb-0`}>
                         <Hdnavi />
                     </ul>
                     <ul className={`${hdscss.utill} d-flex justify-content-end position-relative mb-0`}>
