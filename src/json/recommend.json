@@ -1,0 +1,44 @@
+[
+    {
+        "img" : "../../img/recommend1.jpg",
+        "alt" : "단양",
+        "text" : "스릴을 즐기며 하늘을 날다.|단양여행",
+        "href" : "/redetail"
+    },
+    {
+        "img" : "../../img/recommend2.jpg",
+        "alt" : "전주",
+        "text" : "낭만 가득, 슬로시티|전주 여행",
+        "href" : "/redetail"
+    },
+    {
+        "img" : "../../img/recommend3.jpg",
+        "alt" : "남해",
+        "text" : "남해에서 맛보는|이국적 풍경",
+        "href" : "/redetail"
+    },
+    {
+        "img" : "../../img/recommend4.jpg",
+        "alt" : "제주",
+        "text" : "반려견과 함께하는|제주 여행",
+        "href" : "/redetail"
+    },
+    {
+        "img" : "../../img/recommend5.jpg",
+        "alt" : "여수",
+        "text" : "꽃보다 아름다운 야경,|여수 밤바다",
+        "href" : "/redetail"
+    },
+    {
+        "img" : "../../img/recommend6.jpg",
+        "alt" : "강릉",
+        "text" : "서울에서 강릉까지|KTX 당일치기",
+        "href" : "/redetail"
+    },
+    {
+        "img" : "../../img/recommend7.jpg",
+        "alt" : "태안",
+        "text" : "자연의 신비로운 예술,|태안 해안",
+        "href" : "/redetail"
+    }
+]

@@ -3,8 +3,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Scrollbar } from 'swiper/modules';
 import recommend from './scss/psh.module.scss'
 import './scss/psh.recommend.scss'
+import Slide from './recommend/Slide';
+import redata from '../json/recommend.json'
 
 function Recommend() {
+    
     return (
         <section className={recommend.recommend}>
             <div className="container-1824">
@@ -29,69 +32,15 @@ function Recommend() {
                         modules={[Navigation, Scrollbar]}
                         className="reSwiper"
                     >
-                        <SwiperSlide>
-                            <div className="recommendSlideItemS">
-                                <div className="recommendSlideItemInnerS">
-                                    <img src="./img/recommend1.jpg" alt="강릉" />
-                                </div>
-                                <p>서울에서 강릉까지<br />
-                                    KTX 당일치기</p>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="recommendSlideItemS">
-                                <div className="recommendSlideItemInnerS">
-                                    <img src="./img/recommend1.jpg" alt="강릉" />
-                                </div>
-                                <p>서울에서 강릉까지<br />
-                                    KTX 당일치기</p>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="recommendSlideItemS">
-                                <div className="recommendSlideItemInnerS">
-                                    <img src="./img/recommend1.jpg" alt="강릉" />
-                                </div>
-                                <p>서울에서 강릉까지<br />
-                                    KTX 당일치기</p>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="recommendSlideItemS">
-                                <div className="recommendSlideItemInnerS">
-                                    <img src="./img/recommend1.jpg" alt="강릉" />
-                                </div>
-                                <p>서울에서 강릉까지<br />
-                                    KTX 당일치기</p>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="recommendSlideItemS">
-                                <div className="recommendSlideItemInnerS">
-                                    <img src="./img/recommend1.jpg" alt="강릉" />
-                                </div>
-                                <p>서울에서 강릉까지<br />
-                                    KTX 당일치기</p>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="recommendSlideItemS">
-                                <div className="recommendSlideItemInnerS">
-                                    <img src="./img/recommend1.jpg" alt="강릉" />
-                                </div>
-                                <p>서울에서 강릉까지<br />
-                                    KTX 당일치기</p>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="recommendSlideItemS">
-                                <div className="recommendSlideItemInnerS">
-                                    <img src="./img/recommend1.jpg" alt="강릉" />
-                                </div>
-                                <p>서울에서 강릉까지<br />
-                                    KTX 당일치기</p>
-                            </div>
-                        </SwiperSlide>
+                        {
+                            redata.map((v, i)=> {
+                                return(
+                                    <SwiperSlide>
+                                        <Slide src={v.img} alt={v.alt} text1={v.text.split("|")[0]} text2={v.text.split("|")[1]} href={v.href} />
+                                    </SwiperSlide>
+                                )
+                            })
+                        }                                            
                     </Swiper>
                     <div class="slide-control">
                         <div class="swiper-scrollbar"></div>

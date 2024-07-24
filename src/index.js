@@ -19,8 +19,7 @@ import Pageprepare from './component/subpage/Pageprepare';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <BrowserRouter>
-    
+    <BrowserRouter>    
         <Hd />
         <Routes>
             <Route path="/" element={<Mrc />} />
