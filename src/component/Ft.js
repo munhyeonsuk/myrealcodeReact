@@ -1,15 +1,21 @@
-import React, {useState} from 'react';
-import ftscss from './scss/mhs.module.scss'
+import React, { useState } from 'react';
+import ftscss from './scss/mhs.module.scss';
 
 import logo from '../img/hdLogo.svg';
-import facebook from '../img/ftFacebook.svg'
-import instagram from '../img/ftInstagram.svg'
-import youtube from '../img/ftYoutube.svg'
-import language from '../img/ftlanguage.svg'
-import check from '../img/ftCheck1.svg'
+import facebook from '../img/ftFacebook.svg';
+import instagram from '../img/ftInstagram.svg';
+import youtube from '../img/ftYoutube.svg';
+import language from '../img/ftlanguage.svg';
+import check from '../img/ftCheck1.svg';
 
 const Ft = () => {
-  const [showul, setShowul] = useState(false)
+  const [showul, setShowul] = useState(false);
+  const [activeLanguage, setActiveLanguage] = useState('한국어');
+
+  const handleLanguageClick = (language) => {
+    setActiveLanguage(language);
+    setShowul(false); 
+  };
 
   return (
     <footer className={`${ftscss.ft} py-3`}>
@@ -26,17 +32,28 @@ const Ft = () => {
 
             <div className="container text-center">
               <div className={`${ftscss.languageSelector}`}>
-                <div className={`${ftscss.languageButton}`} onClick={()=>{
-                  setShowul(!showul)
-                }} >
+                <div className={`${ftscss.languageButton}`} onClick={() => setShowul(!showul)}>
                   <img src={language} alt="" />
-                  <span id="selected-language" className="text-white">한국어</span>
-                 <img src={check} alt="" className={`${ showul ? 'up' :'' }`}  /> 
+                  <span className="text-white">{activeLanguage}</span>
+                  <img src={check} alt="" className={`${showul ? 'up' : ''}`} />
                 </div>
-                { showul && <ul className={`${ftscss.languageMenu} ps-0`}>
-                  <li className={`${ftscss.active} m-0`}>한국어</li>
-                  <li className="m-0">English</li>
-                </ul>}
+                {showul && (
+                  <ul className={`${ftscss.languageMenu} ps-0`}>
+                    <li
+                      className={`${activeLanguage === '한국어' ? ftscss.active : ''} m-0`}
+                      onClick={() => handleLanguageClick('한국어')}
+                    >
+                      한국어
+                    </li>
+                    
+                    <li
+                      className={`${activeLanguage === 'English' ? ftscss.active : ''} m-0`}
+                      onClick={() => handleLanguageClick('English')}
+                    >
+                      English
+                    </li>
+                  </ul>
+                )}
               </div>
             </div>
           </ul>

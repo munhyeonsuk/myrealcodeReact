@@ -12,8 +12,8 @@ import Hdpopular from './hd/Hdpopular';
 
 function Hd() {
     useEffect(() => {
-      const openBtn = document.querySelector('#open');
-      const closeBtn = document.querySelector('#close');
+      const openBtn = document.querySelector('.open');
+      const closeBtn = document.querySelector('.close');
       const searchMenu = document.querySelector(`.searchdivbox`);
   
       const toggleMenu = () => {
@@ -50,8 +50,8 @@ function Hd() {
                         <Hdnavi />
                     </ul>
                     <ul className={`${hdscss.utill} d-flex justify-content-end position-relative mb-0`}>
-                        <li className={`${hdscss.searchLi} position-relative`}>
-                            <img src={search} alt="검색" id='open' />
+                        <li className="position-relative">
+                            <img src={search} alt="검색" className= {`${hdscss.searchimg} open`} />
                             <span className="visually-hidden">검색</span>
             
                             <div className={`${hdscss.searchMenu} searchdivbox d-none`} >
@@ -59,7 +59,7 @@ function Hd() {
                                                 <div className="text-end pb-1">
                                                     <img className={`${hdscss.searchimg} pe-3`} src={search} alt="검색" />
                                                     <input type="text" className={hdscss.searchinput}  />
-                                                    <button className={`${hdscss.searchbt} pe-1` } id="close" ><img src={close} alt="닫기" /></button>
+                                                    <button className={`${hdscss.searchbt} pe-1 close` }  ><img src={close} alt="닫기" /></button>
                                                 </div>
                                                 <p className={`${hdscss.searchPopular} pt-2 mb-1 text-black-50`}>실시간인기</p>
                                                 <div className={`${hdscss.searchTop10} d-flex`}>

@@ -25,6 +25,9 @@ body li{
         h1,
         .utill{
             width: 0;
+            .searchimg{
+                cursor: pointer
+            }
         }
 
         .gnb {
@@ -154,6 +157,8 @@ body li{
 .ft{
     margin:0 auto;
     background-color:$mainColor ;
+    position: relative;
+    z-index: 10000;
     .footerMenu{
         margin: 0;
         padding: 0;
