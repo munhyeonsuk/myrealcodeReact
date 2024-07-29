@@ -21,7 +21,7 @@ body li{
 
 
 .hd{
-    background-color: transparent !important;
+    transition: all 0.2s;
         h1,
         .utill{
             width: 0;
@@ -255,6 +255,10 @@ body li{
         bottom: 0;
         z-index: 999;
         li{
+            cursor: pointer;
+            margin: 8px 0;
+            background-color: #fff;
+            border-radius: 50%;
             &.questionIcon{      
                 position: relative;      
                 width: 56px;
@@ -275,13 +279,11 @@ body li{
                     transform: translate3d(-50%, -50%, 0);
                 }
             }
-            margin: 8px 0;
             &:hover{
                 span{
                     display: block;
                 }
-            }
-           
+            }           
             span{
                 display: none;
                 border-radius: 20px;
