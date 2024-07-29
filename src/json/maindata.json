@@ -1,0 +1,50 @@
+[
+    {
+      "bgcolor": "#F9D6D6",
+      "title": "경주의 계절|봄날의 벚꽃 축제",
+      "description": "경주의 계절 축제",
+      "link": "festival",
+      "imgSrc": "img/mainImg1.jpg",
+      "imgAlt": "경주의 계절 축제 봄날의 벚꽃 축제"
+    },
+    {
+      "bgcolor": "#85BD91",
+      "title": "아름다운 한복이 여행을|꽃길로 만들어 줄거에요",
+      "description": "<꽃길한복> 대여 이벤트",
+      "link": "hanbok-event",
+      "imgSrc": "img/mainImg2.jpeg",
+      "imgAlt": "꽃길 한복 대여 이벤트 아름다운 한복이 여행을 꽃길로 만들어 줄거에요"
+    },
+    {
+      "bgcolor": "#D1CFFF",
+      "title": "뚜벅뚜벅, 경주의|역사를 따라 걷는 시간",
+      "description": "여행 명소 투어",
+      "link": "tour",
+      "imgSrc": "img/mainImg3.jpg",
+      "imgAlt": "여행 명소 투어 뚜벅뚜벅, 경주의 역사를 따라 걷는 시간"
+    },
+    {
+      "bgcolor": "#CDE6F9",
+      "title": "무더운 여름, 경주|시원한 카페 TOP 3",
+      "description": "올 여름 어느때보다 시원하게!",
+      "link": "cafes",
+      "imgSrc": "img/mainImg4.jpg",
+      "imgAlt": "올 여름 어느때보다 시원하게! 경주 시원한 카페 TOP 3"
+    },
+    {
+      "bgcolor": "#FFEBB7",
+      "title": "다시 오지 못 할 지금,|이 순간을 기록하세요",
+      "description": "우리들의 추억 여행",
+      "link": "memories",
+      "imgSrc": "img/mainImg5.jpg",
+      "imgAlt": "우리들의 추억 여행 다시 오지 못 할 지금, 이 순간을 기록하세요"
+    },
+    {
+      "bgcolor": "#A1D4EF",
+      "title": "스트레스 해소|최강 스릴 도전!",
+      "description": "행복의 경주월드",
+      "link": "gjworld",
+      "imgSrc": "img/mainImg6.jpg",
+      "imgAlt": "꿈, 사랑, 행복의 경주월드 스트레스 해소 최강 스릴 도전!"
+    }
+  ]
