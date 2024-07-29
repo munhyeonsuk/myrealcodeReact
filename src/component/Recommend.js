@@ -35,18 +35,18 @@ function Recommend() {
                         {
                             redata.map((v, i)=> {
                                 return(
-                                    <SwiperSlide>
+                                    <SwiperSlide key={i} >
                                         <Slide src={v.img} alt={v.alt} text1={v.text.split("|")[0]} text2={v.text.split("|")[1]} href={v.href} />
                                     </SwiperSlide>
                                 )
                             })
                         }                                            
                     </Swiper>
-                    <div class="slide-control">
-                        <div class="swiper-scrollbar"></div>
-                        <div class="swiper-btns">
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
+                    <div className="slide-control">
+                        <div className="swiper-scrollbar"></div>
+                        <div className="swiper-btns">
+                            <div className="swiper-button-prev"></div>
+                            <div className="swiper-button-next"></div>
                         </div>
                     </div>
                 </div>
