@@ -5,6 +5,7 @@ import logo from '../img/hdLogo.svg'
 import search from '../img/hdSearch.svg'
 import login from '../img/hdLogin.svg'
 import close from '../img/hdClose.svg'
+import allbtn from '../img/allbtn.svg'
 
 import Hdnavi from './hd/Hdnavi';
 import Hdpopular from './hd/Hdpopular';
@@ -43,8 +44,9 @@ function Hd() {
 
     return (
         <>
-          <header className={`${hdscss.hd} fixed-top bg-white`} >
+          <header className={`${hdscss.hd} mainhd fixed-top bg-white`} >
                 <div className="container-1824 d-flex justify-content-between align-items-center">
+                    <button className={`${hdscss.allMenuBtn}`}><img src={allbtn} alt="" /></button>
                     <h1><a href="/"><img src={logo} alt=""/></a></h1>
                     <ul className={`${hdscss.gnb} d-flex ps-0 mb-0`}>
                         <Hdnavi />

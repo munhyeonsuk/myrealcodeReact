@@ -318,3 +318,51 @@ body li{
             }
         }
     }
+
+
+    .allMenuBtn{ display: none ;}
+    .ft{
+        h1{ display: block;}
+        .ftsns{
+            margin-left: auto;
+        }
+        .language{
+            margin-right: 0;
+        }
+    }
+    
+    @media (max-width:1024px){
+      
+        .hd{
+            .allMenuBtn{ 
+                display: block ; order:1;
+                border: none;
+                background: none;
+            }  
+             h1{order:2}
+            .gnb{ display: none !important;}
+            .utill{
+                display: block;
+                order: 3;
+            }
+            .logIn{
+                display: none;
+            }
+        }
+        .ft{
+            h1{ display: none;}
+            .ftsns{
+                margin-left: 0;
+            }
+            .verticalLine{display: none !important;}
+            .fnb{
+                margin-left: 1rem;
+                padding-top: 0;
+                    
+                 }
+            .fnbdes {display: none !important;}
+            .language{
+                margin-right: 1rem;
+            }      
+        }   
+    }
