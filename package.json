@@ -12,7 +12,7 @@
     "react-router-dom": "^6.25.1",
     "react-scripts": "5.0.1",
     "sass": "^1.77.6",
-    "swiper": "^11.1.4",
+    "swiper": "^11.1.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

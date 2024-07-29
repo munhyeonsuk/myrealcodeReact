@@ -9,7 +9,8 @@ import './component/scss/common.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import 'swiper/css/autoplay';
+import 'swiper/css/controller';
 
 import Hd from './component/Hd'
 import Mrc from './Mrcmain';
