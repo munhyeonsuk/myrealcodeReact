@@ -68,161 +68,171 @@ $fontColorDarkBeige : #B2A569;
         border: 0;
         padding: 0;
     }
-    .mapLeftS {
-        max-width: 352px;
-        margin-left: 70px;
-        .mapTitleS{
-            position: relative;
-            &::before,
-            &::after {
+    .mapWrapS {
+        .mapLeftS {
+            max-width: 352px;
+            margin-left: 70px;
+            .mapTitleS{
+                position: relative;
+                &::before,
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    width: 8vw;
+                    height: 8vw;
+                }
+                &::before {
+                    background-image: url(../../../public/img/mapBg3.png);
+                    top: 2vw;
+                    left: -10vw;
+                }
+                &::after {
+                    background-image: url(../../../public/img/mapBg2.png);
+                    top: 4vw;
+                    right: -12vw;
+                }
+                text-align: center;
+                font-size: 32px;
+                line-height: 48px;
+                font-weight: 700;
+                margin-bottom: 50px;
+            }
+            .mapCategoryS {
+                text-align: center;
+                margin-bottom: 80px;    
+                i {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 47px;
+                    height: 47px;
+                    border-radius: 50%;
+                }
+                span {
+                    display: block;
+                    font-size: 14px;
+                    font-weight: 700;
+                    margin-top: 10px;
+                }
+                
+            }
+            .mapInfoS {            
+                max-width: 340px;
+                border-radius: 10px;
+                background-color: #fff;
+                box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+                .mapInfoWrapS {
+                    padding: 20px;
+                    img {
+                        border-radius: 10px;
+                    }
+                    p {
+                        position: relative;
+                        font-size: 24px;
+                        font-weight: 800;
+                        margin: 12px 0 16px;
+                        &::after {
+                            content: "";
+                            background: url(../../img/EventArrow.svg) no-repeat;
+                            width: 44px;
+                            height: 100%;
+                            display: block;
+                            position: absolute;
+                            right: 0;
+                            top: 50%;
+                            transform: translateY(-50%);
+                        }
+                        a {
+                            display: block;
+                        }
+                    }
+                    .mapInfoTextS {
+                        font-size: 14px;
+                        min-height: 130px;
+                        li {
+                            display: flex;
+                            margin: 4px 0;
+                            i {
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+                }            
+                .mapInfoLocationS {
+                    padding: 10px 20px;
+                    border-top: 1px solid #E1E1E1;
+                    li {
+                        margin-left: 10px;
+                        &:first-child {
+                            i {
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .mapRightS {        
+            &::before {
                 content: "";
                 display: block;
-                position: absolute;
-                background-repeat: no-repeat;
+                background: url(../../../public/img/mapBg1.png) no-repeat;
                 background-size: contain;
                 width: 8vw;
                 height: 8vw;
-            }
-            &::before {
-                background-image: url(../../../public/img/mapBg3.png);
-                top: 2vw;
-                left: -10vw;
-            }
-            &::after {
-                background-image: url(../../../public/img/mapBg2.png);
-                top: 4vw;
-                right: -12vw;
-            }
-            text-align: center;
-            font-size: 32px;
-            line-height: 48px;
-            font-weight: 700;
-            margin-bottom: 50px;
-        }
-        .mapCategoryS {
-            text-align: center;
-            margin-bottom: 80px;
-            span {
-                display: block;
-                font-size: 14px;
-                font-weight: 700;
-                margin-top: 10px;
-            }
-        }
-        .mapInfoS {            
-            max-width: 340px;
-            border-radius: 10px;
-            background-color: #fff;
-            box-shadow: 0 4px 4px rgba(0,0,0,0.25);
-            .mapInfoWrapS {
-                padding: 20px;
-                img {
-                    border-radius: 10px;
-                }
-                p {
-                    position: relative;
-                    font-size: 24px;
-                    font-weight: 800;
-                    margin: 12px 0 16px;
-                    &::after {
-                        content: "";
-                        background: url(../../img/EventArrow.svg) no-repeat;
-                        width: 44px;
-                        height: 100%;
-                        display: block;
-                        position: absolute;
-                        right: 0;
-                        top: 50%;
-                        transform: translateY(-50%);
-                    }
-                    a {
-                        display: block;
-                    }
-                }
-                .mapInfoTextS {
-                    font-size: 14px;
-                    min-height: 130px;
-                    li {
-                        display: flex;
-                        margin: 4px 0;
-                        i {
-                            margin-right: 10px;
-                        }
-                    }
-                }
-            }            
-            .mapInfoLocationS {
-                padding: 10px 20px;
-                border-top: 1px solid #E1E1E1;
-                li {
-                    margin-left: 10px;
-                    &:first-child {
-                        i {
-                            margin-right: 10px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    .mapRightS {        
-        &::before {
-            content: "";
-            display: block;
-            background: url(../../../public/img/mapBg1.png) no-repeat;
-            background-size: contain;
-            width: 8vw;
-            height: 8vw;
-            position: absolute;
-            top: -5.8vw;
-            right: -9.5vw;
-        }
-        position: relative;
-        margin: 120px 0 0 224px;
-        .mapTextS {
-            position: absolute;
-            top: 80px;
-            right: -100px;
-            z-index: 1;
-            button {
-                margin: 0 0 10px 4px;
-                &:first-child {
-                    margin-left: 0;
-                }
-                i {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    background-color: #000;
-                    width: 34px;
-                    height: 34px;
-                    border-radius: 50%;
-                }
-            }
-            p {
-                font-size: 19px;
-                letter-spacing: -2px;
-                line-height: 1.4;
-                strong {
-                    font-weight: 700;
-                }
-            }
-        }
-        .mapViewS {
-            position: relative;
-            .mapCategoryPointS {
                 position: absolute;
-                width: 100%;
-                height: 100%;
-                p {
-                    position: absolute;
-                    &::before {
-                        content: "";
-                        display: block;                        
-                        width: 22px;
-                        height: 22px;
+                top: -5.8vw;
+                right: -9.5vw;
+            }
+            position: relative;
+            margin: 120px 0 0 224px;
+            .mapTextS {
+                position: absolute;
+                top: 80px;
+                right: -100px;
+                z-index: 1;
+                button {
+                    margin: 0 0 10px 4px;
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                    i {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: #000;
+                        width: 34px;
+                        height: 34px;
                         border-radius: 50%;
-                    }                    
+                    }
+                }
+                p {
+                    font-size: 19px;
+                    letter-spacing: -2px;
+                    line-height: 1.4;
+                    strong {
+                        font-weight: 700;
+                    }
+                }
+            }
+            .mapViewS {
+                position: relative;
+                .mapCategoryPointS {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    p {
+                        position: absolute;
+                        i {
+                            display: inline-block;
+                            width: 22px;
+                            height: 22px;
+                            border-radius: 50%;
+                        }                 
+                    }
                 }
             }
         }
@@ -368,3 +378,129 @@ $fontColorDarkBeige : #B2A569;
     }
 }
 // 팝업 END
+
+// 모바일 style
+
+@media screen and (max-width: 1024px) {
+    .map {
+        background: none;
+        padding: 100px 0 0;
+        &::before,
+        &::after {
+            display: none;
+        }
+        .mapWrapS {
+            position: relative;
+            .mapLeftS{
+                z-index: 2;
+                margin-left: 0;
+                .mapTitleS {
+                    position: absolute;
+                    right: 16px;
+                    bottom: 60px;
+                    font-size: 18px;
+                    line-height: 26px;
+                    margin-bottom: 0;
+                    &::before,
+                    &::after {
+                        display: none;
+                    }
+                }
+                .mapInfoS {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate3d(-50%, -50%, 0);
+                    max-width: 280px;
+                    width: 100%;
+                    z-index: 2;
+                    .mapInfoWrapS {
+                        padding: 10px;
+                        > img {
+                            display: none;
+                        }
+                        p {
+                            font-size: 20px;
+                            margin: 0;
+                            &::after {
+                                display: none;
+                            }
+                        }
+                        .mapInfoTextS {
+                            min-height: 100px;
+                        }
+                    }
+                    .mapInfoLocationS {
+                        padding: 6px 10px 8px;
+                        .link {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+            .mapRightS {
+                margin: 0;
+                &::before {
+                    display: none;
+                }
+                .mapTextS {
+                    left: 16px;
+                    bottom: 14px;
+                    top: inherit;
+                    right: inherit;
+                    button {
+                        margin-bottom: 0;
+                        i {
+                            width: 24px;
+                            height: 24px;
+                            img {
+                                width: 14px;
+                                height: auto;
+                            }
+                        }
+                    }
+                    p {
+                        display: none;
+                    }
+                }
+                .mapViewS {
+                    background-color: $mainColor;
+                    height: 294px;
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    img {
+                        max-width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+            .mapCategoryS {
+                justify-content: space-around !important;
+                border-top: 1px solid #E1E1E1;
+                border-bottom: 1px solid #E1E1E1;
+                padding: 10px 0;
+                margin-bottom: 0;
+                li {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    i {
+                        display: inline-block;
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 50%;
+                        margin-right: 6px;
+                        img {
+                            display: none;
+                        }
+                    }
+                    span {
+                        font-weight: 600;
+                    }
+                }
+            }
+        }        
+    }
+}

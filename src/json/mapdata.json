@@ -1,29 +1,54 @@
 {
     "category" : [
         {
-            "name" : "맛집",
-            "positionX" : "240px",
-            "positionY" : "230px"
+            "food" : [
+                {
+                    "img" : "/img/mapCategoryFood.png",
+                    "name" : "맛집",
+                    "positionX" : "240px",
+                    "positionY" : "230px"
+                }
+            ]
         },
         {
-            "name" : "카페",
-            "positionX" : "200px",
-            "positionY" : "340px"
+            "cafe" : [
+                {
+                    "img" : "/img/mapCategoryCafe.png",
+                    "name" : "카페",
+                    "positionX" : "200px",
+                    "positionY" : "340px"
+                }
+            ]
         },
         {
-            "name" : "액티비티",
-            "positionX" : "310px",
-            "positionY" : "360px"
+            "activity" : [
+                {
+                    "img" : "/img/mapCategoryActivity.png",
+                    "name" : "액티비티",
+                    "positionX" : "310px",
+                    "positionY" : "360px"
+                }
+            ]        
         },
         {
-            "name" : "관광지",
-            "positionX" : "320px",
-            "positionY" : "280px"
+            "landmark" : [
+                {
+                    "img" : "/img/mapCategorylandmark.png",
+                    "name" : "관광지",
+                    "positionX" : "320px",
+                    "positionY" : "280px"
+                }
+            ]
         },
         {
-            "name" : "축제",
-            "positionX" : "280px",
-            "positionY" : "170px"
+            "festival" : [
+                {
+                    "img" : "/img/mapCategoryFestival.png",
+                    "name" : "축제",
+                    "positionX" : "280px",
+                    "positionY" : "170px"
+                }                
+            ]
         }
     ],
     "info" : [

@@ -3,6 +3,7 @@ import MapView from './map/View'
 import MapInfo from './map/Info'
 
 import mapscss from './scss/psh.module.scss'
+import './scss/psh.map.scss'
 
 import IconZoomin from '../img/mapIconZoomin.svg'
 import IconZoomout from '../img/mapIconZoomout.svg'
@@ -12,18 +13,16 @@ function Map() {
     return (
     <section className={mapscss.map}>
       <div className="container-1400">
-        <div className="row mx-0">
-          <div className={`${mapscss.mapLeftS} col-6`}>
+        <div className={`${mapscss.mapWrapS} row mx-0`}>
+          <div className={`${mapscss.mapLeftS} col-md-6`}>
             <h2 className={mapscss.mapTitleS}>
               경주의 숨겨진<br />
               “보석을 찾아 떠나는 여정”
             </h2>
-            <ul className={`${mapscss.mapCategoryS} d-flex justify-content-between align-items-center ps-0`}>
-              <MapCategory></MapCategory>
-            </ul>
+            <MapCategory className="pc"></MapCategory>
             <MapInfo></MapInfo>
           </div>
-          <div className={`${mapscss.mapRightS} col-6`}>
+          <div className={`${mapscss.mapRightS} col-md-6`}>
             <div className={mapscss.mapTextS}>
               <button>
                 <i><img src={IconZoomin} alt="확대" /></i>
@@ -43,6 +42,7 @@ function Map() {
             </div>
             <MapView></MapView>
           </div>
+          <MapCategory className="mo"></MapCategory>
         </div>
       </div>
     </section>

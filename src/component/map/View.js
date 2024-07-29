@@ -4,16 +4,31 @@ import '../scss/psh.map.scss'
 import MapImg from '../../img/map.svg'
 
 import mapdata from '../../json/mapdata.json'
+import { Fragment } from 'react'
 
 function View() {
     return (
         <div className={mapscss.mapViewS}>
             <div className={mapscss.mapCategoryPointS}>
-                <p className='food' style={{"top": mapdata.category[0].positionY, "left": mapdata.category[0].positionX}}><span className="visually-hidden">{mapdata.category[0].name}</span></p>
-                <p className='cafe' style={{"top": mapdata.category[1].positionY, "left": mapdata.category[1].positionX}}><span className="visually-hidden">{mapdata.category[1].name}</span></p>
-                <p className='activity' style={{"top": mapdata.category[2].positionY, "left": mapdata.category[2].positionX}}><span className="visually-hidden">{mapdata.category[2].name}</span></p>
-                <p className='landmark' style={{"top": mapdata.category[3].positionY, "left": mapdata.category[3].positionX}}><span className="visually-hidden">{mapdata.category[3].name}</span></p>
-                <p className='festival' style={{"top": mapdata.category[4].positionY, "left": mapdata.category[4].positionX}}><span className="visually-hidden">{mapdata.category[4].name}</span></p>
+                {
+                    mapdata.category.map((v, i)=>{
+                        const key = Object.keys(v)[0];
+                        return(
+                            <p key={i} className={key} style={{"top": v[key][0].positionY, "left": v[key][0].positionX}}>
+                                {
+                                    v[key].map((vv, ii)=>{
+                                        return(
+                                            <Fragment>
+                                                <i></i>
+                                                <span className="visually-hidden">{vv.name}</span>
+                                            </Fragment>
+                                        )
+                                    })
+                                }
+                            </p>
+                        )
+                    })
+                }
             </div>
             <img src={MapImg} alt="지도" />
         </div>

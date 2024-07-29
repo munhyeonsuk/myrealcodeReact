@@ -25,7 +25,6 @@ function Hd() {
             setBgColor("transparent")
             setSubClass("none")
         }
-        console.log(scrollY)
     }
 
     useEffect(()=>{
