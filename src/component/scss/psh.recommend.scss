@@ -99,6 +99,11 @@
             position: initial;
             width: 900px;
             height: 1px;
+            background-color: #989797;
+            .swiper-scrollbar-drag{
+                height: 1px;
+                background-color: #000;
+            }
         }
         .swiper-btns {
             display: flex;
