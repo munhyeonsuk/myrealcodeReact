@@ -9,12 +9,12 @@ const Category = ({ className }) => {
                 mapdata.category.map((v, i) => {
                     const key = Object.keys(v)[0];
                     return(
-                        <li key={i} className={key}>
+                        <li key={i}>
                             {
                                 v[key].map((vv, ii) => {
                                     return(                                        
                                         <Fragment key={ii}>
-                                            <i><img src={vv.img} alt={vv.name} /></i>
+                                            <i className={key}><img src={vv.img} alt={vv.name} /></i>
                                             <span>{vv.name}</span>
                                         </Fragment>
                                     )

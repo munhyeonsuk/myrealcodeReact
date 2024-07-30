@@ -6,27 +6,27 @@
 }
 
 .food {
-    i {
+    &::before {
         background-color: #FF7682;
     }
 }
 .cafe {
-    i {
+    &::before {
         background-color: #FF9268;
     }
 }
 .activity {
-    i {
+    &::before {
         background-color: #A374C8;
     }
 }
 .landmark {
-    i {
+    &::before {
         background-color: #8AE89F;
     }
 }
 .festival {
-    i {
+    &::before {
         background-color: #77C5FF;
     }
 }

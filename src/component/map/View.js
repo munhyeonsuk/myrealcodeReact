@@ -19,7 +19,6 @@ function View() {
                                     v[key].map((vv, ii)=>{
                                         return(
                                             <Fragment>
-                                                <i></i>
                                                 <span className="visually-hidden">{vv.name}</span>
                                             </Fragment>
                                         )
