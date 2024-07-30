@@ -65,8 +65,13 @@ $fontColorDarkBeige : #B2A569;
         .beforeRoundE:before{
           position: absolute;
           content: "";
-          left:0; top:-30px;
+          left:0; 
+          top:-30px;
           width: 468px;
+          // @media (max-width:1199px) {
+          //   top:0;
+          //   width:100%;
+          // }
           height: 568px;
           background-color: #FFEBB7;
           border-radius: 20px; /* 둥근 사각형 모서리를 위한 값 */

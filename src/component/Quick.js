@@ -16,7 +16,7 @@ const Quick = () => {
               <span className="visually-hidden">위로</span>
             </a>
           </li>
-          <li className="questionIcon"><img src={form} alt="" /></li>
+          <li className={quscss.questionIcon}><img src={form} alt="" /></li>
           <li className="position-relative"><img src={ai} alt="" />
             <span className="mt-2 position-absolute">AI TRIP PLANNER</span>
           </li>

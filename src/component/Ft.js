@@ -22,14 +22,14 @@ const Ft = () => {
       <div className="container-1824">
         <div className={`${ftscss.footerMenu} d-flex justify-content-between align-items-center mb-0`}>
           <h1><a href="/"><img src={logo} alt=""/></a></h1>
-          <ul className={`${ftscss.ftsns} d-flex align-items-center mb-0 p-0 ms-auto`}>
+          <ul className={`${ftscss.ftsns} d-flex align-items-center mb-0 p-0`}>
             <li><span className={`${ftscss.footerIcon} visually-hidden`}>페이스북 </span><img src={facebook} alt="" /> </li>
             <li><span className={`${ftscss.footerIcon} visually-hidden`}>인스타그램</span><img src={instagram} alt="" /></li>
             <li><span className={`${ftscss.footerIcon} visually-hidden`}>유튜브</span><img src={youtube} alt="" /></li>
             <li className={`${ftscss.verticalLine}`}></li>
           </ul>
 
-          <div className=" text-center  ms-3">
+          <div className={`${ftscss.language} text-center ms-3 `}>
             <div className={`${ftscss.languageSelector}`}>
               <div className={`${ftscss.languageButton}`} onClick={() => setShowul(!showul)}>
                 <img src={language} alt="" />
@@ -59,7 +59,7 @@ const Ft = () => {
         </div>
 
         <div>
-          <ul className={`${ftscss.fnb} d-flex mt-2`}>
+          <ul className={`${ftscss.fnb} d-flex flex-wrap mt-2`}>
             <li>회사소개</li>
             <li>이용안내</li>
             <li>개인정보처리방침</li>
