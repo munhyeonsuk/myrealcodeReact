@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import hdscss from './scss/mhs.module.scss'
 
 import logo from '../img/hdLogo.svg'
@@ -12,21 +12,20 @@ import Hdpopular from './hd/Hdpopular';
 
 
 function Hd() {
-    const [ showdiv, setShowdiv] = useState(false);
     const [bgColor,setBgColor] = useState("transparent"); // 헤더 배경색 // 초기값
     const [SubClass,setSubClass] = useState(null); // 헤더 border-bottom // 초기값
 
     const scrollEvent = () => {
         const scrollY = window.scrollY;
 
-        if(scrollY > 1000) {
+        if(scrollY > 806) {
             setBgColor("#fff")
             setSubClass("on")
         }else {
             setBgColor("transparent")
             setSubClass("none")
         }
-        console.log(scrollY)
+      
     }
 
     useEffect(()=>{
