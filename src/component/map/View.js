@@ -11,24 +11,27 @@ function View(props) {
         <div className={mapscss.mapViewS}>
             <div className={`${mapscss.mapViewInner} ${props.cls}`}>
                 <div className={mapscss.mapCategoryPointS}>
-                    {
-                        mapdata.info.map((v, i)=>{
-                            const key = Object.keys(v)[0];
-                            return(
-                                <p key={i} data-category={key} className={key} style={{"top": v[key][0].positionY, "left": v[key][0].positionX}}>
-                                    {
-                                        v[key].map((vv, ii)=>{
-                                            return(
-                                                <Fragment>
-                                                    <span className="visually-hidden">{vv.name}</span>
-                                                </Fragment>
-                                            )
-                                        })
-                                    }
-                                </p>
-                            )
-                        })
-                    }
+                {
+                    Object.entries(mapdata.info).map(([key, value]) => {
+                    return (
+                        <Fragment key={key}>
+                        {
+                            value.map((item, index) => (
+                            <p 
+                                key={index} 
+                                data-category={key} 
+                                onClick={() => { props.triggerKey(key); props.triggerNum(index) }} 
+                                className={key} 
+                                style={{ top: item.positionY, left: item.positionX }}
+                            >
+                                <span className="visually-hidden">{item.name}</span>
+                            </p>
+                            ))
+                        }
+                        </Fragment>
+                    )
+                    })
+                }
                 </div>
                 <img src={MapImg} alt="지도" />
             </div>

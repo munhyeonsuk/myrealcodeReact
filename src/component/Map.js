@@ -11,6 +11,9 @@ import { useEffect, useState } from 'react'
 
 
 const Map = () => {
+  const [clickNum, setClickNum] = useState(0);
+  const [clickKey, setClickKey] = useState("food");
+
   useEffect(() => {
     // 확대 & 축소 버튼 이벤트
     let zoom = 1;
@@ -48,9 +51,10 @@ const Map = () => {
             <h2 className={mapscss.mapTitleS}>
               경주의 숨겨진<br />
               “보석을 찾아 떠나는 여정”
+              {/* <strong>{clickKey} {clickNum}</strong> */}
             </h2>
             <MapCategory className="pc"></MapCategory>
-            <MapInfo></MapInfo>
+            <MapInfo clickKey={clickKey} clickNum={clickNum}></MapInfo>
           </div>
           <div className={`${mapscss.mapRightS} col-md-6`}>
             <div className={mapscss.mapTextS}>
@@ -70,7 +74,7 @@ const Map = () => {
                 <strong>장소별 이야기와 정보</strong>를 알 수 있어요!
               </p>
             </div>
-            <MapView cls={"mapScreen"}></MapView>
+            <MapView cls={"mapScreen"} triggerKey={setClickKey} triggerNum={setClickNum}></MapView>
           </div>
           <MapCategory className="mo"></MapCategory>
         </div>

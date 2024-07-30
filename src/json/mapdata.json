@@ -41,7 +41,7 @@
             ]
         }
     ],
-    "info" : [
+    "info" : 
         {
             "food" : [
                 {
@@ -58,9 +58,7 @@
                     "positionX" : "240px",
                     "positionY" : "230px"
                 }
-            ]
-        },
-        {
+            ],
             "cafe" : [
                 {
                     "img" : "/img/map2.jpg",
@@ -75,10 +73,22 @@
                     "mapNaver" : "#naver",
                     "positionX" : "200px",
                     "positionY" : "340px"
+                },
+                {
+                    "img" : "/img/map3.jpg",
+                    "href" : "/mapdetail",
+                    "name" : "경주월드카페2",
+                    "adress" : "경상북도 경주시 보문로 544",
+                    "tel" : "1544-8765",
+                    "time1" : "10:00 -  18:00",
+                    "time2" : "15:00 - 18:00",
+                    "site" : "//www.gjw.co.kr/Contents/contents.php",
+                    "mapKakao" : "#kakao",
+                    "mapNaver" : "#naver",
+                    "positionX" : "260px",
+                    "positionY" : "100px"
                 }
-            ]
-        },
-        {
+            ],
             "activity" : [
                 {
                     "img" : "/img/map3.jpg",
@@ -94,9 +104,7 @@
                     "positionX" : "310px",
                     "positionY" : "360px"
                 }
-            ]
-        },
-        {
+            ],
             "landmark" : [
                 {
                     "img" : "/img/map4.jpg",
@@ -112,9 +120,7 @@
                     "positionX" : "320px",
                     "positionY" : "280px"
                 }
-            ]
-        },
-        {
+            ],
             "festival" : [
                 {
                     "img" : "/img/map5.jpg",
@@ -132,5 +138,6 @@
                 }
             ]
         }
-    ]
+       
+    
 }
