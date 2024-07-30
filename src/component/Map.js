@@ -7,9 +7,40 @@ import './scss/psh.map.scss'
 
 import IconZoomin from '../img/mapIconZoomin.svg'
 import IconZoomout from '../img/mapIconZoomout.svg'
+import { useEffect, useState } from 'react'
 
 
-function Map() {
+const Map = () => {
+
+    useEffect(() => {
+      // 확대 & 축소 버튼 이벤트
+      let zoom = 1;
+      let zoomstep = 0.2;
+
+      const zoomInEvent = () => {
+        zoom += zoomstep;
+        document.querySelector(".mapScreen").style.transform = `scale(${zoom})`;
+      }      
+      
+      const zoomOutEvent = () => {
+        if(zoom > 1) {
+          zoom -= zoomstep;
+          document.querySelector(".mapScreen").style.transform = `scale(${zoom})`;
+        }    
+      }
+
+      const zoomInButton = document.querySelector(".zoomIn");
+      const zoomOutButton = document.querySelector(".zoomOut");
+  
+      zoomInButton.addEventListener("click", zoomInEvent);
+      zoomOutButton.addEventListener("click", zoomOutEvent);
+        
+      return () => {
+        zoomInButton.removeEventListener("click", zoomInEvent);
+        zoomOutButton.removeEventListener("click", zoomOutEvent);
+      };
+    }, []);
+
     return (
     <section className={mapscss.map}>
       <div className="container-1400">
@@ -24,11 +55,11 @@ function Map() {
           </div>
           <div className={`${mapscss.mapRightS} col-md-6`}>
             <div className={mapscss.mapTextS}>
-              <button>
+              <button className='zoomIn'>
                 <i><img src={IconZoomin} alt="확대" /></i>
                 <span className="visually-hidden">확대</span>
               </button>
-              <button>
+              <button className='zoomOut'>
                 <i><img src={IconZoomout} alt="축소" /></i>
                 <span className="visually-hidden">축소</span>
               </button>
@@ -40,7 +71,7 @@ function Map() {
                 <strong>장소별 이야기와 정보</strong>를 알 수 있어요!
               </p>
             </div>
-            <MapView></MapView>
+            <MapView cls={"mapScreen"}></MapView>
           </div>
           <MapCategory className="mo"></MapCategory>
         </div>
