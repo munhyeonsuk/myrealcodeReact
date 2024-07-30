@@ -6,7 +6,7 @@ function EventE() {
     return (
         <section className={esthercss.eventE}>
         <div className={`${esthercss.containerE} container-1400 py-5`} >
-            <div className={`d-lg-flex align-items-strech ${esthercss.beforeRoundE}`}>
+            <div className={`d-xl-flex align-items-strech ${esthercss.beforeRoundE}`}>
                 <div className={`${esthercss.titleAreaE} flex-grow-1 position-relative me-3`}>
                     <div className="p-5">
                         <h3 className="mb-3">Event</h3>

@@ -18,6 +18,7 @@ import Ft from './component/Ft'
 import Quick from './component/Quick';
 import Pageprepare from './component/subpage/Pageprepare';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>    

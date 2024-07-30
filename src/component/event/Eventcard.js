@@ -11,7 +11,7 @@ function Eventcard() {
                     {
                         eventdata.map(( eventdata, listnumber )=>{
                             return(
-                                <li key={eventdata.id} className={`overflow-hidden  bg-white mx-4 px-0 ${
+                                <li key={`eventcard${listnumber}`} className={`overflow-hidden  bg-white mx-4 px-0 ${
                                     listnumber === 0 ? esthercss.eventFirstE : 
                                     listnumber === 1 ? esthercss.eventSecondE :  
                                     ""
@@ -22,9 +22,10 @@ function Eventcard() {
                                     <span className="d-block">{
                                     eventdata.description.split('|').map((v, i)=>{
                                         return(
-                                            <Fragment key={i}>
+                                            <Fragment key={`des${i}`}>
                                               { i > 0 ? <br></br> : '' }
                                               {v}
+
                                             </Fragment>
                                         )
                                     })

@@ -25,132 +25,140 @@ body li{
         h1,
         .utill{
             width: 0;
+            .searchimg{
+                cursor: pointer
+            }
         }
 
-            .gnb {
-                position: relative;
-                &:before{
-                    content: "";
-                    position: absolute;
-                    top:100%;
-                    height:0;
+        .gnb {
+            position: relative;
+            &:before{
+                content: "";
+                position: absolute;
+                top:100%;
+                height:0;
+                left: 0;
+                right: 0;
+                transition: 0.5s;
+                background-color: white;
+                min-width: 80px;
+                border-radius: 20px;
+            }
+            &:hover{
+                &:before,
+                ul{
+                    height: 180px !important;
+                
+                }
+
+            }
+            .gnb_li{
+                    
+                .gnb_a{//대메뉴
+                    font-size: 1.2em;
+                    font-weight: 700;
+                    }
+                .gnb_li_ul{//소메뉴
+                    min-width: 80px;
+                    white-space: nowrap;
+                    color: $fontColorBlack;
+                    height: 0;
+                    transition: 0.5s;
+                    overflow: hidden;
+                    font-size: 15px;
+                    font-weight: 400;
+                    text-align: center;
                     left: 0;
                     right: 0;
-                    transition: 0.5s;
-                    background-color: white;
-                    min-width: 80px;
-                    border-radius: 20px;
-                }
-                &:hover{
-                    &:before,
-                    ul{
-                        height: 180px !important;
                     
+
+                    &:after,
+                    &:before{
+                        content: "";
+                        display: block;
+                        height: 1rem;
                     }
 
-                }
-                .gnb_li{
-                      
-                    .gnb_a{//대메뉴
-                        font-size: 1.2em;
-                        font-weight: 700;
-                        }
-                    .gnb_li_ul{//소메뉴
-                        min-width: 80px;
-                        white-space: nowrap;
-                        color: $fontColorBlack;
-                        height: 0;
-                        transition: 0.5s;
-                        overflow: hidden;
-                        font-size: 15px;
-                        font-weight: 400;
-                        text-align: center;
-                        left: 0;
-                        right: 0;
+
+                    li {
+                        line-height: 2;
+
                         
-
-                        &:after,
-                        &:before{
-                            content: "";
-                            display: block;
-                            height: 1rem;
-                        }
-
-
-                        li {
-                            line-height: 2;
-
-                            
-                        }
-                        li:hover{
-                            a {
-                                border-bottom: 1px $fontColorBlack solid;
-                                font-weight: 700;
-                            }
+                    }
+                    li:hover{
+                        a {
+                            border-bottom: 1px $fontColorBlack solid;
+                            font-weight: 700;
                         }
                     }
                 }
-                        
             }
+                        
+        }
 
-            .utill li{
-                margin-left: 1rem;
-                .searchIcon{
-                    span{
-                       
+        .utill li{
+            margin-left: 1rem;
+            .searchIcon{
+                span{
+                    
+            }
+            }
+            
+        }
+        .searchMenu.open{
+            display: block;
+        }
+        .searchMenu{
+            position: absolute;
+            min-width: 285px;
+            white-space: nowrap;
+            overflow: hidden;
+            font-size: 14px;
+            font-weight: 400;
+            background-color: white;                
+            border-radius: 15px;
+            top: -9px;
+            right: -21px;
+            height: 0;
+            font-size: 14px;
+            font-weight: 400;
+            height: 184px !important;
+            border:1px solid #ccc;
+            
+            .searchinput{
+                border: none;
+                outline: none;
+            }
+            .searchbt{
+                background-color: transparent;
+                border: none;
+                padding: 0;
+                cursor: pointer;
+                outline: none;
+            }
+            .dropdownbox {                    
+                padding: 10px 20px 20px;
+                .searchPopular{
+                    font-weight: 500;
+                    font-size: 14px;
+                    border-top: 0.5px solid black;
                 }
-                }
-                
+            }
+            }
+            .number {
+            color: inherit;
             }
               
-            .searchMenu{
-                position: absolute;
-                min-width: 285px;
-                white-space: nowrap;
-                overflow: hidden;
-                font-size: 14px;
-                font-weight: 400;
-                background-color: white;                
-                border-radius: 15px;
-                top: -9px;
-                right: -21px;
-                height: 0;
-                font-size: 14px;
-                font-weight: 400;
-                height: 184px !important;
-                border:1px solid #ccc;
-                .searchinput{
-                    border: none;
-                    outline: none;
-                }
-                .searchbt{
-                    background-color: transparent;
-                    border: none;
-                    padding: 0;
-                    cursor: pointer;
-                    outline: none;
-                }
-                .dropdownbox {                    
-                    padding: 10px 20px 20px;
-                    .searchPopular{
-                        font-weight: 500;
-                        font-size: 14px;
-                        border-top: 0.5px solid black;
-                    }
-                }
-             }
-             .number {
-                color: inherit;
-              }
-              
-              .number.red {
-                color: red;
-              }
+            .number.red {
+            color: red;
+            }
 }
 
 .ft{
     margin:0 auto;
     background-color:$mainColor ;
+    position: relative;
+    z-index: 10000; //quick보다 위
     .footerMenu{
         margin: 0;
         padding: 0;
@@ -311,4 +319,57 @@ body li{
                 }
             }
         }
+    }
+
+
+    .allMenuBtn{ display: none ;}
+    .ft{
+        h1{ display: block;}
+        .ftsns{
+            margin-left: auto;
+        }
+        .language{
+            margin-right: 0;
+        }
+    }
+    
+    @media (max-width:1024px){
+        .hd{
+            .allMenuBtn{ 
+                display: block ; order:1;
+                border: none;
+                background: none;
+            }  
+             h1{
+                order:2;
+                width: auto;
+            
+            }
+            .gnb{ display: none !important;}
+            .utill{
+                display: block;
+                order: 3;
+            }
+            .logIn{
+                display: none;
+            }
+        }
+        .ft{
+            h1{ display: none;}
+            .ftsns{
+                margin-left: 0;
+            }
+            .verticalLine{display: none !important;}
+            .fnb{
+                margin-left: 1rem;
+                padding-top: 0;
+                    li:nth-child(2) {
+                        width:calc(100% - 120px)
+                    }
+                 }
+            .fnbdes {display: none !important;}
+            .language{
+                margin-right: 1rem;
+            } 
+        }   
     }
