@@ -11,37 +11,36 @@ import { useEffect, useState } from 'react'
 
 
 const Map = () => {
+  useEffect(() => {
+    // 확대 & 축소 버튼 이벤트
+    let zoom = 1;
+    let zoomstep = 0.2;
 
-    useEffect(() => {
-      // 확대 & 축소 버튼 이벤트
-      let zoom = 1;
-      let zoomstep = 0.2;
-
-      const zoomInEvent = () => {
-        zoom += zoomstep;
+    const zoomInEvent = () => {
+      zoom += zoomstep;
+      document.querySelector(".mapScreen").style.transform = `scale(${zoom})`;
+    }      
+    
+    const zoomOutEvent = () => {
+      if(zoom > 1) {
+        zoom -= zoomstep;
         document.querySelector(".mapScreen").style.transform = `scale(${zoom})`;
-      }      
+      }    
+    }
+
+    const zoomInButton = document.querySelector(".zoomIn");
+    const zoomOutButton = document.querySelector(".zoomOut");
+
+    zoomInButton.addEventListener("click", zoomInEvent);
+    zoomOutButton.addEventListener("click", zoomOutEvent);
       
-      const zoomOutEvent = () => {
-        if(zoom > 1) {
-          zoom -= zoomstep;
-          document.querySelector(".mapScreen").style.transform = `scale(${zoom})`;
-        }    
-      }
+    return () => {
+      zoomInButton.removeEventListener("click", zoomInEvent);
+      zoomOutButton.removeEventListener("click", zoomOutEvent);
+    };
+  }, []);
 
-      const zoomInButton = document.querySelector(".zoomIn");
-      const zoomOutButton = document.querySelector(".zoomOut");
-  
-      zoomInButton.addEventListener("click", zoomInEvent);
-      zoomOutButton.addEventListener("click", zoomOutEvent);
-        
-      return () => {
-        zoomInButton.removeEventListener("click", zoomInEvent);
-        zoomOutButton.removeEventListener("click", zoomOutEvent);
-      };
-    }, []);
-
-    return (
+  return (
     <section className={mapscss.map}>
       <div className="container-1400">
         <div className={`${mapscss.mapWrapS} row mx-0`}>
@@ -77,7 +76,7 @@ const Map = () => {
         </div>
       </div>
     </section>
-    )
+  )
 }
 
 export default Map

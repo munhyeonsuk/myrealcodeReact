@@ -12,10 +12,10 @@ function View(props) {
             <div className={`${mapscss.mapViewInner} ${props.cls}`}>
                 <div className={mapscss.mapCategoryPointS}>
                     {
-                        mapdata.category.map((v, i)=>{
+                        mapdata.info.map((v, i)=>{
                             const key = Object.keys(v)[0];
                             return(
-                                <p key={i} className={key} style={{"top": v[key][0].positionY, "left": v[key][0].positionX}}>
+                                <p key={i} data-category={key} className={key} style={{"top": v[key][0].positionY, "left": v[key][0].positionX}}>
                                     {
                                         v[key].map((vv, ii)=>{
                                             return(

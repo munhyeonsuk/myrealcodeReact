@@ -4,9 +4,7 @@
             "food" : [
                 {
                     "img" : "/img/mapCategoryFood.png",
-                    "name" : "맛집",
-                    "positionX" : "240px",
-                    "positionY" : "230px"
+                    "name" : "맛집"
                 }
             ]
         },
@@ -14,9 +12,7 @@
             "cafe" : [
                 {
                     "img" : "/img/mapCategoryCafe.png",
-                    "name" : "카페",
-                    "positionX" : "200px",
-                    "positionY" : "340px"
+                    "name" : "카페"
                 }
             ]
         },
@@ -24,9 +20,7 @@
             "activity" : [
                 {
                     "img" : "/img/mapCategoryActivity.png",
-                    "name" : "액티비티",
-                    "positionX" : "310px",
-                    "positionY" : "360px"
+                    "name" : "액티비티"
                 }
             ]        
         },
@@ -34,9 +28,7 @@
             "landmark" : [
                 {
                     "img" : "/img/mapCategorylandmark.png",
-                    "name" : "관광지",
-                    "positionX" : "320px",
-                    "positionY" : "280px"
+                    "name" : "관광지"
                 }
             ]
         },
@@ -44,16 +36,14 @@
             "festival" : [
                 {
                     "img" : "/img/mapCategoryFestival.png",
-                    "name" : "축제",
-                    "positionX" : "280px",
-                    "positionY" : "170px"
+                    "name" : "축제"
                 }                
             ]
         }
     ],
     "info" : [
         {
-            "festival" : [
+            "food" : [
                 {
                     "img" : "/img/map1.jpg",
                     "href" : "/mapdetail",
@@ -64,7 +54,81 @@
                     "time2" : "15:00 - 18:00",
                     "site" : "//www.gjw.co.kr/Contents/contents.php",
                     "mapKakao" : "#kakao",
-                    "mapNaver" : "#naver"
+                    "mapNaver" : "#naver",
+                    "positionX" : "240px",
+                    "positionY" : "230px"
+                }
+            ]
+        },
+        {
+            "cafe" : [
+                {
+                    "img" : "/img/map2.jpg",
+                    "href" : "/mapdetail",
+                    "name" : "경주월드",
+                    "adress" : "경상북도 경주시 보문로 544",
+                    "tel" : "1544-8765",
+                    "time1" : "10:00 -  18:00",
+                    "time2" : "15:00 - 18:00",
+                    "site" : "//www.gjw.co.kr/Contents/contents.php",
+                    "mapKakao" : "#kakao",
+                    "mapNaver" : "#naver",
+                    "positionX" : "200px",
+                    "positionY" : "340px"
+                }
+            ]
+        },
+        {
+            "activity" : [
+                {
+                    "img" : "/img/map3.jpg",
+                    "href" : "/mapdetail",
+                    "name" : "경주월드",
+                    "adress" : "경상북도 경주시 보문로 544",
+                    "tel" : "1544-8765",
+                    "time1" : "10:00 -  18:00",
+                    "time2" : "15:00 - 18:00",
+                    "site" : "//www.gjw.co.kr/Contents/contents.php",
+                    "mapKakao" : "#kakao",
+                    "mapNaver" : "#naver",
+                    "positionX" : "310px",
+                    "positionY" : "360px"
+                }
+            ]
+        },
+        {
+            "landmark" : [
+                {
+                    "img" : "/img/map4.jpg",
+                    "href" : "/mapdetail",
+                    "name" : "경주월드",
+                    "adress" : "경상북도 경주시 보문로 544",
+                    "tel" : "1544-8765",
+                    "time1" : "10:00 -  18:00",
+                    "time2" : "15:00 - 18:00",
+                    "site" : "//www.gjw.co.kr/Contents/contents.php",
+                    "mapKakao" : "#kakao",
+                    "mapNaver" : "#naver",
+                    "positionX" : "320px",
+                    "positionY" : "280px"
+                }
+            ]
+        },
+        {
+            "festival" : [
+                {
+                    "img" : "/img/map5.jpg",
+                    "href" : "/mapdetail",
+                    "name" : "경주월드",
+                    "adress" : "경상북도 경주시 보문로 544",
+                    "tel" : "1544-8765",
+                    "time1" : "10:00 -  18:00",
+                    "time2" : "15:00 - 18:00",
+                    "site" : "//www.gjw.co.kr/Contents/contents.php",
+                    "mapKakao" : "#kakao",
+                    "mapNaver" : "#naver",
+                    "positionX" : "280px",
+                    "positionY" : "170px"
                 }
             ]
         }
