@@ -31,8 +31,8 @@ function Hd() {
     useEffect(()=>{
         window.addEventListener('scroll', scrollEvent);
         const openBtn = document.querySelector('.open');
-      const closeBtn = document.querySelector('.close');
-      const searchMenu = document.querySelector(`.searchdivbox`);
+        const closeBtn = document.querySelector('.close');
+        const searchMenu = document.querySelector(`.searchdivbox`);
   
       const toggleMenu = () => {
         if (searchMenu) {
@@ -81,7 +81,7 @@ function Hd() {
             
                             <div className={`${hdscss.searchMenu} searchdivbox d-none`} >
                                 <div className={`${hdscss.dropdownbox} m-0`}>
-                                    <div className="text-end pb-1">
+                                    <div className={`d-flex justify-content-between text-end pb-1`}>
                                         <img className={`${hdscss.searchimg} pe-3`} src={search} alt="검색" />
                                         <input type="text" className={hdscss.searchinput}  />
                                         <button className={`${hdscss.searchbt} pe-1 close` }  ><img src={close} alt="닫기" /></button>
