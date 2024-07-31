@@ -81,17 +81,20 @@ function Hd() {
             
                             <div className={`${hdscss.searchMenu} searchdivbox d-none`} >
                                 <div className={`${hdscss.dropdownbox} m-0`}>
-                                    <div className={`d-flex justify-content-between text-end pb-1`}>
+                                    <div className={`${hdscss.searchbar} d-flex justify-content-between text-end pb-1`}>
                                         <img className={`${hdscss.searchimg} pe-3`} src={search} alt="검색" />
-                                        <input type="text" className={hdscss.searchinput}  />
+                                        <input type="text" placeholder='검색' className={hdscss.searchinput}  />
                                         <button className={`${hdscss.searchbt} pe-1 close` }  ><img src={close} alt="닫기" /></button>
                                     </div>
-                                    <p className={`${hdscss.searchPopular} pt-2 mb-1 text-black-50`}>실시간인기</p>
-                                    <div className={`${hdscss.searchTop10} d-flex`}>
-                                        <div>
-                                          <Hdpopular />
-                                        </div>
+                                    <div className={`${hdscss.popularbar} p-0`}>
+                                      <p className={`${hdscss.searchPopular} pt-2 mb-1 text-black-50`}>실시간인기</p>
+                                      <div className={`${hdscss.searchTop10} d-flex`}>
+                                          <div>
+                                            <Hdpopular />
+                                          </div>
+                                      </div>
                                     </div>
+                                    
                                 </div>
                             </div>
                         </li>

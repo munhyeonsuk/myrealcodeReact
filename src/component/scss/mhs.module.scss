@@ -128,6 +128,7 @@ body li{
             .searchinput{
                 border: none;
                 outline: none;
+                width: 100%;
             }
             .searchbt{
                 background-color: transparent;
@@ -320,28 +321,6 @@ body li{
     }
 }
 
-// .msearch{
-//    .msearchbox{
-//     border: 1px solid black;
-//     border-radius: 20px;
-//    }
-//     input{
-//     border: none;
-//     outline: none;
-//    }
-//     button{
-//         background: transparent;
-//         border: none;
-//     }
-// }
-
-.overlay {
-    display: none;
-}
-
-.overlay.active {
-    display: block; 
-}
 .allMenuBtn{ display: none ;}
 .ft{
     h1{ display: block;}
@@ -355,6 +334,7 @@ body li{
 
     @media (max-width:1024px){
         .hd{
+            z-index: 10000000;
             .allMenuBtn{ 
                 display: block ; order:1;
                 border: none;
@@ -375,25 +355,50 @@ body li{
             }
             .searchMenu{
                 width: 100vw;
-                transform: translateX(40px);
-            }
-            .ft{
-                h1{ display: none;}
-                .ftsns{
-                    margin-left: 0;
-                }
-                .verticalLine{display: none !important;}
-                .fnb{
-                    margin-left: 1rem;
-                    padding-top: 0;
-                        li:nth-child(2) {
-                            width:calc(100% - 120px)
+                height: 100vh !important;
+                top: 0;
+                left: 0;
+                position: fixed;
+                border-radius: 0;
+                background-color: rgba(0, 0, 0, 0.6);
+                    .dropdownbox{
+                        background-color: white;
+                        .searchbar{
+                            border: solid 1px rgba(0, 0, 0, 0.5);
+                            border-radius: 20px;
+                            padding: 5px;
+                            .searchimg{
+                                padding-left: 10px;
+                            }
+                            .searchbt{
+                                padding-right: 10px !important;
+                            }
+                        }
+                        .popularbar{
+                            padding-left: 15px !important;
+                            .searchPopular{
+                                border: none !important;
+                            }
                         }
                     }
-                .fnbdes {display: none !important;}
-                .language{
-                    margin-right: 1rem;
-                } 
-            }   
-        }
+                }
+            }
+        .ft{
+            h1{ display: none;}
+            .ftsns{
+                margin-left: 0;
+            }
+            .verticalLine{display: none !important;}
+            .fnb{
+                margin-left: 1rem;
+                padding-top: 0;
+                    li:nth-child(2) {
+                        width:calc(100% - 120px)
+                    }
+                }
+            .fnbdes {display: none !important;}
+            .language{
+                margin-right: 1rem;
+            } 
+        }   
     }
