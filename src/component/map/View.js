@@ -9,7 +9,7 @@ import { Fragment } from 'react'
 function View(props) {
     return (
         <div className={mapscss.mapViewS}>
-            <div className={`${mapscss.mapViewInner} ${props.cls}`}>
+            <div className={`${mapscss.mapViewInner} ${props.cls}`} onMouseDown={props.mouseDown} style={{left: `${props.moveX}px`, top: `${props.moveY}px`, cursor: props.mouseDrag ? 'grabbing' : 'grab'}}>
                 <div className={mapscss.mapCategoryPointS}>
                 {
                     Object.entries(mapdata.info).map(([key, value]) => {

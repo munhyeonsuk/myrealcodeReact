@@ -34,31 +34,14 @@ $fontColorDarkBeige : #B2A569;
 // 지도 START
 .map {
     position: relative;
-    background: url(../../../public/img/mapBg6.png) repeat-x center bottom;
-    padding: 100px 0 90px;
+    background: #FFEBB7 url(../../../public/img/mapBgTopW.png) repeat-x center top;
+    padding: 100px 0 70px;
     &::before,
     &::after {
         content: "";
         display: block;
         position: absolute;
         background-repeat: no-repeat;
-    }
-    &::before {
-        background-image: url(../../../public/img/mapBg4.png);
-        right: 0;
-        top: 0;
-        width: 12vw;
-        height: 14vw;
-        background-size: contain;
-    }
-    &::after {        
-        background-image: url(../../../public/img/mapBg5.png);
-        left: 0;
-        bottom: 0;
-        width: 14vw;
-        height: 67%;
-        background-position: left bottom;
-        background-size: cover;
     }
     .link {
         color: $fontColorDarkBeige;
@@ -84,16 +67,6 @@ $fontColorDarkBeige : #B2A569;
                     width: 8vw;
                     height: 8vw;
                 }
-                &::before {
-                    background-image: url(../../../public/img/mapBg3.png);
-                    top: 2vw;
-                    left: -10vw;
-                }
-                &::after {
-                    background-image: url(../../../public/img/mapBg2.png);
-                    top: 4vw;
-                    right: -12vw;
-                }
                 text-align: center;
                 font-size: 32px;
                 line-height: 48px;
@@ -102,7 +75,7 @@ $fontColorDarkBeige : #B2A569;
             }
             .mapCategoryS {
                 text-align: center;
-                margin-bottom: 80px;    
+                margin-bottom: 100px;    
                 i {
                     position: relative;
                     display: block;
@@ -189,23 +162,12 @@ $fontColorDarkBeige : #B2A569;
             }
         }
         .mapRightS {
-            &::before {
-                content: "";
-                display: block;
-                background: url(../../../public/img/mapBg1.png) no-repeat;
-                background-size: contain;
-                width: 8vw;
-                height: 8vw;
-                position: absolute;
-                top: -5.8vw;
-                right: -9.5vw;
-            }
             position: relative;
-            margin: 120px 0 0 236px;
+            margin: 210px 0 0 236px;
             .mapTextS {
                 position: absolute;
                 top: 80px;
-                right: -100px;
+                right: -60px;
                 z-index: 2;
                 button {
                     margin: 0 0 10px 4px;
@@ -236,6 +198,9 @@ $fontColorDarkBeige : #B2A569;
                 overflow: hidden;
                 .mapViewInner {
                     position: relative;
+                    &::selection { // 드래그 시 파란색 배경 효과 없애기
+                        background-color: transparent;
+                    }
                     .mapCategoryPointS {
                         position: absolute;
                         width: 100%;
@@ -246,8 +211,8 @@ $fontColorDarkBeige : #B2A569;
                             &::before {
                                 content: "";
                                 display: block;
-                                width: 20px;
-                                height: 20px;
+                                width: 16px;
+                                height: 16px;
                                 border-radius: 50%;
                             }
                             i {
@@ -255,10 +220,10 @@ $fontColorDarkBeige : #B2A569;
                                 width: 22px;
                                 height: 22px;
                                 border-radius: 50%;
-                            }                 
+                            } 
                         }
                     }
-                }                
+                }
             }
         }
     }
