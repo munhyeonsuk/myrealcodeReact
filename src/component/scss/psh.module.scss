@@ -43,6 +43,22 @@ $fontColorDarkBeige : #B2A569;
         position: absolute;
         background-repeat: no-repeat;
     }
+    &::before {
+        background: url(../../../public/img/mapBg5.png) no-repeat bottom left;
+        width: 14%;
+        height: 72%;
+        bottom: 0;
+        left: 0;
+        background-size: cover;
+    }
+    &::after {
+        background: url(../../../public/img//mapBg7.png) no-repeat top right;
+        width: 20%;
+        height: 22%;
+        top: 0;
+        right: 0;
+        background-size: contain;
+    }
     .link {
         color: $fontColorDarkBeige;
     }
@@ -57,6 +73,11 @@ $fontColorDarkBeige : #B2A569;
             margin-left: 70px;
             .mapTitleS{
                 position: relative;
+                text-align: center;
+                font-size: 32px;
+                line-height: 48px;
+                font-weight: 700;
+                margin-bottom: 50px;
                 &::before,
                 &::after {
                     content: "";
@@ -67,11 +88,16 @@ $fontColorDarkBeige : #B2A569;
                     width: 8vw;
                     height: 8vw;
                 }
-                text-align: center;
-                font-size: 32px;
-                line-height: 48px;
-                font-weight: 700;
-                margin-bottom: 50px;
+                &::before {
+                    background-image: url(../../../public/img/mapBg3.png);
+                    top: 2vw;
+                    left: -9vw;
+                }
+                &::after {
+                    background-image: url(../../../public/img/mapBg2.png);
+                    top: 4vw;
+                    right: -10vw;
+                }
             }
             .mapCategoryS {
                 text-align: center;
@@ -112,24 +138,23 @@ $fontColorDarkBeige : #B2A569;
                 box-shadow: 0 4px 4px rgba(0,0,0,0.25);
                 .mapInfoWrapS {
                     padding: 20px;
-                    img {
+                    > img {
                         border-radius: 10px;
+                        height: 190px;
+                        object-fit: fill;
                     }
                     p {
-                        position: relative;
                         font-size: 24px;
                         font-weight: 800;
                         margin: 12px 0 16px;
-                        &::after {
-                            content: "";
-                            background: url(../../img/EventArrow.svg) no-repeat;
+                        span {
+                            width: calc(100% - 50px);
+                        }                        
+                        i {
                             width: 44px;
-                            height: 100%;
-                            display: block;
-                            position: absolute;
-                            right: 0;
-                            top: 50%;
-                            transform: translateY(-50%);
+                            height: 35px;
+                            background: url(../../img/EventArrow.svg) no-repeat;
+                            background-size: contain;
                         }
                         a {
                             display: block;
@@ -211,9 +236,10 @@ $fontColorDarkBeige : #B2A569;
                             &::before {
                                 content: "";
                                 display: block;
-                                width: 16px;
-                                height: 16px;
+                                width: 8px;
+                                height: 8px;
                                 border-radius: 50%;
+                                box-shadow: 0 2px 2px rgba(0,0,0,0.4);
                             }
                             i {
                                 display: inline-block;
