@@ -178,34 +178,36 @@ const Map = () => {
   return (
     <section className={mapscss.map}>
       <div className="container-1400">
-        <div className={`${mapscss.mapWrapS} row mx-0`}>
-          <div className={`${mapscss.mapLeftS} col-md-6`}>
-            <h2 className={mapscss.mapTitleS}>
+        <div className={`${mapscss.mapWrapS}`}>
+          <div className={`${mapscss.mapTitleS}`}>
+            <h2 className={mapscss.mapTitleTextS}>
               경주의 숨겨진<br />
               “보석을 찾아 떠나는 여정”
             </h2>
-            <MapCategory className="pc"></MapCategory>
-            <MapInfo foodData={foodData} landmarkData={landmarkData} selectedItem={selectedItem}></MapInfo>
+            <MapCategory className="pc"></MapCategory>            
           </div>
-          <div className={`${mapscss.mapRightS} col-md-6`}>
-            <div className={mapscss.mapTextS}>
-              <button className='zoomIn'>
-                <i><img src={IconZoomin} alt="확대" /></i>
-                <span className="visually-hidden">확대</span>
-              </button>
-              <button className='zoomOut'>
-                <i><img src={IconZoomout} alt="축소" /></i>
-                <span className="visually-hidden">축소</span>
-              </button>
-              <p>
-                지도로 <strong>한눈에 살펴보는</strong><br />
-                경주의 문화장소<br />
-                <strong>원하는 장소를 선택</strong>하고<br />
-                지도를 확대 하고 축소 하며<br />
-                <strong>장소별 이야기와 정보</strong>를 알 수 있어요!
-              </p>
-            </div>
-            <MapView cls={"mapScreen"} foodData={foodData} landmarkData={landmarkData} setSelectedItem={setSelectedItem} mouseDown={handleMouseDown} moveX={position.x} moveY={position.y} mouseDrag={isDragging}></MapView>
+          <div className={`${mapscss.mapContentsS} row mx-0`}>
+            <MapInfo className="col-xxl-4" foodData={foodData} landmarkData={landmarkData} selectedItem={selectedItem}></MapInfo>
+            <div className={`${mapscss.mapDetailS} col-xxl-8`}>
+              <div className={mapscss.mapTextS}>
+                <button className='zoomIn'>
+                  <i><img src={IconZoomin} alt="확대" /></i>
+                  <span className="visually-hidden">확대</span>
+                </button>
+                <button className='zoomOut'>
+                  <i><img src={IconZoomout} alt="축소" /></i>
+                  <span className="visually-hidden">축소</span>
+                </button>
+                <p>
+                  지도로 <strong>한눈에 살펴보는</strong><br />
+                  경주의 문화장소<br />
+                  <strong>원하는 장소를 선택</strong>하고<br />
+                  지도를 확대 하고 축소 하며<br />
+                  <strong>장소별 이야기와 정보</strong>를 알 수 있어요!
+                </p>
+              </div>
+              <MapView cls={"mapScreen"} foodData={foodData} landmarkData={landmarkData} setSelectedItem={setSelectedItem} mouseDown={handleMouseDown} moveX={position.x} moveY={position.y} mouseDrag={isDragging}></MapView>
+            </div>            
           </div>
           <MapCategory className="mo"></MapCategory>
         </div>
