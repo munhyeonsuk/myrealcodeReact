@@ -139,17 +139,19 @@ $fontColorDarkBeige : #B2A569;
                 background-color: #fff;
                 box-shadow: 0 4px 4px rgba(0,0,0,0.25);
                 margin-left: 4vw;
+                padding: 0;
                 .mapInfoWrapS {
                     padding: 20px;
                     > img {
-                        border-radius: 10px;
+                        width: 100%;
                         height: 190px;
                         object-fit: fill;
+                        border-radius: 10px;
                     }
                     p {
                         font-size: 24px;
                         font-weight: 800;
-                        margin: 12px 0 16px;
+                        margin: 10px 0 14px;
                         span {
                             width: calc(100% - 50px);
                         }                        
@@ -398,71 +400,4 @@ $fontColorDarkBeige : #B2A569;
     }
 }
 // 팝업 END
-
-// 반응형 style
-
-
-@media screen and (max-width: 1460px) {
-    .map {
-        &::before,
-        &::after {
-            display: none;
-        }        
-        .mapWrapS {
-            .mapTitleS {
-                .mapTitleTextS {
-                    &::before,
-                    &::after {
-                        display: none;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 1400px) {
-    .map {
-        .mapWrapS {
-            .mapContentsS {
-                .mapDetailS {
-                    .mapTextS {
-                        right: 0;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    .map {
-        .mapWrapS {
-            .mapContentsS {
-                position: relative;
-                .mapInfoS {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate3d(-50%, -50%, 0);                    
-                    margin-left: 0;
-                    z-index: 10;
-                }
-                .mapDetailS {
-                    margin: auto;
-                    .mapTextS {
-                        top: -40px;
-                    }
-                    .mapViewS {
-                        width: 100%;
-                        img {
-                            display: block;
-                            margin: auto;
-                        }
-                    }
-                }
-            }
-        }
-    }    
-}
 
