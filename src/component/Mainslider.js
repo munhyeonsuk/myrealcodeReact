@@ -12,6 +12,7 @@ const MainSlider = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [swiperTextInstance, setSwiperTextInstance] = useState(null);
   const [swiperImgInstance, setSwiperImgInstance] = useState(null);
+  const [spaceBetween, setSpaceBetween] = useState(window.innerWidth <= 480 ? 10 : 30);
 
   const resetProgressBar = () => {
     const fillElement = document.querySelector(`.mainSlider_fill`);
@@ -63,6 +64,18 @@ const MainSlider = () => {
     }
   }, [swiperTextInstance, swiperImgInstance, isPlaying]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setSpaceBetween(window.innerWidth <= 480 ? 10 : 30);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const togglePlayPause = () => {
     const playPauseButton = document.querySelector('.btnchange');
     const fillElement = document.querySelector(`.mainSlider_fill`);
@@ -100,6 +113,7 @@ const MainSlider = () => {
       <div className={`${mainSlider.mainwrapper} d-flex justify-content-center start-50 position-relative`}>
         <div className={`${mainSlider.mainTextbox} position-relative`}>
           <Swiper
+            className={mainSlider.mbTextSwp}
             spaceBetween={0}
             loop={true}
             loopAdditionalSlides={2}
@@ -160,7 +174,7 @@ const MainSlider = () => {
         <div className="col overflow-hidden">
           <Swiper
             className={`${mainSlider.mainImgbox} swiper mx-0 overflow-visible`}
-            spaceBetween={30}
+            spaceBetween={spaceBetween}
             loop={true}
             loopAdditionalSlides={2}
             pagination={{
