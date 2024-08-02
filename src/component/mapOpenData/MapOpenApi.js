@@ -1,27 +1,30 @@
-import MapCategory from './map/Category'
+import MapCategory from '../map/Category'
 import MapView from './map/View'
 import MapInfo from './map/Info'
 
-import mapscss from './scss/psh.module.scss'
-import './scss/psh.map.scss'
+import mapscss from '../scss/psh.module.scss'
+import '../scss/psh.map.scss'
 
-import IconZoomin from '../img/mapIconZoomin.svg'
-import IconZoomout from '../img/mapIconZoomout.svg'
+import IconZoomin from '../../img/mapIconZoomin.svg'
+import IconZoomout from '../../img/mapIconZoomout.svg'
 import { useEffect, useState, useRef } from 'react'
 import axios from 'axios';
 
 
 const Map = () => {
-  // 지도 좌표 클릭 시 해당 정보 출력 이벤트
-  const [clickNum, setClickNum] = useState(0);
-  const [clickKey, setClickKey] = useState("food");
-
   // 지도 Move / zoom
   const [isDragging, setIsDragging] = useState(false);
   const [position, setPosition] = useState({x:0, y:0});
   const [offset, setOffset] = useState({x:0, y:0});
   const [zoom, setZoom] = useState(1); // Zoom 상태 추가
   const zoomStep = 0.2;
+
+  // openAPI 데이터
+  const [foodData, setFoodData] = useState([]);
+  const [landmarkData, setLandmarkData] = useState([]);
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   // 지도 정보
   const [infoBtn, setinfoBtn] = useState(true);
@@ -129,6 +132,59 @@ const Map = () => {
     };
   }, [position]);
 
+  // 카테고리별 데이터 출력
+  // food
+  useEffect(() => {
+    // API 요청 함수
+    const fetchFoodData = async () => {
+      try {
+        const response = await axios.get('https://apis.data.go.kr/5050000/eatHtpService/getEatHtp', {
+          params: {
+            serviceKey: '46fhFO4qCoXxNZiDerOlp8GFGMwfZzb7MsfVRfUtj18m9WPsqdOqI7SeAbuThqNdW1UGNh6a/85X0xX4d/2Zug==',
+            pageNo: 1,
+            numOfRows: 20
+          }
+        });
+
+        const mydata = response.data.response.body.items.item;
+        setFoodData(mydata); // 상태 업데이트
+        if (mydata && mydata.length > 0) {
+          setSelectedItem(mydata[0]); // 첫 번째 food 항목을 기본 선택
+        }
+      } catch (err) {
+        console.error('Error:', err);
+        setError('데이터를 가져오는 중 오류가 발생했습니다.'); // 오류 상태 업데이트
+      } finally {
+        setLoading(false); // 로딩 완료
+      }
+    };
+  
+  
+    // landmark
+    const fetchLandmarkData = async () => {
+      try {
+        const response = await axios.get('https://apis.data.go.kr/5050000/dstrctsTrrsrtService/getDstrctsTrrsrt', {
+          params: {
+            serviceKey: '46fhFO4qCoXxNZiDerOlp8GFGMwfZzb7MsfVRfUtj18m9WPsqdOqI7SeAbuThqNdW1UGNh6a/85X0xX4d/2Zug==',
+            pageNo: 1,
+            numOfRows: 20
+          }
+        });
+
+        const mydata = response.data.response.body.items.item;
+        setLandmarkData(mydata); // 상태 업데이트
+      } catch (err) {
+        console.error('Error:', err);
+        setError('데이터를 가져오는 중 오류가 발생했습니다.'); // 오류 상태 업데이트
+      } finally {
+        setLoading(false); // 로딩 완료
+      }
+    };
+
+    fetchFoodData();
+    fetchLandmarkData();
+  }, []); // 컴포넌트가 처음 렌더링될 때만 실행  
+
   return (
     <section className={mapscss.map}>
       <div className="container-1400">
@@ -141,7 +197,7 @@ const Map = () => {
             <MapCategory></MapCategory>
           </div>
           <div className={`${mapscss.mapContentsS} row mx-0`}>
-            <MapInfo className="col-xl-4" clickKey={clickKey} clickNum={clickNum} onClose={infoClose} onOpen={infoBtn}></MapInfo>
+            <MapInfo className="col-xl-4" foodData={foodData} landmarkData={landmarkData} selectedItem={selectedItem} onClose={infoClose} onOpen={infoBtn}></MapInfo>
             <div className={`${mapscss.mapDetailS} col-xl-8`}>
               <div className={mapscss.mapTextS}>
                 <button className='zoomIn'>
@@ -160,7 +216,7 @@ const Map = () => {
                   <strong>장소별 이야기와 정보</strong>를 알 수 있어요!
                 </p>
               </div>
-              <MapView cls={"mapScreen"} triggerKey={setClickKey} triggerNum={setClickNum} mouseDown={handleMouseDown} moveX={position.x} moveY={position.y} mouseDrag={isDragging} onOpen={infoOpen}></MapView>
+              <MapView cls={"mapScreen"} foodData={foodData} landmarkData={landmarkData} setSelectedItem={setSelectedItem} mouseDown={handleMouseDown} moveX={position.x} moveY={position.y} mouseDrag={isDragging} onOpen={infoOpen}></MapView>
             </div>            
           </div>
         </div>
