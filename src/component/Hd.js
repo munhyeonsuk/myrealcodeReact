@@ -67,9 +67,9 @@ function Hd() {
     return (
         <>
        
-          <header className={`${hdscss.hd} mainhd fixed-top`} style={{ backgroundColor: bgColor}}>
+          <header className={`${hdscss.hd} fixed-top`} style={{ backgroundColor: bgColor}}>
                 <div className="container-1824 d-flex justify-content-between align-items-center">
-                    <button className={`${hdscss.allMenuBtn} p-0 ms-3`}><img src={allbtn} alt="" /></button>
+                    <button className={`${hdscss.allMenuBtn} p-0`}><img src={allbtn} alt="" /></button>
                     <h1><a href="/"><img src={logo} alt=""/></a></h1>
                     <ul className={`${hdscss.gnb} ${SubClass} d-flex ps-0 mb-0`}>
                         <Hdnavi />
@@ -81,10 +81,10 @@ function Hd() {
             
                             <div className={`${hdscss.searchMenu} searchdivbox d-none`} >
                                 <div className={`${hdscss.dropdownbox} m-0`}>
-                                    <div className={`${hdscss.searchbar} d-flex justify-content-between text-end pb-1`}>
-                                        <img className={`${hdscss.searchimg} pe-3`} src={search} alt="검색" />
+                                    <div className={`${hdscss.searchbar} d-flex justify-content-between align-items-center text-end pb-1`}>
+                                        <img className={`${hdscss.searchimg} pe-2`} src={search} alt="검색" />
                                         <input type="text" placeholder='검색' className={hdscss.searchinput}  />
-                                        <button className={`${hdscss.searchbt} pe-1 close` }  ><img src={close} alt="닫기" /></button>
+                                        <button className={`${hdscss.searchbt} pe-1 close` }  ><img src={close} alt="닫기" className={`${hdscss.closeImg}`}/></button>
                                     </div>
                                     <div className={`${hdscss.popularbar} p-0`}>
                                       <p className={`${hdscss.searchPopular} pt-2 mb-1 text-black-50`}>실시간인기</p>
@@ -98,7 +98,7 @@ function Hd() {
                                 </div>
                             </div>
                         </li>
-                        <li className="ms-4 me-3">
+                        <li className={`${hdscss.loginImg} ms-4 `}>
                             <img src={login} alt="로그인" />
                             <span className="visually-hidden">로그인</span>
                         </li>

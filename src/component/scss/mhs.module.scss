@@ -22,6 +22,7 @@ body li{
 
 .hd{
     transition: all 0.2s;
+    padding: 13px 15px;
         h1,
         .utill{
             width: 0;
@@ -129,6 +130,9 @@ body li{
                 border: none;
                 outline: none;
                 width: 100%;
+                &::placeholder {
+                    color: transparent;
+                  }
             }
             .searchbt{
                 background-color: transparent;
@@ -136,6 +140,10 @@ body li{
                 padding: 0;
                 cursor: pointer;
                 outline: none;
+                .closeImg{
+                    width: 15px;
+                    height: 15px;
+                }
             }
             .dropdownbox {                    
                 padding: 10px 20px 20px;
@@ -156,7 +164,8 @@ body li{
 }
 
 .ft{
-    margin:0 auto;
+    // margin:0 auto;
+    padding: 13px 15px;
     background-color:$mainColor ;
     position: relative;
     z-index: 10000; //quick보다 위
@@ -167,6 +176,18 @@ body li{
         li{
             margin-left: 1rem;
         }
+        .ftsns{
+            li {
+                &:nth-child(1) img,
+                &:nth-child(2) img {
+                  width: 22px;
+                }
+                &:nth-child(3) img{
+                    width: 25px;
+                }
+              }
+        }
+        
         .footerIcon{
             span{
                 position: absolute;
@@ -207,13 +228,16 @@ body li{
                 overflow: hidden;
                 z-index: 1000;
                 width: 100px;
-                transform: translateX(10px) translateY(-10px);
+                transform: translateX(5px) translateY(-10px);
                 font-size: 14px;
                 font-weight: 400;
                 border: 0.5px solid #999999 ;
+                @media (max-width:1024px) {
+                    transform: translateX(5px) translateY(-10px);
+                }
 
                 li{
-                    padding: 10px 20px;
+                    padding: 10px 15px;
                     cursor: pointer;
                     list-style: none;
                 }
@@ -231,6 +255,7 @@ body li{
                 content: url(../../img/ftCheck2.svg);
                 float: right;
                 color: #379CEE;
+                margin-left: 8px;
               }
         }
 
@@ -240,7 +265,7 @@ body li{
         padding: 0;
         margin-bottom: 1rem;
         li{
-            margin-right: 2rem;
+            margin-right: 1.8rem;
             font-size: 14px;
             font-weight: 600;
         }
@@ -321,6 +346,12 @@ body li{
     }
 }
 
+.prepare{
+    padding: 100px 80px;
+    white-space: nowrap
+  }
+
+
 .allMenuBtn{ display: none ;}
 .ft{
     h1{ display: block;}
@@ -334,25 +365,30 @@ body li{
 
     @media (max-width:1024px){
         .hd{
-            z-index: 10000000;
+            z-index: 100000000;
+            position: fixed;
+            background-color: white !important;
             .allMenuBtn{ 
                 display: block ; order:1;
                 border: none;
                 background: none;
+               
             }  
             h1{
                 order:2;
                 width: auto;
+
             
             }
             .gnb{ display: none !important;}
             .utill{
                 display: block;
                 order: 3;
+                .loginImg{
+                    display: none !important;
+                }
             }
-            .logIn{
-                display: none;
-            }
+            
             .searchMenu{
                 width: 100vw;
                 height: 100vh !important;
@@ -369,6 +405,17 @@ body li{
                             padding: 5px;
                             .searchimg{
                                 padding-left: 10px;
+                            }
+                            .searchinput{
+                                &::placeholder{
+                                    color: #999;
+                                    font-family: "IBM Plex Sans KR";
+                                    font-size: 15px;
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    line-height: normal;
+                                    letter-spacing: -1.5px;
+                                } 
                             }
                             .searchbt{
                                 padding-right: 10px !important;
@@ -400,5 +447,25 @@ body li{
             .language{
                 margin-right: 1rem;
             } 
-        }   
+        }
+        .quick{
+                li:first-child{
+                    position: fixed;
+                    bottom: 45px;
+                }
+                li:not(:first-child){
+                    display: none;
+                }
+        }
     }
+    @media(max-width:469px){
+        .hd{
+            h1{
+                img{
+                    width: 35vw;
+                    max-width: 163px;
+                }
+            }
+        }
+    }
+

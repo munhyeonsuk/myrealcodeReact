@@ -24,12 +24,12 @@ const Ft = () => {
           <h1><a href="/"><img src={logo} alt=""/></a></h1>
           <ul className={`${ftscss.ftsns} d-flex align-items-center mb-0 p-0`}>
             <li><span className={`${ftscss.footerIcon} visually-hidden`}>페이스북 </span><img src={facebook} alt="" /> </li>
-            <li><span className={`${ftscss.footerIcon} visually-hidden`}>인스타그램</span><img src={instagram} alt="" /></li>
             <li><span className={`${ftscss.footerIcon} visually-hidden`}>유튜브</span><img src={youtube} alt="" /></li>
-            <li className={`${ftscss.verticalLine}`}></li>
+            <li><span className={`${ftscss.footerIcon} visually-hidden`}>인스타그램</span><img src={instagram} alt="" /></li>
+            <li className={`${ftscss.verticalLine} me-3`}></li>
           </ul>
 
-          <div className={`${ftscss.language} text-center ms-3 `}>
+          <div className={`${ftscss.language} m-0`}>
             <div className={`${ftscss.languageSelector}`}>
               <div className={`${ftscss.languageButton}`} onClick={() => setShowul(!showul)}>
                 <img src={language} alt="" />
@@ -37,16 +37,16 @@ const Ft = () => {
                 <img src={check} alt="" className={`${showul ? 'up' : ''}`} />
               </div>
               {showul && (
-                <ul className={`${ftscss.languageMenu} ps-0`}>
+                <ul className={`${ftscss.languageMenu} ps-0 mb-0 `}>
                   <li
-                    className={`${activeLanguage === '한국어' ? ftscss.active : ''} m-0`}
+                    className={`${activeLanguage === '한국어' ? ftscss.active : ''} m-0 pb-0 `}
                     onClick={() => handleLanguageClick('한국어')}
                   >
                     한국어
                   </li>
                   
                   <li
-                    className={`${activeLanguage === 'English' ? ftscss.active : ''} m-0`}
+                    className={`${activeLanguage === 'English' ? ftscss.active : ''} m-0 `}
                     onClick={() => handleLanguageClick('English')}
                   >
                     English

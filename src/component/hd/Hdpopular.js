@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const ListItem = ({ item, index }) => (
   <li className="m-0">
     <a href={item.href}>
-      <span className={index < 3 ? `${hdscss.number} ${hdscss.red}` : hdscss.number}>
+      <span className={`${index < 3 ? `${hdscss.number} ${hdscss.red}` : hdscss.number} me-1`}>
         {index + 1}
       </span>
       {item.text}
@@ -45,7 +45,7 @@ const Hdpopular = () => {
             {hdpopular.list2.map((item, index) => (
               <li key={`hdpopular${index}`} className="ms-3">
                 <Link to={item.href}>
-                  <span className={(index + list1Length) < 3 ? `${hdscss.number} ${hdscss.red}` : hdscss.number}>
+                  <span className={`${(index + list1Length) < 3 ? `${hdscss.number} ${hdscss.red}` : hdscss.number} me-1`}>
                     {index + 1 + list1Length}
                   </span> {item.text}
                 </Link>
