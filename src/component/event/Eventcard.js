@@ -11,22 +11,25 @@ function Eventcard() {
                     {
                         eventdata.map(( eventdata, listnumber )=>{
                             return(
-                                <li key={`eventcard${listnumber}`} className={`overflow-hidden  bg-white mx-4 px-0 ${
+                                <li key={`eventcard${listnumber}`} className={`overflow-hidden  bg-white mx-sm-4 mx-3 px-0 ${
                                     listnumber === 0 ? esthercss.eventFirstE : 
                                     listnumber === 1 ? esthercss.eventSecondE :  
                                     ""
                                   } `} >
-                                <a href={eventdata.linkHref} className={`d-block overflow-hidden ${esthercss.thumbImgE}`}><img src={eventdata.imageSrc} alt={eventdata.alt} className="d-block img-fluid" /></a>
+                                <a href={eventdata.linkHref} className={`d-block overflow-hidden ${esthercss.thumbImgE}`}>
+                                    <img src={eventdata.imageSrc} alt={eventdata.alt} className="d-none d-md-block img-fluid pcimg" />
+                                    <img src={eventdata.imageSrcM} alt={eventdata.alt} className="d-block d-md-none img-fluid mobileimg" />
+                                </a>
                                 <a href={eventdata.linkHref} className=" d-block ">
                                     <strong className={`${esthercss.textTitleE} d-block mb-3`}>{eventdata.title}</strong>
-                                    <span className="d-block">{
+                                    <span className="d-block ">{
                                     eventdata.description.split('|').map((v, i)=>{
                                         return(
-                                            <Fragment key={`des${i}`}>
-                                              { i > 0 ? <br></br> : '' }
+                                            <span key={`des${i}`} className={`d-block mb-1 mt-0 `}>
+                                             
                                               {v}
 
-                                            </Fragment>
+                                            </span>
                                         )
                                     })
                                     }
