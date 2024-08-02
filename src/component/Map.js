@@ -187,8 +187,8 @@ const Map = () => {
             <MapCategory className="pc"></MapCategory>            
           </div>
           <div className={`${mapscss.mapContentsS} row mx-0`}>
-            <MapInfo className="col-xxl-4" foodData={foodData} landmarkData={landmarkData} selectedItem={selectedItem}></MapInfo>
-            <div className={`${mapscss.mapDetailS} col-xxl-8`}>
+            <MapInfo className="col-xl-4" foodData={foodData} landmarkData={landmarkData} selectedItem={selectedItem}></MapInfo>
+            <div className={`${mapscss.mapDetailS} col-xl-8`}>
               <div className={mapscss.mapTextS}>
                 <button className='zoomIn'>
                   <i><img src={IconZoomin} alt="확대" /></i>

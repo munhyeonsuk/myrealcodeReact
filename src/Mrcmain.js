@@ -6,8 +6,8 @@ function Mrc(){
     return(
         <>
             <Map></Map>
-            <EventE></EventE>
-            <Recommend></Recommend>
+            {/* <EventE></EventE>
+            <Recommend></Recommend> */}
         </>
     )
 }
