@@ -14,19 +14,31 @@ import axios from 'axios';
 const Map = () => {
   // 지도 좌표 클릭 시 해당 정보 출력 이벤트
 
-  // 지도 Move
+  // 지도 Move / zoom
   const [isDragging, setIsDragging] = useState(false);
   const [position, setPosition] = useState({x:0, y:0});
   const [offset, setOffset] = useState({x:0, y:0});
   const [zoom, setZoom] = useState(1); // Zoom 상태 추가
   const zoomStep = 0.2;
 
-  // openAPI
+  // openAPI 데이터
   const [foodData, setFoodData] = useState([]);
   const [landmarkData, setLandmarkData] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  // 지도 정보
+  const [infoBtn, setinfoBtn] = useState(true);
+
+  // 지도 정보 닫기 / 열기
+  const infoOpen = () => {
+    setinfoBtn(true);
+  }
+  const infoClose = () => {
+    setinfoBtn(false);
+  }
+  
 
   // mouse move 이벤트
   const handleMouseDown = (e) => {
@@ -184,10 +196,10 @@ const Map = () => {
               경주의 숨겨진<br />
               “보석을 찾아 떠나는 여정”
             </h2>
-            <MapCategory className="pc"></MapCategory>            
+            <MapCategory></MapCategory>
           </div>
           <div className={`${mapscss.mapContentsS} row mx-0`}>
-            <MapInfo className="col-xl-4" foodData={foodData} landmarkData={landmarkData} selectedItem={selectedItem}></MapInfo>
+            <MapInfo className="col-xl-4" foodData={foodData} landmarkData={landmarkData} selectedItem={selectedItem} onClose={infoClose} onOpen={infoBtn}></MapInfo>
             <div className={`${mapscss.mapDetailS} col-xl-8`}>
               <div className={mapscss.mapTextS}>
                 <button className='zoomIn'>
@@ -206,10 +218,9 @@ const Map = () => {
                   <strong>장소별 이야기와 정보</strong>를 알 수 있어요!
                 </p>
               </div>
-              <MapView cls={"mapScreen"} foodData={foodData} landmarkData={landmarkData} setSelectedItem={setSelectedItem} mouseDown={handleMouseDown} moveX={position.x} moveY={position.y} mouseDrag={isDragging}></MapView>
+              <MapView cls={"mapScreen"} foodData={foodData} landmarkData={landmarkData} setSelectedItem={setSelectedItem} mouseDown={handleMouseDown} moveX={position.x} moveY={position.y} mouseDrag={isDragging} onOpen={infoOpen}></MapView>
             </div>            
           </div>
-          <MapCategory className="mo"></MapCategory>
         </div>
       </div>
     </section>

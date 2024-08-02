@@ -31,16 +31,11 @@
     }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 620px) {
     .pc {
         display: none !important;
     }
     .mo {
         display: flex !important;
-    }
-    
-    .col-md-6 {
-        padding: 0;
-    }
-    
+    }    
 }

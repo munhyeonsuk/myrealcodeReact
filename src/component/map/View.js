@@ -6,7 +6,7 @@ import { useState, useRef, useEffect } from 'react';
 
 const View = (props) => {
     const mapViewRef = useRef(null);
-    const { foodData, landmarkData, setSelectedItem } = props;
+    const { foodData, landmarkData, setSelectedItem, onOpen } = props;
 
     const handleMarkerClick = (item) => {
         setSelectedItem(item);
@@ -19,10 +19,7 @@ const View = (props) => {
             const { offsetWidth, offsetHeight } = mapViewRef.current;
             setMapScreen({ width: offsetWidth, height: offsetHeight });
         }
-    }, []);
-    
-    const mapWidth = mapScreen.width; // 지도 너비
-    const mapHeight = mapScreen.height; // 지도 높이
+    },[])
 
     // 위도와 경도를 픽셀 값으로 변환하는 함수
     const convertLatLngToPixel = (lat, lng) => {
@@ -30,8 +27,8 @@ const View = (props) => {
         const centerLng = 129.2244;
     
         // 간단한 변환 계산 (이것은 실제 변환을 단순화한 예입니다)
-        const x = (lng - centerLng) * (mapWidth / 2) + (mapWidth / 2);
-        const y = (centerLat - lat) * (mapHeight / 2) + (mapHeight / 2);
+        const x = (lng - centerLng) * (mapScreen.width / 2) + (mapScreen.width / 2);
+        const y = (centerLat - lat) * (mapScreen.height / 2) + (mapScreen.height / 2);
     
         return { x, y };
     };
@@ -50,7 +47,8 @@ const View = (props) => {
                                     handleMarkerClick({
                                         type: 'food',
                                         ...item
-                                    }) 
+                                    })
+                                    onOpen();
                                 }} 
                                 className="food"
                                 style={{ top: `${y}px`, left: `${x}px` }}
@@ -73,6 +71,7 @@ const View = (props) => {
                                         type: 'landmark',
                                         ...item
                                     })
+                                    onOpen();
                                 }} 
                                 className="landmark"
                                 style={{ top: `${y}px`, left: `${x}px` }}

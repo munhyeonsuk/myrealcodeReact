@@ -7,12 +7,13 @@ import IconSite from '../../img/mapIconSite.svg'
 import IconMap from '../../img/mapIconMap.svg'
 import IconKakao from '../../img/mapiconKakao.svg'
 import IconNaver from '../../img/mapiconNaver.svg'
+import IconClose from '../../img/formClose.svg'
 
 import { Fragment, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const Info = (props) => {    
-    const { selectedItem } = props;
+    const { selectedItem, onClose, onOpen } = props;
     const [domain, setDomain] = useState('');
 
     // useEffect(() => {
@@ -28,13 +29,14 @@ const Info = (props) => {
     // }, [selectedItem]);
     
     return (
-        <div className={mapscss.mapInfoS}>
+        <div className={mapscss.mapInfoS} style={{display : onOpen ? "block" : "none"}}>
             {
             selectedItem ? (
-                <Fragment>
+                <Fragment>                    
+                    <button className={mapscss.closeS} onClick={onClose}><img src={IconClose} alt="닫기" /><span className="visually-hidden">닫기</span></button>
                     <div className={mapscss.mapInfoWrapS}>
                         <img src={`//${selectedItem.CON_IMGFILENAME}`} alt={selectedItem.CON_TITLE} className="img-fluid" />
-                        <p className={selectedItem.type === '' ? '' : 'food'}>
+                        <p className={selectedItem.type ? selectedItem.type  : 'food'}>
                             <Link to={'/pageprepare'} className='d-flex justify-content-between items-center'><span className='text-truncate'>{selectedItem.CON_TITLE}</span><i></i></Link>                            
                         </p>
                         <ul className={`${mapscss.mapInfoTextS} ps-0 mb-0`}>
@@ -55,7 +57,7 @@ const Info = (props) => {
                             </li>
                             <li>
                                 <i><img src={IconSite} alt="사이트" /></i>
-                                {/* <span><a href={`//${selectedItem.LINKURL}`} target='_blank' className="link">{domain}</a></span> */}
+                                {/* <span><a href={`//${selectedItem.LINKURL}`} target='_blank' rel="noreferrer" className="link">{domain}</a></span> */}
                             </li>
                         </ul>
                     </div>
@@ -65,11 +67,11 @@ const Info = (props) => {
                             <span className={mapscss.link}>길찾기</span>
                         </li>
                         <li>
-                            <i><a href="https://map.kakao.com" target='_blank'><img src={IconKakao} alt="카카오" /></a></i>
+                            <i><a href="https://map.kakao.com" target='_blank' rel="noreferrer"><img src={IconKakao} alt="카카오" /></a></i>
                             <span className="visually-hidden">카카오맵</span>
                         </li>
                         <li>
-                            <i><a href="https://map.naver.com" target='_blank'><img src={IconNaver} alt="네이버" /></a></i>
+                            <i><a href="https://map.naver.com" target='_blank' rel="noreferrer"><img src={IconNaver} alt="네이버" /></a></i>
                             <span className="visually-hidden">네이버맵</span>
                         </li>
                     </ul>
