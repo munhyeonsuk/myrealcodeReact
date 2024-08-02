@@ -4,6 +4,7 @@ import EventE from './component/EventE';
 import Sns from './component/Sns';
 import Recommend from './component/Recommend';
 
+
 function Mrc(){
     return(
         <>

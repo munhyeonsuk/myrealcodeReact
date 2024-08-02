@@ -24,11 +24,12 @@ root.render(
     <BrowserRouter>    
         <Hd />
         <Routes>
-            <Route path="/" element={<Mrc />} />
+            <Route path="/" element={
+            <>  <Mrc /><Quick /> </>} />
             <Route path='*' element={<Pageprepare />} />
         </Routes>
         
-        <Quick />
+      
         <Ft />
     </BrowserRouter>
 );

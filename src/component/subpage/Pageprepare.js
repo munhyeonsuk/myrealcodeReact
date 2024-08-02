@@ -1,8 +1,9 @@
 import React from 'react';
+import subscss from '../scss/mhs.module.scss'
 
 function Pageprepare() {
     return (
-        <h1 style={{ padding: '100px' }}>페이지 준비중 입니다</h1>
+        <h2 className={subscss.prepare}>페이지 준비 중입니다</h2>
     );
 }
 
