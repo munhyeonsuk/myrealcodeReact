@@ -1,3 +1,10 @@
+.pc {
+    display: flex;
+}
+.mo {
+    display: none !important;
+}
+
 .food {
     &::before {
         background-color: #FF7682;
@@ -22,4 +29,18 @@
     &::before {
         background-color: #77C5FF;
     }
+}
+
+@media screen and (max-width: 1024px) {
+    .pc {
+        display: none !important;
+    }
+    .mo {
+        display: flex !important;
+    }
+    
+    .col-md-6 {
+        padding: 0;
+    }
+    
 }
