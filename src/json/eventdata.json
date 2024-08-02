@@ -1,6 +1,7 @@
 [
     {
       "imageSrc": "https://munhyeonsuk.github.io/myrealcode/img/Event1.jpg",
+      "imageSrcM": "https://munhyeonsuk.github.io/myrealcode/img/mobileimg/Event1_375px.jpg",
       "linkHref": "#",
       "title": "꽃길한복x마이리얼트립",
       "description": "대한민국 문화의 화룡점정 한복!|경주 꽃길한복에서 한복 대여시 할인 이벤트 진행중!|우아한 한복을 입고 생생한 경주 여행을 즐겨보세요!",
@@ -8,6 +9,7 @@
     },
     {
       "imageSrc": "https://munhyeonsuk.github.io/myrealcode/img/Event2.jpg",
+      "imageSrcM": "https://munhyeonsuk.github.io/myrealcode/img/mobileimg/Event2_375px.jpg",
       "linkHref": "#",
       "title": "신라한옥호텔x마이리얼트립",
       "description": "마이리얼트립에서 숙소 예약시 20%할인!|신라한옥호텔에서의 특별한 숙박으로|경주 여행이 더욱 특별해집니다!",
@@ -15,6 +17,7 @@
     },
     {
       "imageSrc": "https://munhyeonsuk.github.io/myrealcode/img/Event3.jpg",
+      "imageSrcM": "https://munhyeonsuk.github.io/myrealcode/img/mobileimg/Event3_375px.jpg",
       "linkHref": "#",
       "title": "쏘카x마이리얼트립",
       "description": "마이리얼트립에서 쏘카 예약시 1만원 쿠폰 증정!|경주의 멋진 풍경을 쏘카와 방방곡곡 탐색하며|편안하고 자유로운 여행을 경험하세요!",

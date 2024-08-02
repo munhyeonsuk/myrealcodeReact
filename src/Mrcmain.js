@@ -7,11 +7,12 @@ import Recommend from './component/Recommend';
 function Mrc(){
     return(
         <>
-            <Mainslider></Mainslider>
-            <Map></Map>
+            {/* <Mainslider></Mainslider> */}
+            {/* <Map></Map> */}
             <EventE></EventE>
-            <Sns></Sns>
-            <Recommend></Recommend>
+            {/* <Sns></Sns> */}
+            {/* <Recommend></Recommend> */}
+            
         </>
     )
 }
