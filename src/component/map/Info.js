@@ -33,8 +33,8 @@ const Info = (props) => {
                         <li>
                             <i><img src={IconTime} alt="영업시간" /></i>
                             <span>
-                                종일권 : {mapdata.info[props.clickKey][props.clickNum].time1}<br />
-                                오후권 : {mapdata.info[props.clickKey][props.clickNum].time2}
+                                {mapdata.info[props.clickKey][props.clickNum].time1}<br />
+                                {mapdata.info[props.clickKey][props.clickNum].time2}
                             </span>
                         </li>
                         <li>
