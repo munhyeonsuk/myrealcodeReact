@@ -12,6 +12,14 @@ import IconClose from '../../../img/formClose.svg'
 import { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 
+function getDomain(url) {
+    // URL에서 프로토콜 제거
+    let withoutProtocol = url.split('//')[1] || url;
+    // 도메인 부분 추출
+    let domain = withoutProtocol.split('/')[0].split(':')[0];
+    return domain;
+}
+
 const Info = (props) => {    
     const { selectedItem, onClose, onOpen } = props;
     
@@ -44,7 +52,7 @@ const Info = (props) => {
                             </li>
                             <li>
                                 <i><img src={IconSite} alt="사이트" /></i>
-                                {/* <span><a href={`//${selectedItem.LINKURL}`} target='_blank' rel="noreferrer" className="link">{domain}</a></span> */}
+                                <span><a href={`//${selectedItem.LINKURL}`} target='_blank' rel="noreferrer" className="link">{ getDomain(selectedItem.LINKURL) }</a></span>
                             </li>
                         </ul>
                     </div>
