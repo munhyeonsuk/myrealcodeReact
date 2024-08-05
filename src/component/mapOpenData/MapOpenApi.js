@@ -36,6 +36,14 @@ const Map = () => {
   const infoClose = () => {
     setinfoBtn(false);
   }
+
+  useEffect(() => {  // 새로고침으로 인한 데이터호출 시간차 발생 빈값 호출 local저장소 데이터로 다시 저장
+    const storedFoodData = localStorage.getItem('foodData');
+    const storedLandmarkData = localStorage.getItem('landmarkData');
+
+    if (storedFoodData) setFoodData(JSON.parse(storedFoodData));
+    if (storedLandmarkData) setLandmarkData(JSON.parse(storedLandmarkData));
+  }, []);
   
 
   // mouse move 이벤트
@@ -147,7 +155,10 @@ const Map = () => {
         });
 
         const mydata = response.data.response.body.items.item;
-        setFoodData(mydata); // 상태 업데이트
+        if (JSON.stringify(mydata) !== localStorage.getItem('foodData')) {
+          setFoodData(mydata);
+        }
+
         if (mydata && mydata.length > 0) {
           setSelectedItem(mydata[0]); // 첫 번째 food 항목을 기본 선택
         }
@@ -172,7 +183,10 @@ const Map = () => {
         });
 
         const mydata = response.data.response.body.items.item;
-        setLandmarkData(mydata); // 상태 업데이트
+        if (JSON.stringify(mydata) !== localStorage.getItem('landmarkData')) {
+          setLandmarkData(mydata);
+        }
+
       } catch (err) {
         console.error('Error:', err);
         setError('데이터를 가져오는 중 오류가 발생했습니다.'); // 오류 상태 업데이트
