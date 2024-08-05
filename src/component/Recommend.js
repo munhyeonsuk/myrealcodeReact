@@ -1,6 +1,6 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Scrollbar } from 'swiper/modules';
+import { Navigation, Scrollbar, Pagination } from 'swiper/modules';
 import recommend from './scss/psh.module.scss'
 import './scss/psh.recommend.scss'
 import Slide from './recommend/Slide';
@@ -23,13 +23,28 @@ function Recommend() {
                         loop={true}
                         slidesPerView="auto"
                         slidesPerGroup={1}
-                        spaceBetween={53}
+                        spaceBetween={16} // 기본 간격
+                        breakpoints={{
+                            1440: {
+                            spaceBetween: 23, // 1440px 이상일 때 간격
+                            },
+                            1520: {
+                            spaceBetween: 53, // 1520px 이상일 때 간격
+                            }
+                        }}
                         scrollbar={{ el: '.swiper-scrollbar', draggable: true }}
                         navigation={{
                           nextEl: ".recommendSlideS .swiper-button-next",
                           prevEl: ".recommendSlideS .swiper-button-prev",
                         }}
-                        modules={[Navigation, Scrollbar]}
+                        pagination={{
+                            el: '.swiper-pagination',
+                            type: 'fraction',
+                            clickable: true,
+                            formatFractionCurrent: number => ('0' + number).slice(-2),
+                            formatFractionTotal: number => ('0' + number).slice(-2),
+                        }}
+                        modules={[Navigation, Scrollbar, Pagination]}
                         className="reSwiper"
                     >
                         {
@@ -48,6 +63,7 @@ function Recommend() {
                             <div className="swiper-button-prev"></div>
                             <div className="swiper-button-next"></div>
                         </div>
+                        <div className="swiper-pagination"></div>
                     </div>
                 </div>
             </div>

@@ -1,19 +1,20 @@
 .recommendSlideS {
     .reSwiper {
-        margin-top: -24px;
         .swiper-wrapper {
             align-items: flex-end;
             padding-bottom: 76px;
             .swiper-slide {
-                width: 245px !important;
+                max-width: 245px !important;
                 height: 300px;
+                width: 100%;                
                 border-radius: 220px 220px 0 0;
                 overflow: hidden;
                 margin-top: 116px;
                 margin-bottom: 4px;
                 &.swiper-slide-active + div + div + div + div {
-                    width: 334px !important;
+                    max-width: 334px !important;
                     height: 450px;
+                    width: 100%;
                     box-shadow: 0 4px 4px rgba(0,0,0,0.25);
                     margin-top: 0;
                     .recommendSlideItemS {
@@ -49,7 +50,7 @@
                 .recommendSlideItemS {
                     position: relative;
                     height: 100%;
-                    background-color: #333;                
+                    background-color: #333;
                     &::after {
                         content: "";
                         position: absolute;
@@ -97,9 +98,11 @@
         z-index: 99999;
         .swiper-scrollbar {
             position: initial;
-            width: 900px;
+            max-width: 880px;
+            width: 100%;
             height: 1px;
             background-color: #989797;
+            margin-left: 20px;
             .swiper-scrollbar-drag{
                 height: 1px;
                 background-color: #000;
@@ -111,6 +114,7 @@
             justify-content: space-between;
             width: 48px;
             height: 100%;
+            margin: 0 20px;
             .swiper-button-prev,
             .swiper-button-next {
                 position: initial;
@@ -131,6 +135,123 @@
             }
             .swiper-button-next::after {
                 background-image: url("../../img/recommendBtnR.svg");
+            }
+        }
+        .swiper-pagination {
+            display: none;
+            position: initial;
+            width: 60px;
+            margin: 0 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .recommendSlideS {
+        .reSwiper {
+            .swiper-wrapper {
+                .swiper-slide {
+                    margin-top: 0;
+                    &.swiper-slide-active + div + div + div + div {
+                        max-width: 245px !important;
+                        height: 300px;
+                        box-shadow: none;
+                        margin-top: inherit;
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            background-color: rgba(0, 0, 0, .3);
+                        }
+                        .recommendSlideItemS {                            
+                            a {
+                                height: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-evenly;
+                                align-items: center;
+                            }
+                            .recommendSlideItemInnerS {
+                                overflow: hidden;
+                                background: #000;
+                                width: 100%;
+                                height: 100%;
+                                border-radius: inherit;
+                            }
+                            p {
+                                width: 100%;
+                                position: absolute;
+                                top: 50%;
+                                color: #fff;
+                                font-size: 16px;
+                                text-align: center;
+                                z-index: 1;
+                                transform: translateY(-50%);
+                                line-height: inherit;
+                            }
+                        }  
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .recommendSlideS {
+        .slide-control {
+            .swiper-btns {
+                display: none;
+            }
+            .swiper-pagination {
+                display: block;
+            }
+        }
+    }
+    
+}
+
+
+@media screen and (max-width: 800px) {
+    .recommendSlideS {
+        .reSwiper {
+            .swiper-wrapper {
+                padding-bottom: 46px;
+                .swiper-slide {
+                    max-width: 200px !important;
+                    height: 240px;
+                    width: 100%;
+                    border-radius: 180px 180px 0 0;
+                    &.swiper-slide-active + div + div + div + div {
+                        height: 240px;
+                    }
+                }
+            }
+        }
+        .slide-control {
+            .swiper-pagination {
+                span {
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .recommendSlideS {
+        .reSwiper {
+            .swiper-wrapper {
+                .swiper-slide {
+                    .recommendSlideItemS {
+                        p {
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
             }
         }
     }

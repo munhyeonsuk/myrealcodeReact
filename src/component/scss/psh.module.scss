@@ -295,6 +295,7 @@ $fontColorDarkBeige : #B2A569;
         p {
             font-size: 20px;
             line-height: 29px;
+            margin-bottom: 0;
         }
     }
 }
@@ -431,6 +432,7 @@ $fontColorDarkBeige : #B2A569;
 }
 
 @media screen and (max-width: 1400px) {
+    // 지도 모바일
     .map {
         .mapWrapS {
             .mapContentsS {
@@ -440,6 +442,17 @@ $fontColorDarkBeige : #B2A569;
                     }
                 }
             }
+        }
+    }
+
+    // 국내여행지추천 모바일
+    .recommend {
+        padding-left: 20px;
+        &::before {
+            height: 500px;
+        }
+        .title {
+            padding-bottom: 70px;
         }
     }
 }
@@ -490,7 +503,30 @@ $fontColorDarkBeige : #B2A569;
     }    
 }
 
+
+@media screen and (max-width: 1024px) {
+
+    // 국내여행지추천 모바일
+    .recommend {
+        &::before {
+            height: 400px;
+        }
+        .title {            
+            text-align: center;
+            padding: 50px 0;
+            h2 {
+                font-size: 1.8rem;
+            }
+            p {
+                font-size: 1.2rem;
+                line-height: 1.5rem;
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 800px) {
+    // 지도 모바일
     .map {
         .mapWrapS {
             .mapContentsS {
@@ -538,7 +574,24 @@ $fontColorDarkBeige : #B2A569;
                 width: 100%;
             }
         }
-    } 
+    }
+    
+    // 국내여행지추천 모바일
+    .recommend {
+        &::before {
+            height: 320px;
+        }
+        .title {
+            padding: 34px 0;
+            h2 {
+                font-size: 1.6rem;
+            }
+            p {
+                font-size: 1.1rem;
+                line-height: 1.4rem;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 620px) {
@@ -608,6 +661,8 @@ $fontColorDarkBeige : #B2A569;
 }
 
 @media screen and (max-width: 460px) {
+
+    // 지도 반응형
     .map {
         .mapWrapS {
             .mapTitleS {
@@ -655,6 +710,23 @@ $fontColorDarkBeige : #B2A569;
                         }
                     }
                 }       
+            }
+        }
+    }
+
+    // 국내여행지추천 모바일
+    .recommend {
+        &::before {
+            height: 300px;
+        }
+        .title {
+            padding: 22px 0;
+            h2 {
+                font-size: 1.2rem;
+            }
+            p {
+                font-size: 0.9rem;
+                line-height: 1.3rem;
             }
         }
     }
