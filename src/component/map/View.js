@@ -7,6 +7,7 @@ import mapdata from '../../json/mapdata.json'
 import { Fragment } from 'react'
 
 function View(props) {
+
     return (
         <div className={mapscss.mapViewS}>
             <div className={`${mapscss.mapViewInner} ${props.cls}`} onMouseDown={props.mouseDown} style={{left: `${props.moveX}px`, top: `${props.moveY}px`, cursor: props.mouseDrag ? 'grabbing' : 'grab'}}>
@@ -22,7 +23,7 @@ function View(props) {
                                 data-category={key} 
                                 onClick={() => { props.triggerKey(key); props.triggerNum(index); props.onOpen(); }} 
                                 className={key} 
-                                style={{ top: item.positionY, left: item.positionX }}
+                                style={{ top: `${(item.positionY.replace('px', '') / 744) * 100}%`, left: `${(item.positionX.replace('px', '') / 756) * 100}%` }}
                             >
                                 <span className="visually-hidden">{item.name}</span>
                             </p>
@@ -33,7 +34,7 @@ function View(props) {
                     })
                 }
                 </div>
-                <img src={MapImg} alt="지도" />
+                <img src={MapImg} className='mapImg' alt="지도" />
             </div>
         </div>
     )
