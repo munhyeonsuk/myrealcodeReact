@@ -46,34 +46,34 @@ function SnsImg() {
     }, []);
 
     return (
-        <div className={`${snsscss.sns} container-1400`}>
+        <>
             {isGrid ? (
-                <div className="row d-flex align-items-stretch mx-0">
-                    {imgIndices.images.map((index, i) => (
-                        <div
-                            key={index}
-                            className="col-lg-3 col-md-6 mb-4 hoverimgaction"
-                            onMouseEnter={() => handleHover(i)}
-                            onMouseLeave={handleRemoveBlur}
-                        >
-                            <div className={`${snsscss.snsImgR} d-flex justify-content-center align-items-center`}>
-                                <img src={index} alt={`인스타그램 이미지 ${i}번`} className="img-fluid" />
+                <div className="container-1400">    
+                    <div className="row d-flex align-items-stretch mx-0">
+                        {imgIndices.images.map((index, i) => (
+                            <div
+                                key={index}
+                                className={`col-lg-3 col-md-6 mb-4 hoverimgaction ${snsscss.hovernth}`}
+                                onMouseEnter={() => handleHover(i)}
+                                onMouseLeave={handleRemoveBlur}
+                            >
+                                <div className={`${snsscss.snsImgR} d-flex justify-content-center align-items-center`}>
+                                    <img src={index} alt={`인스타그램 이미지 ${i}번`} className="img-fluid" />
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             ) : (
                 // tablet
                 <div className={`${snsscss.tablet} overflow-hidden`}>
-                    <div className={`${snsscss.imgWrapper} d-flex mb-4`}>
+                    <div className={`${snsscss.imgWrapper} d-flex mb-3`}>
                         <Swiper
                             className={`${snsscss.imgSwiper} overflow-hidden`}
                             spaceBetween={spaceBetween}
                             loop={true}
                             slidesPerView={2}
                             slidesPerGroup={1}
-                            // navigation
-                            // pagination={{ clickable: true }}
                         >
                             {imgIndices.images.map((index, i) => (
                                 <SwiperSlide key={index} className={snsscss.swiperslide}>
@@ -85,7 +85,7 @@ function SnsImg() {
                         </Swiper>
                     </div>
                     <div className={`${snsscss.snsRighttextR} d-flex`}>
-                        <ul className="p-0">
+                        <ul className="p-0 mb-0">
                             <li className="d-flex align-items-center mb-2">
                                 <strong className='ps-0'>선정기준</strong>
                                 <p className="ms-3 mb-0">필수 해시태그 입력 여부<span></span>경주의 멋이 들어있는 감각적인 사진</p>
@@ -98,7 +98,7 @@ function SnsImg() {
                     </div>
                 </div>
             )}
-        </div>
+        </>
     );
 }
 
