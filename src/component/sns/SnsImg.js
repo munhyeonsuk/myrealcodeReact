@@ -48,7 +48,7 @@ function SnsImg() {
     return (
         <div className={`${snsscss.sns} container-1400`}>
             {isGrid ? (
-                <div className="row d-flex align-items-stretch">
+                <div className="row d-flex align-items-stretch mx-0">
                     {imgIndices.images.map((index, i) => (
                         <div
                             key={index}

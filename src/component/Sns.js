@@ -21,7 +21,7 @@ function Sns() {
         <section className={snsscss.sns}>
             {isGrid ? (
                 <div className="container-1400">
-                    <div className={`${snsscss.textbox} row justify-content-between align-items-end`}>
+                    <div className={`${snsscss.textbox} row justify-content-between align-items-end mx-0`}>
                         <div className={`${snsscss.snsLefttextR} col-lg-6`}>
                             <div className="d-flex align-items-center mb-2">
                                 <i><img src={instagram} alt="인스타그램 아이콘" /></i>
