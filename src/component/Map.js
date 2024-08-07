@@ -7,8 +7,7 @@ import './scss/psh.map.scss'
 
 import IconZoomin from '../img/mapIconZoomin.svg'
 import IconZoomout from '../img/mapIconZoomout.svg'
-import { useEffect, useState, useRef } from 'react'
-import axios from 'axios';
+import { useEffect, useState } from 'react'
 
 
 const Map = () => {
@@ -73,26 +72,70 @@ const Map = () => {
     setIsDragging(false);
   }
 
+  // 모바일
+  const handleTouchStart = (e) => {
+    setIsDragging(true);
+    const touch = e.touches[0];
+    setOffset({
+      x: touch.clientX - position.x,
+      y: touch.clientY - position.y,
+    });
+    e.stopPropagation();
+  };
+
+  const handleTouchMove = (e) => {
+    if (isDragging) {
+      e.preventDefault(); // 기본 스크롤 방지
+      e.stopPropagation();
+      const touch = e.touches[0];
+      const newX = touch.clientX - offset.x;
+      const newY = touch.clientY - offset.y;
+
+      const mapScreen = document.querySelector('.mapScreen');
+      const rect = mapScreen.getBoundingClientRect();
+
+      const minX = 0;
+      const minY = 0;
+
+      const elementWidth = mapScreen.offsetWidth;
+      const elementHeight = mapScreen.offsetHeight;
+
+      const maxX = rect.width - elementWidth / zoom;
+      const maxY = rect.height - elementHeight / zoom;
+
+      setPosition({
+        x: Math.max(minX, Math.min(newX, maxX)),
+        y: Math.max(minY, Math.min(newY, maxY)),
+      });
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+  };
+
   useEffect(() => {
     document.addEventListener('mousemove', handleMouseMove);
     document.addEventListener('mouseup', handleMouseUp);
+    document.addEventListener('touchmove', handleTouchMove, { passive: false }); // passive: false 설정
+    document.addEventListener('touchend', handleTouchEnd);
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseup', handleMouseUp);
+      document.removeEventListener('touchmove', handleTouchMove);
+      document.removeEventListener('touchend', handleTouchEnd);
     };
-  },[isDragging, offset])
+  }, [isDragging, offset]);
 
   // 확대 & 축소 버튼 이벤트
   useEffect(() => {
-
     const zoomInEvent = (e) => {
-
         const mapScreen = document.querySelector(".mapScreen");
         const rect = mapScreen.getBoundingClientRect();
 
         // 클릭한 위치 기준으로 확대
         const clickX = e.clientX - rect.left; // 클릭한 X 좌표
-        const clickY = e.clientY - rect.top + 320; // 클릭한 Y 좌표
+        const clickY = e.clientY - rect.top + 400; // 클릭한 Y 좌표
         
       setZoom((prevZoom) => {
         if (prevZoom < 1.6) {
@@ -111,6 +154,13 @@ const Map = () => {
         if (prevZoom > 1) {
           const newZoom = prevZoom - zoomStep;
           document.querySelector(".mapScreen").style.transform = `scale(${newZoom})`;
+          if (newZoom === 1) {
+            // zoom이 1일 때, mapScreen을 가운데로 이동            
+            setPosition({
+              x: 0,
+              y: 0,
+            });
+          }
           return newZoom;
         }
         return prevZoom;
@@ -140,7 +190,7 @@ const Map = () => {
             </h2>
             <MapCategory></MapCategory>
           </div>
-          <div className={`${mapscss.mapContentsS} row mx-0`}>
+          <div className={`${mapscss.mapContentsS} row mx-0`} style={{userSelect: 'none'}}>
             <MapInfo className="col-xl-4" clickKey={clickKey} clickNum={clickNum} onClose={infoClose} onOpen={infoBtn}></MapInfo>
             <div className={`${mapscss.mapDetailS} col-xl-8`}>
               <div className={mapscss.mapTextS}>
@@ -160,7 +210,7 @@ const Map = () => {
                   <strong>장소별 이야기와 정보</strong>를 알 수 있어요!
                 </p>
               </div>
-              <MapView cls={"mapScreen"} triggerKey={setClickKey} triggerNum={setClickNum} mouseDown={handleMouseDown} moveX={position.x} moveY={position.y} mouseDrag={isDragging} onOpen={infoOpen}></MapView>
+              <MapView cls={"mapScreen"} triggerKey={setClickKey} triggerNum={setClickNum} mouseDown={handleMouseDown} TouchStart={handleTouchStart} moveX={position.x} moveY={position.y} mouseDrag={isDragging} onOpen={infoOpen}></MapView>
             </div>            
           </div>
         </div>

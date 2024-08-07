@@ -10,7 +10,7 @@ function View(props) {
 
     return (
         <div className={mapscss.mapViewS}>
-            <div className={`${mapscss.mapViewInner} ${props.cls}`} onMouseDown={props.mouseDown} style={{left: `${props.moveX}px`, top: `${props.moveY}px`, cursor: props.mouseDrag ? 'grabbing' : 'grab'}}>
+            <div className={`${mapscss.mapViewInner} ${props.cls}`} onMouseDown={props.mouseDown} onTouchStart={props.TouchStart}  style={{left: `${props.moveX}px`, top: `${props.moveY}px`, cursor: props.mouseDrag ? 'grabbing' : 'grab'}}>
                 <div className={mapscss.mapCategoryPointS}>
                 {
                     Object.entries(mapdata.info).map(([key, value]) => {
@@ -34,7 +34,7 @@ function View(props) {
                     })
                 }
                 </div>
-                <img src={MapImg} className='mapImg' alt="지도" />
+                <img src={MapImg} className='mapImg' alt="지도" style={{touchAction: 'none'}}/>
             </div>
         </div>
     )
