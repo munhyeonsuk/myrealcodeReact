@@ -22,7 +22,18 @@ function getDomain(url) {
 }
 
 const Info = (props) => {
-    return (
+
+    const { clickKey, clickNum } = props;
+    
+    const time1 = mapdata.info[clickKey][clickNum].time1
+        ? mapdata.info[clickKey][clickNum].time1
+        : null;
+    
+    const time2 = mapdata.info[clickKey][clickNum].time2
+        ? mapdata.info[clickKey][clickNum].time2
+        : null;
+
+    return (        
         <div className={mapscss.mapInfoS} style={{display : props.onOpen ? "block" : "none"}}>
             <Fragment>
             <button className={mapscss.closeS} onClick={props.onClose}><img src={IconClose} alt="닫기" /><span className="visually-hidden">닫기</span></button>
@@ -32,22 +43,40 @@ const Info = (props) => {
                     <ul className={`${mapscss.mapInfoTextS} ps-0 mb-0`}>
                         <li>
                             <i><img src={IconAdress} alt="위치" /></i>
-                            <span>{mapdata.info[props.clickKey][props.clickNum].adress}</span>
+                            <span>{ mapdata.info[props.clickKey][props.clickNum].adress
+                                ? mapdata.info[props.clickKey][props.clickNum].adress 
+                                : '-' }
+                            </span>
                         </li>
                         <li>
                             <i><img src={IconPhone} alt="전화번호" /></i>
-                            <span>{mapdata.info[props.clickKey][props.clickNum].tel}</span>
+                            <span>{mapdata.info[props.clickKey][props.clickNum].tel
+                                ? mapdata.info[props.clickKey][props.clickNum].tel
+                                : '-'}
+                            </span>
                         </li>
                         <li>
                             <i><img src={IconTime} alt="영업시간" /></i>
                             <span>
-                                {mapdata.info[props.clickKey][props.clickNum].time1}<br />
-                                {mapdata.info[props.clickKey][props.clickNum].time2}
+                                {time1 || time2 ? (
+                                    <>
+                                        {time1}<br />
+                                        {time2}
+                                    </>
+                                ) : (
+                                    "-"
+                                )}
                             </span>
                         </li>
                         <li>
                             <i><img src={IconSite} alt="사이트" /></i>
-                            <span><a href={mapdata.info[props.clickKey][props.clickNum].site} className="link">{  getDomain(mapdata.info[props.clickKey][props.clickNum].site) }</a></span>
+                            <span>
+                                <a href={mapdata.info[props.clickKey][props.clickNum].site} className="link">
+                                    { getDomain(mapdata.info[props.clickKey][props.clickNum].site) 
+                                    ? getDomain(mapdata.info[props.clickKey][props.clickNum].site) 
+                                    : '-' }
+                                </a>
+                            </span>
                         </li>
                     </ul>
                 </div>
