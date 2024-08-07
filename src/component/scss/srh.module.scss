@@ -144,18 +144,16 @@
                     left: 0;
                     top: 0;
                     width: 45vw;
-                    // min-width: px;
                     height: 35vw;
                     min-height: 200px;
                     background-color: #FFEBB7;
-                    border-radius: 10px;
-                    margin-left: 20px;
+                    border-radius: 0 10px 10px 0;
                 }
                 .titlebox {
                     position: absolute;
                     z-index: 999;
                     margin-top: 60px;
-                    margin-left: 70px;
+                    margin-left: 50px;
                     img {
                         top: 0;
                         height: 65px;
@@ -177,7 +175,7 @@
             position: relative;
             padding-top: 190px;
             .imgWrapper{
-                margin-left: 70px;
+                margin-left: 50px;
                 width: 100vw;
                 .imgSwiper{
                     width: 100vw;
@@ -207,7 +205,7 @@
                 }
             }
             .snsRighttextR {
-                margin-left: 70px;
+                margin-left: 50px;
                 strong {
                     font-size: 16px;
                 }
@@ -226,7 +224,7 @@
 }
     
 // 모바일
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .sns {
         .textarea {
             .snsLefttextR {
@@ -241,7 +239,7 @@
                         font-size: 20px;
                     }
                     p {
-                        font-size: 16px;
+                        font-size: 18px;
                         letter-spacing: -1px !important;
                     }
                 }
@@ -260,11 +258,11 @@
             .snsRighttextR {
                 margin-left: 20px;
                 strong {
-                    font-size: 14px;
+                    font-size: 15px;
                     width: 85px;
                 }
                 p {
-                    font-size: 14px;
+                    font-size: 15px;
                 }
             }
         }
@@ -317,13 +315,11 @@
             .snsRighttextR {
                 margin-left: 15px;
                 strong {
-                    font-size: 13px;
+                    font-size: 15px;
                     font-weight: 400;
-                    width: 70px;
-                    height: 30px;
                 }
                 p {
-                    font-size: 13px;
+                    font-size: 15px;
                     span {
                         &::after {
                             content: " \00a0\00a0 | \00a0\00a0";
@@ -335,12 +331,12 @@
     }
 }
 
-@media (max-width: 410px) {
+@media (max-width: 465px) {
     .sns {
         .tablet{
             .snsRighttextR {
                 p {
-                    font-size: 13px;
+                    font-size: 14px;
                     span {
                         &::after {
                             content: "";
@@ -366,6 +362,18 @@
                             font-size: 13px;
                         }
                     }
+                }
+            }
+        }
+        .tablet {
+            .imgWrapper{
+                width: 100vw;
+                .imgSwiper{
+                    height: 123px;              
+                    .slideImg{
+                        position: relative;
+                        height: 100%;
+                    }                         
                 }
             }
         }
@@ -401,8 +409,11 @@
                 }
             }
             .snsRighttextR {
+                p {
+                    font-size: 13px;
+                }
                 strong {
-                    height: 22px;
+                    font-size: 13px;
                 }
             }
         }
@@ -662,12 +673,12 @@
 }
 
 // 태블릿
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (max-width: 1024px) {
     .mainslider {
         margin-top: 70px;
         height: 460px;
         &::after{
-            height: 90px;
+            height: 96px;
             z-index: 1;
         }
         .mainwrapper{
@@ -687,14 +698,14 @@
                 }
                 .mainSlidetext{   
                     p {
-                        font-size: 15px;
+                        font-size: 16px;
                         height: 30px;
-                        margin-bottom: 0.2rem !important;
+                        margin-bottom: 0.4rem !important;
                     }
                     strong {
-                        font-size: 15px;
+                        font-size: 16px;
                         font-weight: 500;
-                        line-height: 1.3rem !important;
+                        line-height: 1.5rem !important;
                         letter-spacing: -6% !important;
                     }
                     .text_with_underline {
@@ -708,12 +719,12 @@
                 height: 15px;
                 order: 3;  
                 .swiper_progress_bar {
-                    width: 150px;             
+                    width: 170px;             
                   }
                 .numberui{
                     width: auto;
                     margin-left: 25px;
-                    font-size: 15px;
+                    font-size: 16px;
                 }
                 .btn{
                     margin-left: 25px;
@@ -730,7 +741,7 @@
             // z-index: 2;
             margin-top: 25px;     
             height: 350px;
-            width: 500px;
+            width: 556px;
             order: 1;  
             .img{
                 height: 350px;
@@ -740,12 +751,248 @@
 }
 
 // 모바일 - 소형
-@media (min-width: 481px) and (max-width: 767px) {
+@media (max-width: 768px) {
     .mainslider {
         margin-top: 69.8px;
-        height: 340px;
+        height: 370px;
         &::after{
-            height: 82px;
+            height: 115px;
+            z-index: 1;
+        }
+        .mainwrapper{
+            flex-direction: column !important;
+            overflow-x: hidden;
+            left: 0 !important;
+            margin-left: 15px;         
+            .mainTextbox{
+                margin-top: 0;
+                width: 100vw !important;
+                order: 2;
+                z-index: 3;
+                margin-left: 27px;
+                .mbTextSwp{
+                    display: block;
+                    top: -1rem; 
+                }
+                .mainSlidetext{   
+                    p {
+                        font-size: 16px;
+                        height: 30px;
+                        margin-bottom: 0.3rem !important;
+                    }
+                    strong {
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 1.4rem !important;
+                        letter-spacing: -6% !important;
+                    }
+                    .text_with_underline {
+                        display: none !important;
+                    }
+                }
+            }
+            .mainPagebox{
+                display: block;
+                width: 100%;
+                height: 15px;
+                order: 3;  
+                .swiper_progress_bar {
+                    width: 170px;             
+                  }
+                .numberui{
+                    width: auto;
+                    margin-left: 25px;
+                    font-size: 16px;
+                }
+                .btn{
+                    margin-left: 25px;
+                    .buttonPrev{
+                        display: none;
+                    }              
+                    .buttonNext{
+                        display: none;
+                    }
+                }
+            }
+        }
+        .mainImgbox{
+            // z-index: 2;
+            margin-top: 15px;     
+            height: 250px;
+            width: 440px;
+            order: 1;  
+            .img{
+                height: 250px;
+            }
+        }
+    }
+}
+
+// 모바일 - 초소형
+@media (max-width: 480px) {
+    .mainslider {
+        margin-top: 58.8px;
+        height: 350px;
+        &::after{
+            height: 94px;
+            z-index: 1;
+        }
+        .mainwrapper{
+            flex-direction: column !important;
+            overflow-x: hidden;
+            left: 0 !important;
+            margin-left: 15px;         
+            .mainTextbox{
+                margin-top: 0;
+                width: 100vw !important;
+                order: 2;
+                z-index: 3;
+                margin-left: 27px;
+                .mbTextSwp{
+                    display: block;
+                    top: -1rem; 
+                }
+                .mainSlidetext{   
+                    p {
+                        font-size: 16px;
+                        width: 120px;
+                        height: 28px;
+                        margin-bottom: 0.5rem !important;
+                    }
+                    strong {
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 1.2rem !important;
+                        letter-spacing: -6% !important;
+                    }
+                    .text_with_underline {
+                        display: none !important;
+                    }
+                }
+            }
+            .mainPagebox{
+                display: block;
+                width: 100%;
+                height: 12px;
+                order: 3;  
+                .swiper_progress_bar {
+                    width: 170px;             
+                  }
+                .numberui{
+                    width: auto;
+                    margin-left: 30px;
+                    font-size: 16px;
+                }
+                .btn{
+                    margin-left: 30px;
+                    .button_auto{
+                        width: 20px;
+                        height: 20px;
+                    }
+                    .buttonPrev{
+                        display: none;
+                    }              
+                    .buttonNext{
+                        display: none;
+                    }
+                }
+            }
+        }
+        .mainImgbox{
+            // z-index: 2;
+            margin-top: 15px;     
+            height: 250px;
+            width: 360px;
+            order: 1;  
+            .img{
+                height: 250px;
+            }
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .mainslider {
+        margin-top: 58.8px;
+        height: 350px;
+        &::after{
+            height: 94px;
+            z-index: 1;
+        }
+        .mainwrapper{
+            flex-direction: column !important;
+            overflow-x: hidden;
+            left: 0 !important;
+            margin-left: 15px;         
+            .mainTextbox{
+                margin-top: 0;
+                width: 100vw !important;
+                order: 2;
+                z-index: 3;
+                margin-left: 27px;
+                .mbTextSwp{
+                    display: block;
+                    top: -1rem; 
+                }
+                .mainSlidetext{   
+                    p {
+                        font-size: 16px;
+                        width: 120px;
+                        height: 28px;
+                        margin-bottom: 0.5rem !important;
+                    }
+                    strong {
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 1.2rem !important;
+                        letter-spacing: -6% !important;
+                    }
+                    .text_with_underline {
+                        display: none !important;
+                    }
+                }
+            }
+            .mainPagebox{
+                display: block;
+                width: 100%;
+                height: 12px;
+                order: 3;  
+                .swiper_progress_bar {
+                    width: 160px;             
+                  }
+                .numberui{
+                    width: auto;
+                    margin-left: 27px;
+                    font-size: 16px;
+                }
+                .btn{
+                    margin-left: 27px;
+                    .button_auto{
+                        width: 20px;
+                        height: 20px;
+                    }   
+                }
+            }
+        }
+        .mainImgbox{
+            // z-index: 2;
+            margin-top: 15px;     
+            height: 250px;
+            width: 320px;
+            order: 1;  
+            .img{
+                height: 250px;
+            }
+        }
+    }
+}
+
+@media (max-width: 350px) {
+    .mainslider {
+        margin-top: 58.8px;
+        height: 350px;
+        &::after{
+            height: 94px;
             z-index: 1;
         }
         .mainwrapper{
@@ -766,13 +1013,14 @@
                 .mainSlidetext{   
                     p {
                         font-size: 15px;
-                        height: 30px;
-                        margin-bottom: 0.2rem !important;
+                        width: 120px;
+                        height: 28px;
+                        margin-bottom: 0.5rem !important;
                     }
                     strong {
                         font-size: 15px;
                         font-weight: 500;
-                        line-height: 1.3rem !important;
+                        line-height: 1.2rem !important;
                         letter-spacing: -6% !important;
                     }
                     .text_with_underline {
@@ -783,24 +1031,22 @@
             .mainPagebox{
                 display: block;
                 width: 100%;
-                height: 15px;
+                height: 12px;
                 order: 3;  
                 .swiper_progress_bar {
                     width: 150px;             
                   }
                 .numberui{
                     width: auto;
-                    margin-left: 25px;
+                    margin-left: 20px;
                     font-size: 15px;
                 }
                 .btn{
-                    margin-left: 25px;
-                    .buttonPrev{
-                        display: none;
-                    }              
-                    .buttonNext{
-                        display: none;
-                    }
+                    margin-left: 20px;
+                    .button_auto{
+                        width: 20px;
+                        height: 20px;
+                    }   
                 }
             }
         }
@@ -808,7 +1054,7 @@
             // z-index: 2;
             margin-top: 15px;     
             height: 250px;
-            width: 400px;
+            width: 300px;
             order: 1;  
             .img{
                 height: 250px;
@@ -817,8 +1063,7 @@
     }
 }
 
-// 모바일 - 초소형
-@media (min-width: 320px) and (max-width: 480px) {
+@media (max-width: 320px) {
     .mainslider {
         margin-top: 58.8px;
         height: 335px;
@@ -865,7 +1110,7 @@
                 height: 12px;
                 order: 3;  
                 .swiper_progress_bar {
-                    width: 150px;             
+                    width: 140px;             
                   }
                 .numberui{
                     width: auto;
@@ -874,12 +1119,6 @@
                 }
                 .btn{
                     margin-left: 25px;
-                    .buttonPrev{
-                        display: none;
-                    }              
-                    .buttonNext{
-                        display: none;
-                    }
                 }
             }
         }
