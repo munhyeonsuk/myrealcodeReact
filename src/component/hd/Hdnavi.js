@@ -15,7 +15,6 @@ function Hdnavi() {
             submenu[item.prnum].push(item);
         }
     }
-
     return (
         <>
             {d1navi.map((v, i) => (
@@ -24,8 +23,8 @@ function Hdnavi() {
                     { submenu[v.cateno] && <ul className={`${hdscss.gnb_li_ul} position-absolute ps-0 pt-2`}>
                         { submenu[v.cateno].map((vv, ii) => (
                             <li key={`submenu${ii}`} >
-                                <Link to={`*${vv.gnblink}`}>{vv.gnbnm}</Link>
-                                </li>
+                                <Link to={`/${vv.gnblink}`}>{vv.gnbnm}</Link>
+                            </li>
                         ))
                         }
                     </ul>
