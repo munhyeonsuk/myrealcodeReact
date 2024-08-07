@@ -223,7 +223,7 @@ $fontColorDarkBeige : #B2A569;
                     p {
                         font-size: 19px;
                         letter-spacing: -2px;
-                        line-height: 1.4;
+                        line-height: 1.4rem;
                         strong {
                             font-weight: 700;
                         }
@@ -310,7 +310,7 @@ $fontColorDarkBeige : #B2A569;
     right: 0;
     bottom: 0;
     background-color: rgba(0,0,0,.7);
-    z-index: 999999999;
+    z-index: 9999;
     .popupWrapS {
         position: absolute;
         top: 50%;
@@ -319,7 +319,7 @@ $fontColorDarkBeige : #B2A569;
         max-width: 540px;
         width: 100%;
         border-radius: 20px;
-        padding: 20px 20px 30px;
+        padding: 20px;
         transform: translate3d(-50%, -50%, 0);
         .popupHeaderS {
             border-bottom: 1px solid $fontColorGray;
@@ -342,7 +342,7 @@ $fontColorDarkBeige : #B2A569;
                     position: relative;
                     padding-left: 16px;
                     font-size: 12px;
-                    line-height: 1.6;
+                    line-height: 1.6rem;
                     &.point {
                         font-size: 14px;
                         padding-left: 0;
@@ -487,7 +487,36 @@ $fontColorDarkBeige : #B2A569;
                 }
             }
         }
-    }    
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .popupform {
+        position: inherit;
+        margin: 90px 0 50px;
+        background-color: transparent;        
+        .popupWrapS {
+            position: inherit;
+            top: auto;
+            left: auto;
+            transform: none;
+            margin: 0 auto;
+            border: 1px solid #E1E1E1;
+            .popupHeaderS {
+                .close {
+                    display: none;
+                }
+            }
+            .popupFooterS {
+                button {
+                    width: 100%;
+                    &:first-child {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -655,6 +684,33 @@ $fontColorDarkBeige : #B2A569;
                         }
                     }
                 }       
+            }
+        }
+    }
+
+    // 문의 사항 접수
+    .popupform {
+        .popupWrapS {
+            padding: 30px 10px 50px;
+            .popupHeaderS {
+                h3 {
+                    font-size: 1.2rem;
+                }
+            }
+            .popupBodyS {
+                ul {
+                    li {
+                        line-height: 1.2rem;
+                    }
+                }
+                div {
+                    label {
+                        font-size: 1rem;;
+                    }
+                    select, input, textarea {
+                        font-size: 0.8rem;
+                    }
+                }
             }
         }
     }

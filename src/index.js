@@ -16,6 +16,7 @@ import Mrc from './Mrcmain';
 import Ft from './component/Ft'
 import Quick from './component/Quick';
 import Pageprepare from './component/subpage/Pageprepare';
+import Popupform from './component/Popupform'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -23,7 +24,8 @@ root.render(
         <Hd />
         <Routes>
             <Route path="/" element={<Mrc />} />
-            <Route path='*' element={<Pageprepare />} />
+            <Route path="/faq" element={<Popupform onOpen={true} onClose={false} />} />
+            <Route path="*" element={<Pageprepare />} />
         </Routes>
         
         <Quick />
