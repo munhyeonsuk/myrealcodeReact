@@ -42,6 +42,9 @@ $fontColorDarkBeige : #B2A569;
           h3{
             font-size: 30px;
             font-weight: bold;
+            @media (max-width:767px) {
+              font-size: 20px;
+            }
             @media (max-width:375px) {
               font-size: 20px;
             }
@@ -76,19 +79,22 @@ $fontColorDarkBeige : #B2A569;
           top:-30px;
           width: 468px;
           height: 568px;
-
+          
+         
           @media (max-width:1199px) {
-            top:0;
-            width:100%;
-            height: 110vw;
+            top: 0;
+            width: 53vw;
+            height: 45vw;
+            right: 0;
+            border-radius: 20px 20px 0px 0px;
+            left: unset;            
           }
 
-          @media (max-width:375px) {
-            top: 0;
-            width: 70vw;
-            height: 63vw;
-            right: 0;
-            left: unset;            
+          @media (max-width:767px) {
+          
+            width: 69vw;
+            height: 55vw;
+                     
           }
           
           background-color: #FFEBB7;
@@ -101,10 +107,15 @@ $fontColorDarkBeige : #B2A569;
             font-size: 24px;
           }      
           margin: 0;
-         @media (max-width:375px) {
-           width:70vw;
+         
+         @media (max-width:1199px) {
+          width: 53vw;
            margin-left: auto;
            margin-top: 10vw;
+         }
+         @media (max-width:767px) {
+          width: 70vw;
+       
          }
 
         }
@@ -113,8 +124,18 @@ $fontColorDarkBeige : #B2A569;
   
         .eventListE{
           // transform: translate(-5%, 10%); 
+          gap:66px;
+          @media (max-width:1360px) {
+            gap:20px;            
+          }
+          @media (max-width:1199px) {
+            justify-content: center !important; 
+            margin: 0 0.5rem;        
+          }
+
           @media (max-width:768px) {
             transform: translate(0,0);
+            margin: 0 1rem;
           }
           
           margin-top: 30px;
@@ -128,15 +149,22 @@ $fontColorDarkBeige : #B2A569;
               max-width: 100%;
               height: 450px;
               box-shadow: 0 4px 4px rgba(0,0,0,0.25);; /* 가로, 세로, 흐림 정도, 색상 */ 
+             
               @media (max-width:767px) {
                  margin-bottom: 20px;
                  display: flex;
                  height: 36vw;
-                 >a>span>span:nth-child(2),
-                 >a>span>span:nth-child(3){
+                 >a>span>span:nth-child(2){
                   display: none !important;
                  }
               }
+              @media (max-width:520px) {
+               
+                
+                >a>span>span:nth-child(3){
+                 display: none !important;
+                }
+             }
               @media (max-width:360px) {
                 height: 42vw;
                 
@@ -149,11 +177,26 @@ $fontColorDarkBeige : #B2A569;
              > a  > span{
                 font-size: 14px;
                 margin: 1.3rem ;
+            
+                @media (max-width:910px) {
+                  font-size: 13px ;
+                  margin: 1rem 1.3rem;
+                  
+                }
+
+                @media (max-width:850px) {
+                  font-size: 12.5px ;
+                  margin: 1rem 1rem;
+                  
+                }
+
+
                 @media (max-width:375px) {
                   font-size: 13px ;
                   margin: 1rem 0.6rem ;
                   
                 }
+
                
               }
   
@@ -161,6 +204,16 @@ $fontColorDarkBeige : #B2A569;
                 font-weight: bold;
                 font-size: 20px;
                 margin: 1.3rem ;
+
+                @media (max-width:850px) {
+                  margin: 1rem;
+                  
+                }
+
+                @media (max-width:472px) {
+                  font-size: 1rem ;
+                  
+                }
                 @media (max-width:375px) {
                   font-size: 14px;
                   margin: 1rem 0.6rem;
@@ -185,7 +238,6 @@ $fontColorDarkBeige : #B2A569;
   
                   img{ 
    
-                    margin-top: -6rem;
                     @media (max-width:767px) {
                       margin-top:0; 
                       
@@ -224,6 +276,10 @@ $fontColorDarkBeige : #B2A569;
                 width: 42px;
                 height: 30px;
                 overflow: hidden;
+                @media (max-width:480px) {
+                  display: none !important;
+                  
+                }
                 @media (max-width:375px) {
                   transform: scale(0.65);
                   margin-right:-6px;
@@ -232,7 +288,7 @@ $fontColorDarkBeige : #B2A569;
                 svg{
                   position: absolute;
                   right: 0;
-                  height: auto !important;
+                  height: auto  ;
                   &.gray {                  
                     transition: opacity 0.2s, margin-right 0.2s;
                   }
@@ -307,18 +363,76 @@ $fontColorDarkBeige : #B2A569;
 @media (max-width:990px) {
   
 }
+.eventtextw{
+  padding: 63px 0 0 46px;
+  .titletextres{
+  
+    span.titlespan{
+   
+      .wow{
+       display: none;
+      }
+     }
+  }
+  >a{
+    justify-content: start;
+  }
+}
 
 
-@media (max-width:767px) {
+@media (max-width:1360px) {
+  
+.eventtextw{
+    padding: 60px 0 0 55px;
+  .titletextres{
+    font-size: 0 !important;
+    line-height: 0; 
+      span.titlespan{
+        font-size: 18px;
+        line-height: 1;
+        .wow{
+          display: inline;       
+        }
+        br{
+          display: none;
+        }
+      }
+  
+  }
+}
+  
+}
+@media (max-width:1199px) {
+  .eventtextw{
+
+  >a{
+    justify-content: end;
+  }
+}
+  
+}
+@media (max-width:768px) {
+  .eventtextw{
+    padding: 60px 0 20px 46px;
+  }
+    
+  
+}
+@media (max-width:575px) {
+  .eventtextw{
+    padding: 42px 8px 9px 7vw
+    
+  
+}
   
 }
 
-@media (max-width:375px) {
+@media (max-width:320px) {
   .titletextres{
     font-size: 0 !important;
     line-height: 0;
     span{
-      font-size: 16px;
+      font-size: 14px;
       line-height: 1;
       br{
         display: none;
@@ -329,6 +443,3 @@ $fontColorDarkBeige : #B2A569;
 }
 
 
-@media (max-width:320px) {
-  
-}
