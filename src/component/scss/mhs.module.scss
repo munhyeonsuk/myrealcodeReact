@@ -30,9 +30,12 @@ body li{
                 cursor: pointer
             }
         }
-
+       
         .gnb {
             position: relative;
+            > li:nth-child(5),
+            > li:nth-child(6)
+            {display: none;}
             &:before{
                 content: "";
                 position: absolute;
@@ -54,12 +57,14 @@ body li{
 
             }
             .gnb_li{
-                    
+                position: relative;
+                
                 .gnb_a{//대메뉴
                     font-size: 1.2em;
                     font-weight: 700;
                     }
                 .gnb_li_ul{//소메뉴
+                    position: absolute;
                     min-width: 80px;
                     white-space: nowrap;
                     color: $fontColorBlack;
@@ -98,7 +103,7 @@ body li{
         }
 
         .utill li{
-            margin-left: 1rem;
+            // margin-left: 1rem;
             .searchIcon{
                 span{
                     
@@ -160,6 +165,12 @@ body li{
               
             .number.red {
             color: red;
+            }
+            .mnaviclose{
+                order: 4;
+                border: none;
+                background: none;
+                
             }
 }
 
@@ -281,12 +292,12 @@ body li{
 .quick{
     position: fixed;
     right: 5%;
-    width: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    top: 0;
-    bottom: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    
     z-index: 999;
     li{
         cursor: pointer;
@@ -324,7 +335,7 @@ body li{
             background-color: #000;
             color: white;
             padding: 5px 10px;
-            right: -20px;
+            right: -9px;
             
             
             &::after {
@@ -351,6 +362,83 @@ body li{
     white-space: nowrap
   }
 
+.lognavi{
+    margin-top: 57px;
+    background-color: $mainColor;
+    .loginimg{
+        background-color: black;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        img{
+            filter: invert(1);
+            transform: translate(14px, 9px);
+        }
+        
+    }
+    .logtext1{
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 149.707%;
+    }
+    .logtext2{
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 149.707%;
+        letter-spacing: -1.1px;
+    }
+    .navi{
+        background-color: white;
+        border-radius: 20px 20px 0 0;
+        padding-top: 65px;
+        .gnb_li {
+            position: relative;
+            padding: 5px 15px !important;
+        }
+        .gnb_li > a::after {
+            content: url(../../img/mnaviArrow.svg);
+            position: absolute;
+            right: 20px;
+        }
+        .gnb_li:nth-child(5) > a::after,
+        .gnb_li:nth-child(6) > a::after {
+            content: none;
+        }
+        .gnb_li.open > a::after {
+            transform: rotate(180deg);
+        }
+        .gnb_a{//대메뉴
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 149.707%;
+            letter-spacing: -0.9px;
+           
+        }
+        .gnb_li_ul{// 소메뉴
+            display: none;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 200%;
+            letter-spacing: -0.78px;
+            background-color: $mainColor;
+            width: 100%;
+            padding:15px  20px !important;
+            position: relative !important;
+            margin-top: 12px !important;
+        }
+        .gnb_li_ul.show {
+            display: block;
+            max-height: 500px;
+        }
+    }
+}
+
+
+
 
 .allMenuBtn{ display: none ;}
 .ft{
@@ -362,6 +450,11 @@ body li{
         margin-right: 0;
     }
 }
+    @media (max-width:1600px) {
+        h1,
+        .utill{
+            width: auto !important;}
+    }
 
     @media (max-width:1024px){
         .hd{
@@ -372,6 +465,7 @@ body li{
                 display: block ; order:1;
                 border: none;
                 background: none;
+                width: 0;
                
             }  
             h1{
@@ -403,6 +497,7 @@ body li{
                             border: solid 1px rgba(0, 0, 0, 0.5);
                             border-radius: 20px;
                             padding: 5px;
+                            margin-top: 17px ;
                             .searchimg{
                                 padding-left: 10px;
                             }
@@ -449,9 +544,12 @@ body li{
             } 
         }
         .quick{
+                top: unset;
+                bottom: 10%;
                 li:first-child{
                     position: fixed;
-                    bottom: 45px;
+                    right: 5%;
+                    
                 }
                 li:not(:first-child){
                     display: none;

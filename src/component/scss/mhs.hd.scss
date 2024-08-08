@@ -1,0 +1,10 @@
+$mainColor : #FFEBB7;
+
+.showMnavi{
+    background-color: $mainColor !important;
+    > div{
+        &:before{
+        content: "";
+        }
+    }
+}

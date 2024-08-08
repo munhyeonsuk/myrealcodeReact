@@ -19,8 +19,8 @@ const Quick = () => {
 
   return (
     <>
-      <section className={quscss.quick}>
-        <ul>
+      <div className={quscss.quick}>
+        <ul className='p-0 m-0'>
           <li>
             <a href="#top">
               <img src={up} alt="" />
@@ -32,7 +32,7 @@ const Quick = () => {
             <span className="mt-2 position-absolute">AI TRIP PLANNER</span>
           </li>
         </ul>      
-      </section>
+      </div>
       <Popupform onOpen={popVisible} onClose={popClose} />
     </>    
   );

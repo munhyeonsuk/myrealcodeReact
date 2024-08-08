@@ -1,98 +1,110 @@
 [
     {
         "gnbnm": "경주 소개",
-        "gnblink": "/pageprepare",
+        "gnblink": "pageprepare",
         "prnum": "",
         "cateno": "1"
     },
     {
         "gnbnm": "역사 및 소개",
-        "gnblink": "/pageprepare",
+        "gnblink": "pageprepare",
         "prnum": "1",
         "cateno": "1"
     },
     {
         "gnbnm": "지역 특산품",
-        "gnblink": "/pageprepare",
+        "gnblink": "pageprepare",
         "prnum": "1",
         "cateno": "2"
     },
     {
         "gnbnm": "여행 정보",
-        "gnblink": "/pageprepare",
+        "gnblink": "pageprepare",
         "prnum": "",
         "cateno": "2"
     },
     {
         "gnbnm": "관광지",
-        "gnblink": "/pageprepare",
+        "gnblink": "pageprepare",
         "prnum": "2",
         "cateno": "1"
     },
     {
         "gnbnm": "음식 및 카페",
-        "gnblink": "/pageprepare",
+        "gnblink": "pageprepare",
         "prnum": "2",
         "cateno": "2"
     },
     {
         "gnbnm": "축제",
-        "gnblink": "/pageprepare",
+        "gnblink": "pageprepare",
         "prnum": "2",
         "cateno": "3"
     },
     {
         "gnbnm": "추천 코스",
-        "gnblink": "/pageprepare",
+        "gnblink": "pageprepare",
         "prnum": "2",
         "cateno": "4"
     },
     {
         "gnbnm": "여행 후기",
-        "gnblink": "/pageprepare",
+        "gnblink": "pageprepare",
         "prnum": "2",
         "cateno": "5"
     },
     {
         "gnbnm": "예약 및 문의",
-        "gnblink": "/pageprepare",
+        "gnblink": "pageprepare",
         "prnum": "",
         "cateno": "3"
     },
     {
         "gnbnm": "숙소 예약",
-        "gnblink": "/pageprepare",
+        "gnblink": "pageprepare",
         "prnum": "3",
         "cateno": "1"
     },
     {
         "gnbnm": "패키지 여행 예약",
-        "gnblink": "/pageprepare",
+        "gnblink": "pageprepare",
         "prnum": "3",
         "cateno": "2"
     },
     {
         "gnbnm": "문의사항",
-        "gnblink": "/pageprepare",
+        "gnblink": "pageprepare",
         "prnum": "3",
         "cateno": "3"
     },
     {
         "gnbnm": "자주 묻는 문의",
-        "gnblink": "/pageprepare",
+        "gnblink": "pageprepare",
         "prnum": "3",
         "cateno": "4"
     },
     {
         "gnbnm": "이벤트",
-        "gnblink": "/pageprepare",
+        "gnblink": "pageprepare",
         "prnum": "",
         "cateno": "4"
     },
     {
         "gnbnm": "진행중인 이벤트",
-        "gnblink": "/pageprepare",
+        "gnblink": "pageprepare",
         "prnum": "4",
         "cateno": "1"
+    },
+    {
+        "gnbnm": "문의 사항 접수",
+        "gnblink": "faq",
+        "prnum": "",
+        "cateno": "5"
+    },
+    {
+        "gnbnm": "AI TRIP PLANER",
+        "gnblink": "pageprepare",
+        "prnum": "",
+        "cateno": "6"
     }
 ]
