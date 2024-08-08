@@ -18,7 +18,7 @@ const Ft = () => {
   };
 
   return (
-    <footer className={`${ftscss.ft} py-3`}>
+    <footer className={`${ftscss.ft} footerWrap py-3`}>
       <div className="container-1824">
         <div className={`${ftscss.footerMenu} d-flex justify-content-between align-items-center mb-0`}>
           <h1><a href="/"><img src={logo} alt=""/></a></h1>
