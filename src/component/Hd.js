@@ -161,8 +161,8 @@ function Hd() {
                         <button className={hdscss.mnaviclose} onClick={handleCloseBtnClick}><img src={close} alt="닫기" /></button>
                     )}
                 </div>
+                {showMnavi && <Mnavi handleCloseBtnClick={handleCloseBtnClick} />}
             </header>
-            {showMnavi && <Mnavi handleCloseBtnClick={handleCloseBtnClick} />}
         </>
     );
 }

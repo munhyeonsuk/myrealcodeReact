@@ -378,7 +378,7 @@ body li{
   }
 
 .lognavi{
-    margin-top: 57px;
+    margin-top: 30px;
     background-color: $mainColor;
     .loginimg{
         background-color: black;
@@ -471,7 +471,8 @@ body li{
         .allMenuBtn{ 
             display: block ; order:1;
             border: none;
-            background: none;            
+            background: none;
+            width: 0;          
         }  
         h1{
             order:2;

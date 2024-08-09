@@ -7,7 +7,7 @@ import login from '../../img/hdLogin1.svg'
 function Mnavi( { handleCloseBtnClick }) {
     return (
         <div className={lognaviscss.lognavi}>
-            <div className="d-flex px-5 pt-3">
+            <div className="d-flex ps-3 pt-3">
                 <div className={`${lognaviscss.loginimg} me-3`}>
                     <img src={login} alt=""/>
                 </div>
