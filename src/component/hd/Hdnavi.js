@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import navicafe from '../../json/hdnavi.json';
 import hdscss from '../scss/mhs.module.scss';
 
-function Hdnavi() {
+function Hdnavi({ handleCloseBtnClick }) {
     const [activeIndex, setActiveIndex] = useState(null); 
 
     const d1navi = navicafe.filter((item) => item.prnum === "");
@@ -22,6 +22,12 @@ function Hdnavi() {
         setActiveIndex(activeIndex === index ? null : index);
     };
 
+    const handleSubMenuClick = () => {
+        if (handleCloseBtnClick) {
+            handleCloseBtnClick();
+        }
+    };
+
     return (
         <>
             {d1navi.map((v, i) => (
@@ -34,8 +40,8 @@ function Hdnavi() {
                     {submenu[v.cateno] && (
                         <ul className={`${hdscss.gnb_li_ul} position-absolute ps-0 pt-2 ${activeIndex === i ? hdscss.show : ''}`}>
                             {submenu[v.cateno].map((vv, ii) => (
-                                <li key={`submenu${ii}`}>
-                                    <Link to={`*${vv.gnblink}`}>{vv.gnbnm}</Link>
+                                <li key={`submenu${ii}`} onClick={handleSubMenuClick}>
+                                    <Link to={`/${vv.gnblink}`}>{vv.gnbnm}</Link>
                                 </li>
                             ))}
                         </ul>

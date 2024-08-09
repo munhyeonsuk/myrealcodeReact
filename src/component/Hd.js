@@ -18,7 +18,8 @@ function Hd() {
     const [SubClass, setSubClass] = useState(null); // 헤더 border-bottom 초기값
     const [showMnavi, setShowMnavi] = useState(false); // Mnavi 표시 여부
     const [showAllMenuBtn, setShowAllMenuBtn] = useState(true); // 햄버거 메뉴 버튼 표시 여부
-    const [showSearchIcon, setShowSearchIcon] = useState(true); // 검색 아이콘 표시 여부
+    const [showSearchIcon, setShowSearchIcon] = useState(true); 
+    const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024); // 1024 기준 데스크탑 여부 체크
 
     const scrollEvent = () => {
         const scrollY = window.scrollY;
@@ -74,7 +75,29 @@ function Hd() {
         } else{
             document.body.classList.remove('overflow-hidden')
         }
-    }, [showMnavi])
+    }, [showMnavi]);
+
+    useEffect(() => {
+        const handleResize = () => {
+            const isDesktop = window.innerWidth >= 1024;
+            setIsDesktop(isDesktop);
+
+            if (isDesktop) {
+                setShowMnavi(false); // 데스크탑 모드일 때 Mnavi 자동 닫기
+                handleCloseBtnClick(false) 
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        // 초기 화면 크기 확인
+        handleResize();
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
 
     const handleAllMenuBtnClick = () => {
         setShowMnavi(true);
@@ -94,12 +117,12 @@ function Hd() {
                 <div className="container-1824 d-flex justify-content-between align-items-center">
                     {showAllMenuBtn && (
                         <button className={`${hdscss.allMenuBtn} p-0`} onClick={handleAllMenuBtnClick}>
-                            <img src={allbtn} alt="" />
+                            <img src={allbtn} alt="메뉴" />
                         </button>
                     )}
                     <h1><a href="/"><img src={logo} alt="" /></a></h1>
                     <ul className={`${hdscss.gnb} ${SubClass} d-flex ps-0 mb-0`}>
-                        <Hdnavi />
+                        <Hdnavi handleCloseBtnClick={handleCloseBtnClick} /> {/* handleCloseBtnClick 전달 */}
                     </ul>
                     <ul className={`${hdscss.utill}  justify-content-end position-relative mb-0 p-0 ${showMnavi ? "d-none" : "d-flex" }`}>
                         <li className="position-relative">
@@ -134,7 +157,9 @@ function Hd() {
                             <span className="visually-hidden">로그인</span>
                         </li>
                     </ul>
-                    {showMnavi ? <button className={hdscss.mnaviclose} onClick={handleCloseBtnClick}> <img src={close} alt="" /> </button> : ""}
+                    {!isDesktop && showMnavi && (
+                        <button className={hdscss.mnaviclose} onClick={handleCloseBtnClick}><img src={close} alt="닫기" /></button>
+                    )}
                 </div>
             </header>
             {showMnavi && <Mnavi handleCloseBtnClick={handleCloseBtnClick} />}
