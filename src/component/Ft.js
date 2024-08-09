@@ -21,32 +21,31 @@ const Ft = () => {
     <footer className={`${ftscss.ft} footerWrap py-3`}>
       <div className="container-1824">
         <div className={`${ftscss.footerMenu} d-flex justify-content-between align-items-center mb-0`}>
-          <h1><a href="/"><img src={logo} alt=""/></a></h1>
-          <ul className={`${ftscss.ftsns} d-flex align-items-center mb-0 p-0`}>
-            <li><span className={`${ftscss.footerIcon} visually-hidden`}>페이스북 </span><img src={facebook} alt="" /> </li>
-            <li><span className={`${ftscss.footerIcon} visually-hidden`}>유튜브</span><img src={youtube} alt="" /></li>
-            <li><span className={`${ftscss.footerIcon} visually-hidden`}>인스타그램</span><img src={instagram} alt="" /></li>
-            <li className={`${ftscss.verticalLine} me-3`}></li>
+          <h1><a href="/"><img src={logo} alt="로고" className="img-fluid" /></a></h1>
+          <ul className={`${ftscss.ftsns} d-flex align-items-center`}>
+            <li><a href="#"><img src={facebook} alt="페이스북" className="img-fluid" /><span className="visually-hidden">페이스북</span></a></li>
+            <li><a href="#"><img src={youtube} alt="유튜브" className="img-fluid" /><span className="visually-hidden">유튜브</span></a></li>
+            <li><a href="#"><img src={instagram} alt="인스타그램" className="img-fluid" /><span className="visually-hidden">인스타그램</span></a></li>
           </ul>
 
           <div className={`${ftscss.language} m-0`}>
             <div className={`${ftscss.languageSelector}`}>
               <div className={`${ftscss.languageButton}`} onClick={() => setShowul(!showul)}>
-                <img src={language} alt="" />
+                <img src={language} alt="언어 아이콘" className="img-fluid" />
                 <span className="text-white">{activeLanguage}</span>
-                <img src={check} alt="" className={`${showul ? 'up' : ''}`} />
+                <img src={check} alt="드롭다운 아이콘" className={`${showul ? 'up' : ''} img-fluid`} />
               </div>
               {showul && (
-                <ul className={`${ftscss.languageMenu} ps-0 mb-0 `}>
+                <ul className={`${ftscss.languageMenu} mb-0`}>
                   <li
-                    className={`${activeLanguage === '한국어' ? ftscss.active : ''} m-0 pb-0 `}
+                    className={`${activeLanguage === '한국어' ? ftscss.active : ''}`}
                     onClick={() => handleLanguageClick('한국어')}
                   >
                     한국어
                   </li>
                   
                   <li
-                    className={`${activeLanguage === 'English' ? ftscss.active : ''} m-0 `}
+                    className={`${activeLanguage === 'English' ? ftscss.active : ''}`}
                     onClick={() => handleLanguageClick('English')}
                   >
                     English
