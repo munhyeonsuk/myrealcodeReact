@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ftscss from './scss/mhs.module.scss';
+import{ Link } from 'react-router-dom'
 
 import logo from '../img/hdLogo.svg';
 import facebook from '../img/ftFacebook.svg';
@@ -58,12 +59,12 @@ const Ft = () => {
         </div>
 
         <div>
-          <ul className={`${ftscss.fnb} d-flex flex-wrap mt-2`}>
-            <li>회사소개</li>
-            <li>이용안내</li>
-            <li>개인정보처리방침</li>
-            <li>여행약관</li>
-            <li>고객센터</li>
+          <ul className={`${ftscss.fnb} d-flex flex-wrap mt-2 ms-0`}>
+            <li><Link>회사소개</Link></li>
+            <li><Link>이용안내</Link></li>
+            <li><Link>개인정보처리방침</Link></li>
+            <li><Link>여행약관</Link></li>
+            <li><Link>고객센터</Link></li>
           </ul>
           <p className={`${ftscss.fnbdes} mb-0`}>
             상호명 (주)마이리얼트립 | 대표 이동건 | 개인정보보호책임자 정재훈 | 사업자등록번호 209-81-55339 사업자정보확인 |  통신판매업신고번호 2019-서울서초-0260 | 관광사업등록번호 : 제2019-3호<br />

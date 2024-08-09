@@ -94,5 +94,17 @@
         "gnblink": "pageprepare",
         "prnum": "4",
         "cateno": "1"
+    },
+    {
+        "gnbnm": "문의 사항 접수",
+        "gnblink": "faq",
+        "prnum": "",
+        "cateno": "5"
+    },
+    {
+        "gnbnm": "AI TRIP PLANER",
+        "gnblink": "pageprepare",
+        "prnum": "",
+        "cateno": "6"
     }
 ]
