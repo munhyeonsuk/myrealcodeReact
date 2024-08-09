@@ -57,7 +57,7 @@ const Quick = () => {
             <span className="position-absolute">AI TRIP PLANNER</span>
           </li>
         </ul>      
-      </div>
+      </section>
       <Popupform onOpen={popVisible} onClose={popClose} />
     </>    
   );
