@@ -102,15 +102,6 @@ body li{
                         
         }
 
-        .utill li{
-            // margin-left: 1rem;
-            .searchIcon{
-                span{
-                    
-            }
-            }
-            
-        }
         .searchMenu.open{
             display: block;
         }
@@ -497,6 +488,7 @@ body li{
             background-color: rgba(0, 0, 0, 0.6);
             .dropdownbox{
                 background-color: white;
+                padding: 13px 20px 20px;
                 .searchbar{
                     border: solid 1px rgba(0, 0, 0, 0.5);
                     border-radius: 20px;
@@ -505,6 +497,7 @@ body li{
                         padding-left: 10px;
                     }
                     .searchinput{
+                        height: 26px;
                         &::placeholder{
                             color: #999;
                             font-family: "IBM Plex Sans KR";

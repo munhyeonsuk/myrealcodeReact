@@ -79,7 +79,7 @@ function Hd() {
 
     useEffect(() => {
         const handleResize = () => {
-            const isDesktop = window.innerWidth >= 1024;
+            const isDesktop = window.innerWidth > 1024;
             setIsDesktop(isDesktop);
 
             if (isDesktop) {
@@ -157,12 +157,13 @@ function Hd() {
                             <span className="visually-hidden">로그인</span>
                         </li>
                     </ul>
-                    {!isDesktop && showMnavi && (
+                    { showMnavi && (
                         <button className={hdscss.mnaviclose} onClick={handleCloseBtnClick}><img src={close} alt="닫기" /></button>
                     )}
                 </div>
                 {showMnavi && <Mnavi handleCloseBtnClick={handleCloseBtnClick} />}
             </header>
+            
         </>
     );
 }
