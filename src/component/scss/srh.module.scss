@@ -672,10 +672,16 @@
     }
 }
 
+@media (min-width: 1025px) {
+    .srh_mainSlider {
+      margin-top: 0; 
+    }
+  }
+
 // 태블릿
 @media (max-width: 1024px) {
     .mainslider {
-        margin-top: 70px;
+        margin-top: var(--header-height);
         height: 460px;
         &::after{
             height: 96px;
@@ -753,7 +759,6 @@
 // 모바일 - 소형
 @media (max-width: 768px) {
     .mainslider {
-        margin-top: 69.8px;
         height: 370px;
         &::after{
             height: 115px;
@@ -831,7 +836,6 @@
 // 모바일 - 초소형
 @media (max-width: 480px) {
     .mainslider {
-        margin-top: 58.8px;
         height: 350px;
         &::after{
             height: 94px;
@@ -913,7 +917,6 @@
 
 @media (max-width: 375px) {
     .mainslider {
-        margin-top: 58.8px;
         height: 350px;
         &::after{
             height: 94px;
@@ -989,7 +992,6 @@
 
 @media (max-width: 350px) {
     .mainslider {
-        margin-top: 58.8px;
         height: 350px;
         &::after{
             height: 94px;
@@ -1065,7 +1067,6 @@
 
 @media (max-width: 320px) {
     .mainslider {
-        margin-top: 58.8px;
         height: 335px;
         &::after{
             height: 78px;

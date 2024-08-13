@@ -67,6 +67,15 @@ const MainSlider = () => {
   useEffect(() => {
     const handleResize = () => {
       setSpaceBetween(window.innerWidth <= 480 ? 10 : 30);
+      const hdElement = document.querySelector('header');
+      const swiperdom = document.querySelector('.srh_mainSlider')
+      if (hdElement && swiperdom) {
+        const hdComputedStyle = window.getComputedStyle(hdElement);
+        const headerHeight = hdComputedStyle.height;
+        
+        // CSS 변수 설정
+        document.documentElement.style.setProperty('--header-height', headerHeight);
+      }
     };
 
     window.addEventListener('resize', handleResize);
@@ -109,7 +118,7 @@ const MainSlider = () => {
   };
 
   return (
-    <section className={`${mainSlider.mainslider} overflow-hidden`} style={{ backgroundColor: bgColor }}>
+    <section className={`${mainSlider.mainslider} overflow-hidden srh_mainSlider`} style={{ backgroundColor: bgColor }}>
       <div className={`${mainSlider.mainwrapper} d-flex justify-content-center start-50 position-relative`}>
         <div className={`${mainSlider.mainTextbox} position-relative`}>
           <Swiper
