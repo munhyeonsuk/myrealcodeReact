@@ -151,7 +151,7 @@ function Hd() {
                                 <img src={allbtn} alt="메뉴" />
                             </button>
                         )}
-                        <h1><a href="/"><img src={logo} alt="로고" className="img-fluid" /></a></h1>
+                        <h1><a href="/"><img src={logo} alt="로고" /></a></h1>
                         <ul className={`${hdscss.gnb} ${SubClass} d-flex ps-0 mb-0`}>
                             <Hdnavi handleCloseBtnClick={handleCloseBtnClick} /> {/* handleCloseBtnClick 전달 */}
                         </ul>

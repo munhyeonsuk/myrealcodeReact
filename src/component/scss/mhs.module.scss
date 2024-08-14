@@ -33,6 +33,9 @@ body li{
         h1 {
             a {
                 display: block;
+                img {
+                    height: auto;
+                }
             }
         }
        
@@ -398,6 +401,9 @@ body li{
         h1{
             order:2;
             width: 110px;
+            img {
+                width: 100%;
+            }
         }
         .gnb{ display: none !important;}
         .utill{

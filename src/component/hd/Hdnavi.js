@@ -36,7 +36,7 @@ function Hdnavi({ handleCloseBtnClick }) {
                     className={`${hdscss.gnb_li} px-xl-5 px-4 py-3 ${activeIndex === i ? hdscss.open : ''}`} 
                     onClick={() => handleMenuClick(i)}
                 >
-                    <Link className={hdscss.gnb_a}>{v.gnbnm}</Link>
+                    <Link to={`/${v.gnblink}`} className={hdscss.gnb_a}>{v.gnbnm}</Link>
                     {submenu[v.cateno] && (
                         <ul className={`${hdscss.gnb_li_ul} position-absolute ps-0 pt-2 ${activeIndex === i ? hdscss.show : ''}`}>
                             {submenu[v.cateno].map((vv, ii) => (

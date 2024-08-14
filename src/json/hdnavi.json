@@ -1,7 +1,7 @@
 [
     {
         "gnbnm": "경주 소개",
-        "gnblink": "pageprepare",
+        "gnblink": "",
         "prnum": "",
         "cateno": "1"
     },
@@ -19,7 +19,7 @@
     },
     {
         "gnbnm": "여행 정보",
-        "gnblink": "pageprepare",
+        "gnblink": "",
         "prnum": "",
         "cateno": "2"
     },
@@ -55,7 +55,7 @@
     },
     {
         "gnbnm": "예약 및 문의",
-        "gnblink": "pageprepare",
+        "gnblink": "",
         "prnum": "",
         "cateno": "3"
     },
@@ -85,7 +85,7 @@
     },
     {
         "gnbnm": "이벤트",
-        "gnblink": "pageprepare",
+        "gnblink": "",
         "prnum": "",
         "cateno": "4"
     },
