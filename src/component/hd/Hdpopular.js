@@ -32,27 +32,23 @@ const Hdpopular = () => {
 
   return (
     <div className="d-flex">
-      <div>
-        <ul className="ps-0">
-          {hdpopular.list1.map((item, index) => (
-            <ListItem key={`listp${index}`} item={item} index={index} />
+      <ul className="ps-0">
+        {hdpopular.list1.map((item, index) => (
+          <ListItem key={`listp${index}`} item={item} index={index} />
+        ))}
+      </ul>
+      {!isMobileView && (
+        <ul>
+          {hdpopular.list2.map((item, index) => (
+            <li key={`hdpopular${index}`} className="ms-3">
+              <Link to={item.href}>
+                <span className={`${(index + list1Length) < 3 ? `${hdscss.number} ${hdscss.red}` : hdscss.number} me-1`}>
+                  {index + 1 + list1Length}
+                </span> {item.text}
+              </Link>
+            </li>
           ))}
         </ul>
-      </div>
-      {!isMobileView && (
-        <div>
-          <ul>
-            {hdpopular.list2.map((item, index) => (
-              <li key={`hdpopular${index}`} className="ms-3">
-                <Link to={item.href}>
-                  <span className={`${(index + list1Length) < 3 ? `${hdscss.number} ${hdscss.red}` : hdscss.number} me-1`}>
-                    {index + 1 + list1Length}
-                  </span> {item.text}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
       )}
     </div>
   );

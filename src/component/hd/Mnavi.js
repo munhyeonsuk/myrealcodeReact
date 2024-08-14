@@ -7,9 +7,9 @@ import login from '../../img/hdLogin1.svg'
 function Mnavi( { handleCloseBtnClick }) {
     return (
         <div className={lognaviscss.lognavi}>
-            <div className="d-flex ps-3 pt-3">
+            <div className="d-flex align-items-center px-3 py-4">
                 <div className={`${lognaviscss.loginimg} me-3`}>
-                    <img src={login} alt=""/>
+                    <img src={login} alt="로그인 아이콘" />
                 </div>
                 <div>
                     <p className={`${lognaviscss.logtext1} m-0`}>로그인 <span>하세요</span></p>

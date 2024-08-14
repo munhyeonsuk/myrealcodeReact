@@ -42,15 +42,7 @@ const HdWrap = styled.header`
     }
 `;
 
-
-const HdBtn = styled.button`
-    position: fixed;
-    right:0;
-    bottom:0;
-`;
-
 function Hd() {
-    const [hd, setHd] = useState(true);
 
     const [bgColor, setBgColor] = useState("transparent"); // 헤더 배경색 초기값
     const [SubClass, setSubClass] = useState(null); // 헤더 border-bottom 초기값
@@ -106,7 +98,6 @@ function Hd() {
     }, [])
     
     useEffect(()=>{
-        console.log(showMnavi)
         if(showMnavi){
             document.body.classList.add('overflow-hidden')
 
@@ -122,7 +113,7 @@ function Hd() {
 
             if (isDesktop) {
                 setShowMnavi(false); // 데스크탑 모드일 때 Mnavi 자동 닫기
-                handleCloseBtnClick(false) 
+                handleCloseBtnClick(false);
             }
         };
 
@@ -151,110 +142,56 @@ function Hd() {
 
     return (
         <>
-            { hd ? <header className={`${hdscss.hd} fixed-top ${showMnavi ? "showMnavi" : "" }`} style={{ backgroundColor: bgColor }}>
-                <HdBtn onClick={ () => { setHd(false)}}>헤더2</HdBtn>
-                <div className="container-1824 d-flex justify-content-between align-items-center">
-                    {showAllMenuBtn && (
-                        <button className={`${hdscss.allMenuBtn} p-0`} onClick={handleAllMenuBtnClick}>
-                            <img src={allbtn} alt="메뉴" />
-                        </button>
-                    )}
-                    <h1><a href="/"><img src={logo} alt="" /></a></h1>
-                    <ul className={`${hdscss.gnb} ${SubClass} d-flex ps-0 mb-0`}>
-                        <Hdnavi handleCloseBtnClick={handleCloseBtnClick} /> {/* handleCloseBtnClick 전달 */}
-                    </ul>
-                    <ul className={`${hdscss.utill}  justify-content-end position-relative mb-0 p-0 ${showMnavi ? "d-none" : "d-flex" }`}>
-                        <li className="position-relative">
-                            {showSearchIcon ? (
-                                <img src={search} alt="검색" className={`${hdscss.searchimg} open`} />
-                            ) : (
-                                <img src={close} alt="닫기" className={`${hdscss.closeimg}`} onClick={handleCloseBtnClick} />
-                            )}
-                            <span className="visually-hidden">검색</span>
+            <HdWrap className={`${hdscss.hd} fixed-top ${showMnavi ? "showMnavi" : "" }`} style={{ backgroundColor: bgColor }}>
+                <div>
+                    <div className="container-1824 d-flex justify-content-between align-items-center">
+                        {showAllMenuBtn && (
+                            <button className={`${hdscss.allMenuBtn} p-0`} onClick={handleAllMenuBtnClick}>
+                                <img src={allbtn} alt="메뉴" />
+                            </button>
+                        )}
+                        <h1><a href="/"><img src={logo} alt="로고" className="img-fluid" /></a></h1>
+                        <ul className={`${hdscss.gnb} ${SubClass} d-flex ps-0 mb-0`}>
+                            <Hdnavi handleCloseBtnClick={handleCloseBtnClick} /> {/* handleCloseBtnClick 전달 */}
+                        </ul>
+                        <ul className={`${hdscss.utill}  justify-content-end position-relative mb-0 p-0 ${showMnavi ? "d-none" : "d-flex" }`}>
+                            <li className="position-relative">
+                                {showSearchIcon ? (
+                                    <img src={search} alt="검색" className={`${hdscss.searchimg} open`} />
+                                ) : (
+                                    <img src={close} alt="닫기" className={`${hdscss.closeimg}`} onClick={handleCloseBtnClick} />
+                                )}
+                                <span className="visually-hidden">검색</span>
 
-                            <div className={`${hdscss.searchMenu} searchdivbox d-none`}>
-                                <div className={`${hdscss.dropdownbox} m-0`}>
-                                    <div className={`${hdscss.searchbar} d-flex justify-content-between align-items-center text-end pb-1`}>
-                                        <img className={`${hdscss.searchimg} pe-2`} src={search} alt="검색" />
-                                        <input type="text" placeholder='검색' className={hdscss.searchinput} />
-                                        <button className={`${hdscss.searchbt} pe-1 close`} ><img src={close} alt="닫기" className={`${hdscss.closeImg}`} /></button>
-                                    </div>
-                                    <div className={`${hdscss.popularbar} p-0`}>
-                                        <p className={`${hdscss.searchPopular} pt-2 mb-1 text-black-50`}>실시간인기</p>
-                                        <div className={`${hdscss.searchTop10} d-flex`}>
-                                            <div>
+                                <div className={`${hdscss.searchMenu} searchdivbox d-none`}>
+                                    <div className={`${hdscss.dropdownbox} m-0`}>
+                                        <div className={`${hdscss.searchbar} d-flex justify-content-between align-items-center text-end pb-1`}>
+                                            <img className={`${hdscss.searchimg} pe-2`} src={search} alt="검색" />
+                                            <input type="text" placeholder='검색' className={hdscss.searchinput} />
+                                            <button className={`${hdscss.searchbt} pe-1 close`} ><img src={close} alt="닫기" className={`${hdscss.closeImg}`} /></button>
+                                        </div>
+                                        <div className={`${hdscss.popularbar} p-0`}>
+                                            <p className={`${hdscss.searchPopular} pt-2 mb-1 text-black-50`}>실시간인기</p>
+                                            <div className="d-flex">
                                                 <Hdpopular />
                                             </div>
                                         </div>
-                                    </div>
 
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li className={`${hdscss.loginImg} ms-4 `}>
-                            <Link><img src={login} alt="로그인" /></Link>
-                            <span className="visually-hidden">로그인</span>
-                        </li>
-                    </ul>
-                    {!isDesktop && showMnavi && (
-                        <button className={hdscss.mnaviclose} onClick={handleCloseBtnClick}><img src={close} alt="닫기" /></button>
-                    )}
+                            </li>
+                            <li className={`${hdscss.loginImg} ms-4 `}>
+                                <Link><img src={login} alt="로그인" /></Link>
+                                <span className="visually-hidden">로그인</span>
+                            </li>
+                        </ul>
+                        {!isDesktop && showMnavi && (
+                            <button className={hdscss.mnaviclose} onClick={handleCloseBtnClick}><img src={close} alt="닫기" /></button>
+                        )}
+                    </div>
+                    {showMnavi && <Mnavi handleCloseBtnClick={handleCloseBtnClick} />}                
                 </div>
-                {showMnavi && <Mnavi handleCloseBtnClick={handleCloseBtnClick} />}
-            </header>
-            : <HdWrap className={`${hdscss.hd} fixed-top ${showMnavi ? "showMnavi" : "" }`} style={{ backgroundColor: bgColor }}>
-                <HdBtn onClick={ () => { setHd(true)}}>헤더</HdBtn>
-            <div>
-                <div className="container-1824 d-flex justify-content-between align-items-center">
-                    {showAllMenuBtn && (
-                        <button className={`${hdscss.allMenuBtn} p-0`} onClick={handleAllMenuBtnClick}>
-                            <img src={allbtn} alt="메뉴" />
-                        </button>
-                    )}
-                    <h1><a href="/"><img src={logo} alt="" /></a></h1>
-                    <ul className={`${hdscss.gnb} ${SubClass} d-flex ps-0 mb-0`}>
-                        <Hdnavi handleCloseBtnClick={handleCloseBtnClick} /> {/* handleCloseBtnClick 전달 */}
-                    </ul>
-                    <ul className={`${hdscss.utill}  justify-content-end position-relative mb-0 p-0 ${showMnavi ? "d-none" : "d-flex" }`}>
-                        <li className="position-relative">
-                            {showSearchIcon ? (
-                                <img src={search} alt="검색" className={`${hdscss.searchimg} open`} />
-                            ) : (
-                                <img src={close} alt="닫기" className={`${hdscss.closeimg}`} onClick={handleCloseBtnClick} />
-                            )}
-                            <span className="visually-hidden">검색</span>
-
-                            <div className={`${hdscss.searchMenu} searchdivbox d-none`}>
-                                <div className={`${hdscss.dropdownbox} m-0`}>
-                                    <div className={`${hdscss.searchbar} d-flex justify-content-between align-items-center text-end pb-1`}>
-                                        <img className={`${hdscss.searchimg} pe-2`} src={search} alt="검색" />
-                                        <input type="text" placeholder='검색' className={hdscss.searchinput} />
-                                        <button className={`${hdscss.searchbt} pe-1 close`} ><img src={close} alt="닫기" className={`${hdscss.closeImg}`} /></button>
-                                    </div>
-                                    <div className={`${hdscss.popularbar} p-0`}>
-                                        <p className={`${hdscss.searchPopular} pt-2 mb-1 text-black-50`}>실시간인기</p>
-                                        <div className={`${hdscss.searchTop10} d-flex`}>
-                                            <div>
-                                                <Hdpopular />
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </li>
-                        <li className={`${hdscss.loginImg} ms-4 `}>
-                            <Link><img src={login} alt="로그인" /></Link>
-                            <span className="visually-hidden">로그인</span>
-                        </li>
-                    </ul>
-                    {!isDesktop && showMnavi && (
-                        <button className={hdscss.mnaviclose} onClick={handleCloseBtnClick}><img src={close} alt="닫기" /></button>
-                    )}
-                </div>
-                {showMnavi && <Mnavi handleCloseBtnClick={handleCloseBtnClick} />}                
-            </div>
-        </HdWrap>}
+            </HdWrap>
         </>
     );
 }

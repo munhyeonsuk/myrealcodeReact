@@ -30,6 +30,11 @@ body li{
                 cursor: pointer
             }
         }
+        h1 {
+            a {
+                display: block;
+            }
+        }
        
         .gnb {
             position: relative;
@@ -146,8 +151,8 @@ body li{
                 cursor: pointer;
                 outline: none;
                 .closeImg{
-                    width: 15px;
-                    height: 15px;
+                    width: 13px;
+                    height: 13px;
                 }
             }
             .dropdownbox {                    
@@ -375,91 +380,7 @@ body li{
 .prepare{
     padding: 100px 80px;
     white-space: nowrap
-  }
-
-.lognavi{
-    margin-top: 30px;
-    background-color: $mainColor;
-    .loginimg{
-        background-color: black;
-        border-radius: 50%;
-        width: 45px;
-        height: 45px;
-        img{
-            filter: invert(1);
-            transform: translate(14px, 9px);
-        }
-        
-    }
-    .logtext1{
-        font-size: 15px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 149.707%;
-            span{
-                font-weight: 500;
-            }
-    }
-    .logtext2{
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 149.707%;
-        letter-spacing: -1.1px;
-        white-space: nowrap;
-
-    }
-    .navi{
-        background-color: white;
-        border-radius: 20px 20px 0 0;
-        padding-top: 65px;
-        height: 100vh;
-        .gnb_li {
-            position: relative;
-            padding: 5px 15px !important;
-        }
-        .gnb_li > a::after {
-            content: url(../../img/mnaviArrow.svg);
-            position: absolute;
-            right: 20px;
-        }
-        .gnb_li:nth-child(5) > a::after,
-        .gnb_li:nth-child(6) > a::after {
-            content: none;
-        }
-        .gnb_li.open > a::after {
-            transform: rotate(180deg);
-        }
-        .gnb_a{//대메뉴
-            font-size: 15px;
-            font-style: normal;
-            font-weight: 700;
-            line-height: 149.707%;
-            letter-spacing: -0.9px;
-           
-        }
-        .gnb_li_ul{// 소메뉴
-            display: none;
-            font-size: 13px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 200%;
-            letter-spacing: -0.78px;
-            background-color: $mainColor;
-            width: 100%;
-            padding:15px  20px !important;
-            position: relative !important;
-            margin-top: 12px !important;
-        }
-        .gnb_li_ul.show {
-            display: block;
-            max-height: 500px;
-        }
-    }
 }
-
-
-
 
 .allMenuBtn{ display: none ;}
 
@@ -476,7 +397,7 @@ body li{
         }  
         h1{
             order:2;
-            width: auto;
+            width: 110px;
         }
         .gnb{ display: none !important;}
         .utill{
@@ -497,16 +418,19 @@ body li{
             background-color: rgba(0, 0, 0, 0.6);
             .dropdownbox{
                 background-color: white;
-                padding: 15px 20px 20px;
+                padding: 13px 15px;
                 .searchbar{
                     border: solid 1px rgba(0, 0, 0, 0.5);
                     border-radius: 20px;
-                    padding: 5px;
+                    padding: 3px 10px;
                     .searchimg{
-                        padding-left: 10px;
+                        width: 16px;
+                        height: 16px;
+                        padding-right: 0 !important;
                     }
                     .searchinput{
-                        height: 26px;
+                        height: 100%;
+                        margin: 0 5px;
                         &::placeholder{
                             color: #999;
                             font-family: "IBM Plex Sans KR";
@@ -518,14 +442,115 @@ body li{
                         } 
                     }
                     .searchbt{
-                        padding-right: 10px !important;
+                        padding-right: 0 !important;
                     }
                 }
                 .popularbar{
-                    padding-left: 15px !important;
+                    padding-left: 8px !important;
                     .searchPopular{
                         border: none !important;
+                        padding-top: 14px !important;
                     }
+                }
+            }
+        }
+        .lognavi{
+            background-color: $mainColor;
+            .loginimg{
+                background-color: black;
+                border-radius: 50%;
+                width: 46px;
+                height: 46px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    filter: invert(1);
+                }
+                
+            }
+            .logtext1{
+                font-size: 15px;
+                font-weight: 700;
+                line-height: normal;
+                margin-bottom: 2px !important;
+                    span{
+                        font-weight: 500;
+                    }
+            }
+            .logtext2{
+                font-size: 12px;
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: -1.1px;
+                white-space: nowrap;
+                margin-bottom: 0;        
+            }
+            .navi{
+                background-color: white;
+                border-radius: 20px 20px 0 0;
+                padding-top: 20px;
+                height: 100vh;
+                .gnb_li {
+                    padding: 9px 16px !important;
+                }
+                .gnb_li > a {                        
+                    position: relative;
+                    display: block;
+                    &::after {
+                        content: "";
+                        display: block;
+                        width: 16px;
+                        height: 16px;
+                        background: url(../../img/mnaviArrow.svg);
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        transform: translateY(-50%);
+                    }
+                }
+                .gnb_li:nth-child(5) > a::after,
+                .gnb_li:nth-child(6) > a::after {
+                    content: none;
+                }
+                .gnb_li.open > a::after {
+                    transform: rotate(180deg);
+                    top: 16%;
+                }
+                .gnb_a{//대메뉴
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 149.707%;
+                    letter-spacing: -0.9px;
+                   
+                }
+                .gnb_li_ul{// 소메뉴
+                    font-size: 13px;
+                    font-weight: 400;
+                    letter-spacing: -0.78px;
+                    width: 100%;
+                    padding: 0 !important;
+                    position: relative !important;
+                    margin: 0 !important;
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.5s;
+                    li {
+                        background-color: $mainColor;
+                        padding: 5px 10px;
+                        &:first-child {
+                            padding-top: 10px;
+                            margin-top: 8px;
+                        }
+                        &:last-child {
+                            padding-bottom: 10px;
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+                .gnb_li_ul.show {
+                    max-height: 500px;
                 }
             }
         }
@@ -577,14 +602,4 @@ body li{
     }
 }
 
-@media(max-width:469px){
-    .hd{
-        h1{
-            img{
-                width: 35vw;
-                max-width: 163px;
-            }
-        }
-    }
-}
 

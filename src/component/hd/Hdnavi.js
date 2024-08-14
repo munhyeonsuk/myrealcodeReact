@@ -33,7 +33,7 @@ function Hdnavi({ handleCloseBtnClick }) {
             {d1navi.map((v, i) => (
                 <li 
                     key={`${i}`} 
-                    className={`${hdscss.gnb_li} px-5 py-3 ${activeIndex === i ? hdscss.open : ''}`} 
+                    className={`${hdscss.gnb_li} px-xl-5 px-4 py-3 ${activeIndex === i ? hdscss.open : ''}`} 
                     onClick={() => handleMenuClick(i)}
                 >
                     <Link className={hdscss.gnb_a}>{v.gnbnm}</Link>
