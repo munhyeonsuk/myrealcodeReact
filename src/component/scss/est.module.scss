@@ -99,7 +99,7 @@ $fontColorDarkBeige : #B2A569;
           
           background-color: #FFEBB7;
           border-radius: 20px; /* 둥근 사각형 모서리를 위한 값 */
-          padding: 20px; /* 텍스트와 경계 사이의 간격을 조절하기 위해 사용 */
+          padding: 13px 15px; /* 텍스트와 경계 사이의 간격을 조절하기 위해 사용 */
         }
   
         .titleAreaE{
@@ -110,8 +110,7 @@ $fontColorDarkBeige : #B2A569;
          
          @media (max-width:1199px) {
           width: 53vw;
-           margin-left: auto;
-           margin-top: 10vw;
+          margin-left: auto;
          }
          @media (max-width:767px) {
           width: 70vw;
@@ -130,12 +129,12 @@ $fontColorDarkBeige : #B2A569;
           }
           @media (max-width:1199px) {
             justify-content: center !important; 
-            margin: 0 0.5rem;        
+            margin: 0 15px;
           }
 
           @media (max-width:768px) {
             transform: translate(0,0);
-            margin: 0 1rem;
+            margin: 0 15px;
           }
           
           margin-top: 30px;
@@ -383,7 +382,7 @@ $fontColorDarkBeige : #B2A569;
 @media (max-width:1360px) {
   
 .eventtextw{
-    padding: 60px 0 0 55px;
+    padding: 60px 13px 20px 55px;
   .titletextres{
     font-size: 0 !important;
     line-height: 0; 

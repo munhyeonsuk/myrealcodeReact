@@ -73,6 +73,7 @@ function Hd() {
             if (searchMenu) {
                 searchMenu.classList.toggle('d-block');
                 searchMenu.classList.toggle('d-none');
+                document.body.classList.toggle('overflow-hidden');
             }
         };
 

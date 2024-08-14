@@ -422,6 +422,7 @@ $fontColorDarkBeige : #B2A569;
 
 @media screen and (max-width: 1460px) {
     .map {
+        padding: 0 0 20px;
         &::before,
         &::after {
             display: none;
@@ -429,10 +430,14 @@ $fontColorDarkBeige : #B2A569;
         .mapWrapS {
             .mapTitleS {
                 .mapTitleTextS {
+                    margin-bottom: 30px;
                     &::before,
                     &::after {
                         display: none;
                     }
+                }
+                .mapCategoryS {
+                    margin-bottom: 50px;
                 }
             }
         }
@@ -455,7 +460,7 @@ $fontColorDarkBeige : #B2A569;
 
     // 국내여행지추천 모바일
     .recommend {
-        padding-left: 20px;
+        padding-left: 15px;
         &::before {
             height: 500px;
         }
@@ -673,7 +678,7 @@ $fontColorDarkBeige : #B2A569;
             }
             .mapContentsS {
                 order: 1;
-                padding: 20px;
+                padding: 13px 15px;
                 .mapDetailS {
                     padding: 0;
                     .mapTextS {

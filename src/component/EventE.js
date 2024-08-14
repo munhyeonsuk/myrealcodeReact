@@ -5,9 +5,9 @@ import esthercss from './scss/est.module.scss'
 function EventE() {
     return (
         <section className={esthercss.eventE}>
-        <div className={`${esthercss.containerE} container-1400 py-5`} >
+        <div className={`${esthercss.containerE} container-1400 py-xl-5`} >
             <div className={`d-xl-flex align-items-strech ${esthercss.beforeRoundE}`}>
-                <div className={`${esthercss.titleAreaE} flex-grow-1 position-relative me-sm-3`}>
+                <div className={`${esthercss.titleAreaE} flex-grow-1 position-relative`}>
                     <div className={esthercss.eventtextw}>
                         <h3 className="mb-sm-3 mb-1">Event</h3>
                         <p className={esthercss.titletextres}>마이리얼트립에서는<br />
