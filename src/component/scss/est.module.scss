@@ -181,10 +181,15 @@ $fontColorDarkBeige : #B2A569;
                 font-size: 14px;
                 margin: 1.3rem ;
 
-                @media (min-width: 768px) and (max-width: 910px) {
+                @media (min-width: 816px) and (max-width: 910px) {
                   font-size: 0.8rem;
                   margin-left: 0.5rem;
                     }
+
+                    @media (min-width: 768px) and (max-width: 816px) {
+                      font-size: 0.75rem;
+                      margin-left: 0.5rem;
+                        }
 
 
                 @media (max-width:375px) {
