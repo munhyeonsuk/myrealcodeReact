@@ -11,10 +11,11 @@ function Eventcard() {
                     {
                         eventdata.map(( eventdata, listnumber )=>{
                             return(
-                                <li key={`eventcard${listnumber}`} className={`overflow-hidden  bg-white  px-0 ${
-                                    listnumber === 0 ? esthercss.eventFirstE : 
-                                    listnumber === 1 ? esthercss.eventSecondE :  
-                                    ""
+                                <li key={`eventcard${listnumber}`} className={`overflow-hidden eventcard${listnumber}  bg-white  px-0 ${
+                                    listnumber === 0 ? 
+                                    esthercss.eventFirstE : listnumber === 1 ? esthercss.eventSecondE : esthercss.eventThirdE
+
+                                    
                                   } `} >
                                 <a href={eventdata.linkHref} className={`d-block overflow-hidden ${esthercss.thumbImgE}`}>
                                     <img src={eventdata.imageSrc} alt={eventdata.alt} className="d-none img-fluid pcimg" />
