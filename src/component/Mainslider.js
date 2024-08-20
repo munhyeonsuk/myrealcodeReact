@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, Controller } from 'swiper/modules';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import './scss/srh.mainslider.scss';
 import mainSlider from './scss/srh.module.scss';
@@ -13,6 +13,7 @@ const MainSlider = () => {
   const [swiperTextInstance, setSwiperTextInstance] = useState(null);
   const [swiperImgInstance, setSwiperImgInstance] = useState(null);
   const [spaceBetween, setSpaceBetween] = useState(window.innerWidth <= 480 ? 10 : 30);
+  const location = useLocation();
 
   const resetProgressBar = () => {
     const fillElement = document.querySelector(`.mainSlider_fill`);
@@ -69,21 +70,22 @@ const MainSlider = () => {
       setSpaceBetween(window.innerWidth <= 480 ? 10 : 30);
       const hdElement = document.querySelector('header');
       const swiperdom = document.querySelector('.srh_mainSlider')
+
       if (hdElement && swiperdom) {
         const hdComputedStyle = window.getComputedStyle(hdElement);
         const headerHeight = hdComputedStyle.height;
         
-        // CSS 변수 설정
         document.documentElement.style.setProperty('--header-height', headerHeight);
       }
     };
+    handleResize();
 
     window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [location]);
 
   const togglePlayPause = () => {
     const playPauseButton = document.querySelector('.btnchange');
