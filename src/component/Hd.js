@@ -109,7 +109,7 @@ function Hd() {
 
     useEffect(() => {
         const handleResize = () => {
-            const isDesktop = window.innerWidth >= 1024;
+            const isDesktop = window.innerWidth > 1024;
             setIsDesktop(isDesktop);
 
             if (isDesktop) {
