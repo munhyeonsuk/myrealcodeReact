@@ -18,6 +18,7 @@ import Ft from './component/Ft'
 import Quick from './component/Quick';
 import Pageprepare from './component/subpage/Pageprepare';
 import Popupform from './component/Popupform'
+import MapOpen from './component/mapOpenData/MapOpenApi'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -27,7 +28,8 @@ root.render(
             <Route path="/" element={
             <>  <Mrc /><Quick /> </>} />
             <Route path="/faq" element={<Popupform onOpen={true} onClose={false} />} />
-            <Route path="*" element={<Pageprepare />} />
+            <Route path="/map" element={<MapOpen />} />
+            <Route path="*" element={<Pageprepare />} />            
         </Routes>
         
       
