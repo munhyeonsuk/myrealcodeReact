@@ -5,6 +5,7 @@ import ai from '../img/quickAI.svg'
 import quscss from './scss/mhs.module.scss'
 
 import Popupform from './Popupform'
+import { Link } from 'react-router-dom'
 
 const Quick = () => {
   const [popVisible, setPopVisible] = useState(false);  
@@ -53,8 +54,10 @@ const Quick = () => {
             <span className="visually-hidden">위로</span>
           </li>
           <li className="position-relative">
-            <img src={ai} alt="AI TRIP PLANNER" className="img-fluid" />
-            <span className="position-absolute">AI TRIP PLANNER</span>
+            <Link to="/map">
+              <img src={ai} alt="AI TRIP PLANNER" className="img-fluid" />
+              <span className="position-absolute">AI TRIP PLANNER</span>
+            </Link>
           </li>
         </ul>      
       </section>
