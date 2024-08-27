@@ -28,6 +28,8 @@ function Popupform({onOpen, onClose}) {
         const { data, error } = await supabase
         .from('mrc_inquiry')
         .insert([inquiryData]);
+
+        alert('접수되었습니다!'); // 팝업 띄우기
         
         if (error) {
             console.error('Error submitting QnA:', error);
@@ -71,7 +73,7 @@ function Popupform({onOpen, onClose}) {
                         </div>
                         <div>
                             <label htmlFor="title">제목</label>
-                            <input type="text" id="title" name="inquiry_title" onChange={handleChange} value={inquiryData.inquiry_title} placeholder="제목을 입력해주세요." />
+                            <input type="text" id="title" name="inquiry_title" onChange={handleChange} value={inquiryData.inquiry_title} placeholder="제목을 입력해주세요." required />
                         </div>
                         <div>
                             <label htmlFor="text">내용</label>
