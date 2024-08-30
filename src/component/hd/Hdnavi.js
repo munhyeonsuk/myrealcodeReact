@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import navicafe from '../../json/hdnavi.json';
 import hdscss from '../scss/mhs.module.scss';
 
 function Hdnavi({ handleCloseBtnClick }) {
     const [activeIndex, setActiveIndex] = useState(null); 
+    
 
     const d1navi = navicafe.filter((item) => item.prnum === "");
     const submenu = {};
@@ -19,7 +20,11 @@ function Hdnavi({ handleCloseBtnClick }) {
     }
 
     const handleMenuClick = (index) => {
-        setActiveIndex(activeIndex === index ? null : index);
+        setActiveIndex(activeIndex === index ? null : index); 
+        // 저장된 원래 --header-height 값으로 복원합니다.
+       
+   
+
     };
 
     const handleSubMenuClick = () => {
@@ -28,13 +33,34 @@ function Hdnavi({ handleCloseBtnClick }) {
         }
     };
 
+
+    useEffect(() => {
+        // 컴포넌트가 마운트될 때 초기 --header-height 값을 저장합니다.
+        const rootStyle = getComputedStyle(document.documentElement);
+        const initialHeaderHeight = rootStyle.getPropertyValue('--header-height').trim();
+
+        const headerElement = document.querySelector('header');
+        if (headerElement && initialHeaderHeight) {
+        headerElement.style.height = initialHeaderHeight; 
+        }
+
+       
+        
+      }, []);
+
+   
+
     return (
         <>
             {d1navi.map((v, i) => (
                 <li 
                     key={`${i}`} 
                     className={`${hdscss.gnb_li} px-xl-5 px-4 py-3 ${activeIndex === i ? hdscss.open : ''}`} 
-                    onClick={() => handleMenuClick(i)}
+                    onClick={() => { 
+                        handleMenuClick(i); 
+                        v.gnblink == 'faq' &&  handleCloseBtnClick();
+                    
+                    } }
                 >
                     <Link to={`/${v.gnblink}`} className={hdscss.gnb_a}>{v.gnbnm}</Link>
                     {submenu[v.cateno] && (

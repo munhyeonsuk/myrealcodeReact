@@ -18,7 +18,7 @@ function Mnavi( { handleCloseBtnClick }) {
                 </div>
             </div>
             <div className={lognaviscss.navi}>
-                <Hdnavi handleCloseBtnClick={handleCloseBtnClick} />
+                <Hdnavi handleCloseBtnClick={handleCloseBtnClick}  />
             </div>
         </div>
     )
